@@ -71,7 +71,7 @@ public class UsuarioController {
 	@GetMapping("/delete")
 	public String deleteUsuario(@RequestParam("usuarioId") int id) {
 		
-		// deleta o usuario
+		// deleta o usuario (teste commit)
 		usuarioService.deleteUsuario(id);
 		
 		return "redirect:/usuario/list";
