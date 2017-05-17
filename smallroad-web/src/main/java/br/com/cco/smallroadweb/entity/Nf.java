@@ -2,15 +2,41 @@ package br.com.cco.smallroadweb.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="nf")
 public class Nf {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
 	private int id;
+	
+	@Column(name="numero", unique=true, nullable=false)
 	private int numero;
+	
+	@Column(name="cep_origem")
 	private int cepOrigem;
+	
+	@Column(name="end_origem")
 	private int endOrigem;
+	
+	@Column(name="cep_destino")
 	private String cepDestino;
+	
+	@Column(name="end_destino")
 	private String endDestino;
+	
+	@Column(name="distancia")
 	private double distancia;
+	
+	@Column(name="dt_entrega")
 	private Date dtEntrega;
 
 	public Nf() {
