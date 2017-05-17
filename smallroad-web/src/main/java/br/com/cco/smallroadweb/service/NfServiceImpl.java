@@ -1,5 +1,7 @@
 package br.com.cco.smallroadweb.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +21,43 @@ public class NfServiceImpl implements NfService {
 	public void saveNf(Nf nf) {
 		nfDAO.saveNf(nf);
 		
+	}
+
+
+	@Override
+	@Transactional
+	public List<Nf> getNfs() {
+		return nfDAO.getNfs();
+	}
+
+
+	@Override
+	@Transactional
+	public Nf getNf(Integer numero) {
+		return nfDAO.getNf(numero);
+	}
+
+
+	@Override
+	@Transactional
+	public void deleteNf(Integer numero) {
+		nfDAO.deleteNf(numero);
+		
+	}
+
+
+	@Override
+	@Transactional
+	public void deleteNfByNumero(Integer numero) {
+		nfDAO.deleteNf(numero);
+		
+	}
+
+
+	@Override
+	@Transactional
+	public List<Nf> procuraNfsByNumero(Integer numero) {
+		return nfDAO.procuraNfsByNumero(numero);
 	}
 
 }

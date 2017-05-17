@@ -10,9 +10,9 @@ public interface NfDAO {
 
 	public void saveNf(Nf nf);
 
-	public Nf getNf(Integer id);
+	public Nf getNf(Integer numero);
 
-	public void deleteNf(Integer id);
+	public void deleteNf(Integer numero);
 	
 	public void deleteNfByNumero(Integer numero);
 
