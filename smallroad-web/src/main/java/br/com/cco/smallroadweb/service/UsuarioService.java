@@ -10,9 +10,9 @@ public interface UsuarioService {
 
 	public void saveUsuario(Usuario usuario);
 
-	public Usuario getUsuario(int id);
+	public Usuario getUsuario(Integer id);
 
-	public void deleteUsuario(int id);
+	public void deleteUsuario(Integer id);
 
 	public List<Usuario> procuraUsuariosPorNome(String nome);
 	

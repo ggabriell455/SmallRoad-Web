@@ -10,9 +10,9 @@ public interface UsuarioDAO {
 
 	public void saveUsuario(Usuario usuario);
 
-	public Usuario getUsuario(int id);
+	public Usuario getUsuario(Integer id);
 
-	public void deleteUsuario(int id);
+	public void deleteUsuario(Integer id);
 
 	List<Usuario> procuraUsuariosByNome(String nomeProcurado);
 	

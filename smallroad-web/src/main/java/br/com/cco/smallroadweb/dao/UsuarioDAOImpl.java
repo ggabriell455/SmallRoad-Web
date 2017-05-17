@@ -47,7 +47,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 
 	@Override
-	public Usuario getUsuario(int id) {
+	public Usuario getUsuario(Integer id) {
 
 		// pega a seção atual do hibernate
 		Session currentSession = sessionFactory.getCurrentSession();
@@ -59,7 +59,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 
 	@Override
-	public void deleteUsuario(int id) {
+	public void deleteUsuario(Integer id) {
 
 		// pega a seção atual do hibernate
 		Session currentSession = sessionFactory.getCurrentSession();

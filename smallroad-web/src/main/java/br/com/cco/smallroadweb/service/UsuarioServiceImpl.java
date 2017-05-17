@@ -31,14 +31,14 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	@Transactional
-	public Usuario getUsuario(int id) {
+	public Usuario getUsuario(Integer id) {
 		
 		return usuarioDAO.getUsuario(id);
 	}
 
 	@Override
 	@Transactional
-	public void deleteUsuario(int id) {
+	public void deleteUsuario(Integer id) {
 		
 		usuarioDAO.deleteUsuario(id);
 	}

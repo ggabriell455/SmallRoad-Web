@@ -2,11 +2,14 @@ package br.com.cco.smallroadweb.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,28 +19,33 @@ public class Nf {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private int id;
+	private Integer id;
 	
 	@Column(name="numero", unique=true, nullable=false)
-	private int numero;
+	private Integer numero;
 	
 	@Column(name="cep_origem")
-	private int cepOrigem;
+	private Integer cepOrigem;
 	
 	@Column(name="end_origem")
-	private int endOrigem;
+	private String endOrigem;
 	
 	@Column(name="cep_destino")
-	private String cepDestino;
+	private Integer cepDestino;
 	
 	@Column(name="end_destino")
 	private String endDestino;
 	
 	@Column(name="distancia")
-	private double distancia;
+	private Double distancia;
 	
 	@Column(name="dt_entrega")
 	private Date dtEntrega;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="roteiro_id")
+	private Roteiro roteiro;
+	
 
 	public Nf() {
 		
@@ -67,19 +75,19 @@ public class Nf {
 		this.cepOrigem = cepOrigem;
 	}
 
-	public int getEndOrigem() {
+	public String getEndOrigem() {
 		return endOrigem;
 	}
 
-	public void setEndOrigem(int endOrigem) {
+	public void setEndOrigem(String endOrigem) {
 		this.endOrigem = endOrigem;
 	}
 
-	public String getCepDestino() {
+	public Integer getCepDestino() {
 		return cepDestino;
 	}
 
-	public void setCepDestino(String cepDestino) {
+	public void setCepDestino(Integer cepDestino) {
 		this.cepDestino = cepDestino;
 	}
 
@@ -91,11 +99,11 @@ public class Nf {
 		this.endDestino = endDestino;
 	}
 
-	public double getDistancia() {
+	public Double getDistancia() {
 		return distancia;
 	}
 
-	public void setDistancia(double distancia) {
+	public void setDistancia(Double distancia) {
 		this.distancia = distancia;
 	}
 

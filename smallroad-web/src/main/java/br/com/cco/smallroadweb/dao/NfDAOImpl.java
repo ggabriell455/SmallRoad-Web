@@ -30,25 +30,25 @@ public class NfDAOImpl implements NfDAO {
 	}
 
 	@Override
-	public Nf getNf(int id) {
+	public Nf getNf(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void deleteNf(int id) {
+	public void deleteNf(Integer id) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void deleteNfByNumero(int numero) {
+	public void deleteNfByNumero(Integer numero) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public List<Nf> procuraNfsByNumero(int numero) {
+	public List<Nf> procuraNfsByNumero(Integer numero) {
 		// TODO Auto-generated method stub
 		return null;
 	}

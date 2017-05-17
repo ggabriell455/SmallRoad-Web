@@ -55,7 +55,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("usuarioId") int id,
+	public String showFormForUpdate(@RequestParam("usuarioId") Integer id,
 									Model modelo) {
 		
 		// pega o usuario do serviço
@@ -69,7 +69,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/delete")
-	public String deleteUsuario(@RequestParam("usuarioId") int id) {
+	public String deleteUsuario(@RequestParam("usuarioId") Integer id) {
 		
 		// deleta o usuario (Teste de Gabriel)
 		usuarioService.deleteUsuario(id);
