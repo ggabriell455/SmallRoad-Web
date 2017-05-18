@@ -106,5 +106,7 @@ public class NfDAOImpl implements NfDAO {
         // retorna o resultado        
         return nfs;
 	}
+	
+	//Mostrando a Gil
 
 }
