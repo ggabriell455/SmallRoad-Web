@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import br.com.cco.smallroadweb.entity.Nf;
-import br.com.cco.smallroadweb.entity.Usuario;
 
 @Repository
 public class NfDAOImpl implements NfDAO {
@@ -38,9 +37,9 @@ public class NfDAOImpl implements NfDAO {
 	}
 
 	@Override
-	public Nf getNf(Integer id) {
+	public Nf getNf(Integer numero) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Nf nf = currentSession.get(Nf.class, id);
+		Nf nf = currentSession.get(Nf.class, numero);
 		return nf;
 		
 		
@@ -57,12 +56,12 @@ public class NfDAOImpl implements NfDAO {
 	}
 
 	@Override
-	public void deleteNf(Integer nfId) {
+	public void deleteNf(Integer nfNumero) {
 		
 				Session currentSession = sessionFactory.getCurrentSession();
 				Query consulta = 
-						currentSession.createQuery("delete from nf where id=:nfid");
-				consulta.setParameter("nfid", nfId);
+						currentSession.createQuery("delete from Nf where numero=:nfNumero");
+				consulta.setParameter("nfNumero", nfNumero);
 				
 				consulta.executeUpdate();
 
@@ -72,7 +71,7 @@ public class NfDAOImpl implements NfDAO {
 	public void deleteNfByNumero(Integer nfNumero) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query consulta = 
-				currentSession.createQuery("delete from nf where id=:nfnumero");
+				currentSession.createQuery("delete from nf where numero=:nfnumero");
 		consulta.setParameter("nfnumero", nfNumero);
 		
 		consulta.executeUpdate();
@@ -92,13 +91,13 @@ public class NfDAOImpl implements NfDAO {
         if (numeroProcurado != null) {
 
             // procura pelo nome ... caso insensitive
-        	consulta =currentSession.createQuery("from Nf where numero like :nome ", Nf.class);
-            consulta.setParameter("nome", numeroProcurado);
+        	consulta =currentSession.createQuery("from Nf where numero like :numero ", Nf.class);
+            consulta.setParameter("numero", numeroProcurado);
 
         }
         else {
             // se o nome for vazio, traga todos os usuarios
-        	consulta =currentSession.createQuery("from Nfs", Nf.class);            
+        	consulta =currentSession.createQuery("from Nf", Nf.class);            
         }
         
         // executa a consulta e guarda na lista

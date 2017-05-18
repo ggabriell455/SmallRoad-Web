@@ -28,7 +28,7 @@
 	
 		<form:form action="saveUsuario" modelAttribute="usuario" method="POST">
 
-			<!-- need to associate this data with customer id -->
+			<!-- precisa dessa informacao pra associar com a id do usuario -->
 			<form:hidden path="id" />
 					
 			<table>

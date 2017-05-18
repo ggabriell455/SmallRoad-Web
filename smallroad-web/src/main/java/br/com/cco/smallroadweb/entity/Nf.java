@@ -17,10 +17,6 @@ import javax.persistence.Table;
 public class Nf {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
-	private Integer id;
-	
 	@Column(name="numero", unique=true, nullable=false)
 	private Integer numero;
 	
@@ -51,13 +47,7 @@ public class Nf {
 		
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 	public int getNumero() {
 		return numero;
@@ -117,7 +107,7 @@ public class Nf {
 
 	@Override
 	public String toString() {
-		return "Nf [id=" + id + ", numero=" + numero + ", cepOrigem=" + cepOrigem + ", endOrigem=" + endOrigem
+		return "Nf [numero=" + numero + ", cepOrigem=" + cepOrigem + ", endOrigem=" + endOrigem
 				+ ", cepDestino=" + cepDestino + ", endDestino=" + endDestino + ", distancia=" + distancia
 				+ ", dtEntrega=" + dtEntrega + "]";
 	}
