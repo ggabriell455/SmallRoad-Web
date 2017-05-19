@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.cco.smallroadweb.entity.Nf;
+import br.com.cco.smallroadweb.entity.Usuario;
 import br.com.cco.smallroadweb.service.NfService;
 
 @Controller
@@ -61,6 +62,17 @@ public class NfController {
 		
 	}
 	
+	
+	
+	@GetMapping("/showFormForAdd")
+	public String showFormForAdd(Model modelo) {
+		
+		// cria modelo para ligar ao dado do formulario na view
+		Nf nf = new Nf();
+		modelo.addAttribute("tempNf", nf);
+		
+		return "nf-form";
+	}
 	
 	
 

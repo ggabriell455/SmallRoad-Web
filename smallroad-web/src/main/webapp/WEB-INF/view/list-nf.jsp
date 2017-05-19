@@ -8,7 +8,10 @@
 	<title>Smallroad Home</title>
 </head>
 <body>
-	
+			<input type="button" value="Add Nf"
+				   onclick="window.location.href='showFormForAdd'; return false;"
+				   class="add-button"
+			/>
 
 			<table>
 				<tr>

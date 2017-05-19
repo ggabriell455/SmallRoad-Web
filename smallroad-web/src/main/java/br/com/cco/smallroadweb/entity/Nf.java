@@ -49,19 +49,19 @@ public class Nf {
 
 	
 
-	public int getNumero() {
+	public Integer getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
 
-	public int getCepOrigem() {
+	public Integer getCepOrigem() {
 		return cepOrigem;
 	}
 
-	public void setCepOrigem(int cepOrigem) {
+	public void setCepOrigem(Integer cepOrigem) {
 		this.cepOrigem = cepOrigem;
 	}
 

@@ -17,16 +17,18 @@
 
 <body>
 	
-	<form:form action="saveNf" method="POST" modelAttribute="tempNf">
-		<form:hidden path="cepOrigem"/>
-		<form:hidden path="endOrigem"/>
-		<form:hidden path="numero"/>
-		
-			<label> ${tempNf.numero}</label>
+	<form:form action="saveNf" modelAttribute="tempNf" method="POST">
+
+	
 			
-			
+			Numero      <form:input path="numero"/>
+			End Origem: <form:input path="EndOrigem"/>
+			CEP Origem: <form:input path="cepOrigem"/>
 			Endereço: <form:input path="endDestino"/>
 			CEP:    <form:input path="cepDestino"/>
+			
+	
+	
 			
 			 <input type="submit" value="Submit">
 
