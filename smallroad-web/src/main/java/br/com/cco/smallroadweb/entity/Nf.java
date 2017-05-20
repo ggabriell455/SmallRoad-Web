@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+// Teste de commit luizhgnunes
 @Entity
 @Table(name="nf")
 public class Nf {
