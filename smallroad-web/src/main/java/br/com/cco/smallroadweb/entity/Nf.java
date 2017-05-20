@@ -104,6 +104,19 @@ public class Nf {
 	public void setDtEntrega(Date dtEntrega) {
 		this.dtEntrega = dtEntrega;
 	}
+	
+	
+	public Roteiro getRoteiro() {
+		return roteiro;
+	}
+
+
+
+	public void setRoteiro(Roteiro roteiro) {
+		this.roteiro = roteiro;
+	}
+
+
 
 	@Override
 	public String toString() {
@@ -111,6 +124,7 @@ public class Nf {
 				+ ", cepDestino=" + cepDestino + ", endDestino=" + endDestino + ", distancia=" + distancia
 				+ ", dtEntrega=" + dtEntrega + "]";
 	}
+	
 	
 	
 

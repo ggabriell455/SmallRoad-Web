@@ -60,4 +60,11 @@ public class NfServiceImpl implements NfService {
 		return nfDAO.procuraNfsByNumero(numero);
 	}
 
+
+	@Override
+	@Transactional
+	public List<Nf> listaNotaSemRoteiro() {
+		return nfDAO.listaNotaSemRoteiro();
+	}
+
 }

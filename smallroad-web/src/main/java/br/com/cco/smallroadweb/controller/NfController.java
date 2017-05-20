@@ -21,6 +21,8 @@ public class NfController {
 	@Autowired
 	private NfService nfService;
 	
+
+	
 	@GetMapping("/list")
 	public String listUsuarios(Model modelo) {
 		

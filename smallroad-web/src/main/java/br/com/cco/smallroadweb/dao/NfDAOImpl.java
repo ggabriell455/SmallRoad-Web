@@ -107,6 +107,15 @@ public class NfDAOImpl implements NfDAO {
         // retorna o resultado        
         return nfs;
 	}
+
+	@Override
+	public List<Nf> listaNotaSemRoteiro() {
+		Session session = sessionFactory.getCurrentSession();
+		Query <Nf> consulta  = session.createQuery("from Nf where roteiro is null");
+		List<Nf> nfs = consulta.getResultList();
+		return nfs;
+		
+	}
 	
 	
 

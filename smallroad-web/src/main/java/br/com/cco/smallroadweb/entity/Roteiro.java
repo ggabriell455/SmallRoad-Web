@@ -15,6 +15,12 @@ import javax.persistence.Table;
 @Table(name="roteiro")
 public class Roteiro {
 	
+	@Override
+	public String toString() {
+		return "Roteiro [id=" + id + ", nome=" + nome + ", nfs=" + nfs + "]";
+	}
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")

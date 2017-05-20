@@ -17,5 +17,7 @@ public interface NfDAO {
 	public void deleteNfByNumero(Integer numero);
 
 	List<Nf> procuraNfsByNumero(Integer numero);
+	
+	public List<Nf> listaNotaSemRoteiro();
 
 }
