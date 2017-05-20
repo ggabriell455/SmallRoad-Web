@@ -74,6 +74,19 @@ public class NfController {
 		return "nf-form";
 	}
 	
+	@PostMapping("/search")
+    public String searchUsuarios(@RequestParam("procuraNumero") Integer numero,
+                                    Model modelo) {
+
+        // procura usuarios no serviço
+        List<Nf> nfs = nfService.procuraNfsByNumero(numero);
+                
+        // adiciona usuarios ao modelo
+        modelo.addAttribute("nfs", nfs);
+
+        return "list-nf";        
+    }
+	
 	
 
 }

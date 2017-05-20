@@ -12,7 +12,13 @@
 				   onclick="window.location.href='showFormForAdd'; return false;"
 				   class="add-button"
 			/>
-
+			
+			<form:form action="search" method="POST">
+				Procurar Usuário: <input type="text" name="procuraNumero" />
+				
+				<input type="submit" value="Procurar" class="add-button" />
+			</form:form>
+			
 			<table>
 				<tr>
 					<th>Numero</th>

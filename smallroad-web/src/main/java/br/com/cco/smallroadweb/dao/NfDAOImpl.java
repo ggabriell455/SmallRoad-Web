@@ -91,8 +91,9 @@ public class NfDAOImpl implements NfDAO {
         if (numeroProcurado != null) {
 
             // procura pelo nome ... caso insensitive
-        	consulta =currentSession.createQuery("from Nf where numero like :numero ", Nf.class);
-            consulta.setParameter("numero", numeroProcurado);
+        	consulta =currentSession.createQuery("from Nf where numero = :numeroProcurado ", Nf.class);
+            consulta.setParameter("numeroProcurado", numeroProcurado);
+            System.out.println(numeroProcurado);
 
         }
         else {
