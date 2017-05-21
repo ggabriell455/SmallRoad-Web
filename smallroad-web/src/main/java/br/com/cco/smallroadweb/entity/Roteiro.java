@@ -15,10 +15,6 @@ import javax.persistence.Table;
 @Table(name="roteiro")
 public class Roteiro {
 	
-	@Override
-	public String toString() {
-		return "Roteiro [id=" + id + ", nome=" + nome + ", nfs=" + nfs + "]";
-	}
 
 
 	@Id
@@ -68,6 +64,11 @@ public class Roteiro {
 		this.nome = nome;
 	}
 	
+	@Override
+	public String toString() {
+		return "Roteiro [id=" + id + ", nome=" + nome + ", nfs=" + nfs + "]";
+	}
+
 	
 
 }

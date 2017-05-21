@@ -14,6 +14,7 @@
 				<tr>
 						<th> ID </th>
 						<th> NOME </th>
+						<th>  <th>
 				
 				</tr>
 		
@@ -23,14 +24,14 @@
 					
 						<td> ${roteiro.id} </td>
 						<td> ${roteiro.nome} </td>
-
+						
 	
 					</tr>
 					
 				</c:forEach>
 					
 				</table>
-				<input type="submit" value="Criar">
+				<input type="submit" value="Create List">
 			</form:form>	
 				
 				

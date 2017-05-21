@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.cco.smallroadweb.dao.NfDAO;
 import br.com.cco.smallroadweb.entity.Nf;
+import br.com.cco.smallroadweb.entity.Roteiro;
 
 @Service
 public class NfServiceImpl implements NfService {
@@ -65,6 +66,14 @@ public class NfServiceImpl implements NfService {
 	@Transactional
 	public List<Nf> listaNotaSemRoteiro() {
 		return nfDAO.listaNotaSemRoteiro();
+	}
+
+
+	@Override
+	@Transactional
+	public void addRoteiroOnNf(Roteiro roteiro) {
+		nfDAO.addRoteiroOnNf(roteiro);
+		
 	}
 
 }

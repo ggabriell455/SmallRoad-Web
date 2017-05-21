@@ -3,6 +3,7 @@ package br.com.cco.smallroadweb.service;
 import java.util.List;
 
 import br.com.cco.smallroadweb.entity.Nf;
+import br.com.cco.smallroadweb.entity.Roteiro;
 
 public interface NfService {
 	
@@ -19,5 +20,7 @@ public interface NfService {
 	public List<Nf> procuraNfsByNumero(Integer numero);
 	
 	public List<Nf> listaNotaSemRoteiro();
+	
+	public void addRoteiroOnNf(Roteiro roteiro);
 
 }

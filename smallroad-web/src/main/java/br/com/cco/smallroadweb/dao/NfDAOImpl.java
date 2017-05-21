@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import br.com.cco.smallroadweb.entity.Nf;
+import br.com.cco.smallroadweb.entity.Roteiro;
 
 @Repository
 public class NfDAOImpl implements NfDAO {
@@ -114,6 +115,17 @@ public class NfDAOImpl implements NfDAO {
 		Query <Nf> consulta  = session.createQuery("from Nf where roteiro is null");
 		List<Nf> nfs = consulta.getResultList();
 		return nfs;
+		
+	}
+
+	@Override
+	public void addRoteiroOnNf(Roteiro roteiro) {
+		Session session = sessionFactory.getCurrentSession();
+		Query consulta = 
+				session.createQuery("From Nf where Roteiro=:roteiro");
+		consulta.setParameter("Roteiro", roteiro);
+		
+		consulta.executeUpdate();
 		
 	}
 	

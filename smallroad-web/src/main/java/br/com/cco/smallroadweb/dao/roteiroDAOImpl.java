@@ -9,6 +9,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
 
 @Repository
@@ -43,6 +44,7 @@ public class roteiroDAOImpl implements roteiroDAO {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 }

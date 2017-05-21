@@ -9,56 +9,39 @@
 </head>
 <body>
 		<form:form action="cadastrar" modelAttribute="roteiro" method="POST">
-
-			<!-- precisa dessa informacao pra associar com a id do usuario -->
 			<form:hidden var="roteiroId" path="id" />
-					
 			<table>
 				<tbody>
 					<tr>
 						<td><label>Nome:</label></td>
 						<td><form:input path="nome" /></td>
 					</tr>
-					<tr>
-						<td><label></label></td>
-						
-					</tr>
-
-				
 				</tbody>
 			</table>
-			
+			<form:form modelAttribute="nfs" >
+			<c:forEach var="nf" items="${nfs}">
 			<table>
-				<tr>
-					<th>Numero</th>
-					<th>Cep</th>
-					<th>Endereço</th>
-					<th>Data Entrega</th>
-					<th>Ação</th>
-				</tr>
-				
-			
-				<c:forEach var="tempNf" items="${nfs}">
-					<form:checkboxes items="${tempNf}" path="${roteiroId}"/>			
-					
-					
+				<tbody>
 					<tr>
-						
-					
-						
-						<td> ${tempNf.numero} </td>
-						<td> ${tempNf.cepDestino} </td>
-						<td> ${tempNf.endDestino} </td>
-						<td> ${tempNf.dtEntrega} </td>
-						<td> </td>
-
-						
+						<td><label>Numero:</label></td>
+						<td>${nf.numero}</td>
 					</tr>
-				
-				</c:forEach>
-						
+					<tr>
+						<td><label>CEP ORIGEM:</label></td>
+						<td>${nf.cepOrigem}</td>
+					</tr>
+					<tr>
+						<td><label>END ORIGEM:</label></td>
+						<td>${nf.endOrigem}</td>
+					</tr>
+					<tr>
+						<td><label>ROTEIRO:</label></td>
+						<td><form:checkbox path="nfs" value="nf"/></td>
+					</tr>
+				</tbody>
 			</table>
-		<input type="submit" value="Salvar" class="save" />
+			</c:forEach>
+			</form:form>
 		
 		</form:form>
 		

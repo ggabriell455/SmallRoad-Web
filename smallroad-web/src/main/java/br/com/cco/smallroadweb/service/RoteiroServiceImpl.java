@@ -31,4 +31,7 @@ public class RoteiroServiceImpl implements RoteiroService {
 		return roteiroDAO.getRoteiros();
 	}
 
+
+
+
 }

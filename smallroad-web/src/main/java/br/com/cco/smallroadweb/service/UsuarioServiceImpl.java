@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.cco.smallroadweb.dao.NfDAO;
 import br.com.cco.smallroadweb.dao.UsuarioDAO;
+import br.com.cco.smallroadweb.dao.roteiroDAO;
+import br.com.cco.smallroadweb.entity.Roteiro;
 import br.com.cco.smallroadweb.entity.Usuario;
 
 @Service
@@ -49,6 +52,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		
 		return usuarioDAO.procuraUsuariosByNome(nome);
 	}
+
 
 
 }
