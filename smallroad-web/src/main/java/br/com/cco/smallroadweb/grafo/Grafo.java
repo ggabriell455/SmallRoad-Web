@@ -19,6 +19,19 @@ public class Grafo {
 		return response.body().string();
 	}
 
+	public static String getTagValue(String tag, String xml) {
+
+		String tagStart = "<" + tag + ">";
+		int indexStart = xml.indexOf(tagStart) + tagStart.length();
+		String tagEnd = "</" + tag + ">";
+		int indexEnd = xml.indexOf(tagEnd);
+		String result = xml.substring(indexStart, indexEnd);
+
+		return result;
+
+	}
+	
+
 	public static void main(String[] args) throws IOException {
 
 		Grafo request = new Grafo();
@@ -44,27 +57,14 @@ public class Grafo {
 
 		String tagValue = getTagValue("distance", xml);
 		String distanciaText = getTagValue("text", tagValue);
-		
+
 		String distanciaString = distanciaText.replaceAll("km", "").replaceAll(",", ".").trim();
 
-	
+		BigDecimal distancia = new BigDecimal(distanciaString);
 
-		 BigDecimal distancia = new BigDecimal(distanciaString);
-
-		 System.out.println(distancia);
+		System.out.println(distancia);
 
 	}
 
-	public static String getTagValue(String tag, String xml) {
-
-		String tagStart = "<" + tag + ">";
-		int indexStart = xml.indexOf(tagStart) + tagStart.length();
-		String tagEnd = "</" + tag + ">";
-		int indexEnd = xml.indexOf(tagEnd);
-		String result = xml.substring(indexStart, indexEnd);
-
-		return result;
-
-	}
 
 }
