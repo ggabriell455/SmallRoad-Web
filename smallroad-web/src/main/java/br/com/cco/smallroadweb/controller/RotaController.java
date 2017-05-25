@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.grafo.Rota;
+import br.com.cco.smallroadweb.service.NfService;
 import br.com.cco.smallroadweb.service.RotaService;
 
 @Controller
@@ -19,12 +21,17 @@ public class RotaController {
 	@Autowired
 	RotaService rotaService;
 	
+	@Autowired
+	NfService nfService;
+	
 	
 	@RequestMapping("/list")
 	public String rotaList(@ModelAttribute("rota")Rota request) throws IOException{
 		
-		String origins = "Rua joaquim marques de jesus,176 - Piedade";
-		String destinations = "Faculdade dos Guararapes";
+		Nf nf = nfService.getNf(13243);
+		
+		String origins = nf.getEndOrigem();
+		String destinations = nf.getEndDestino();
 		String idioma = "pt-BR";
 		String retorno = "xml";
 		String mode = "driving";
