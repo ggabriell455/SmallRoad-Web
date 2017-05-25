@@ -24,7 +24,7 @@ public class Grafo {
 		Grafo request = new Grafo();
 
 		String origins = "Rua joaquim marques de jesus,176 - Piedade";
-		String destinations = "Bahia";
+		String destinations = "Faculdade dos Guararapes";
 		String idioma = "pt-BR";
 		String retorno = "xml";
 		String mode = "driving";
@@ -32,18 +32,26 @@ public class Grafo {
 		String url_request = "https://maps.googleapis.com/maps/api/distancematrix/" + retorno + "?origins=" + origins
 				+ "&destinations=" + destinations + "&mode=" + mode + "&language=" + idioma + "&key=" + API_KEY;
 
-		// String url_request =
-		// "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Vancouver+BC%7CSeattle&destinations=San+Francisco%7CVictoria+BC&mode=bicycling&language=pt-BR&key="
-		// + API_KEY;
+		String xml = request.run(url_request);
 
-		String response = request.run(url_request);
-		String tagValue = getTagValue("distance", response);
+		/*
+		 * String url_request =
+		 * "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Vancouver+BC%7CSeattle&destinations=San+Francisco%7CVictoria+BC&mode=bicycling&language=pt-BR&key="
+		 * + API_KEY;
+		 */
 
+		// System.out.println(response);
+
+		String tagValue = getTagValue("distance", xml);
 		String distanciaText = getTagValue("text", tagValue);
+		
+		String distanciaString = distanciaText.replaceAll("km", "").replaceAll(",", ".").trim();
 
-		BigDecimal distancia = new BigDecimal(distanciaText.replaceAll("km", "").trim());
+	
 
-		System.out.println(distancia);
+		 BigDecimal distancia = new BigDecimal(distanciaString);
+
+		 System.out.println(distancia);
 
 	}
 
