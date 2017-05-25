@@ -4,6 +4,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 public class Grafo {
 
@@ -22,10 +23,10 @@ public class Grafo {
 
 		Grafo request = new Grafo();
 
-		String origins = "Pernambuco";
+		String origins = "Rua joaquim marques de jesus,176 - Piedade";
 		String destinations = "Bahia";
 		String idioma = "pt-BR";
-		String retorno = "json";
+		String retorno = "xml";
 		String mode = "driving";
 
 		String url_request = "https://maps.googleapis.com/maps/api/distancematrix/" + retorno + "?origins=" + origins
@@ -36,7 +37,26 @@ public class Grafo {
 		// + API_KEY;
 
 		String response = request.run(url_request);
-		System.out.println(response);
+		String tagValue = getTagValue("distance", response);
+
+		String distanciaText = getTagValue("text", tagValue);
+
+		BigDecimal distancia = new BigDecimal(distanciaText.replaceAll("km", "").trim());
+
+		System.out.println(distancia);
 
 	}
+
+	public static String getTagValue(String tag, String xml) {
+
+		String tagStart = "<" + tag + ">";
+		int indexStart = xml.indexOf(tagStart) + tagStart.length();
+		String tagEnd = "</" + tag + ">";
+		int indexEnd = xml.indexOf(tagEnd);
+		String result = xml.substring(indexStart, indexEnd);
+
+		return result;
+
+	}
+
 }
