@@ -22,17 +22,9 @@ public class Grafo {
 	public static String getTagValue(String tag, String xml) {
 
 		String tagStart = "<" + tag + ">";
-		System.out.println("TAGSTART: " + tagStart);
-		System.out.println("TAGSTART LENGHT: " + tagStart.length());
 		int indexStart = xml.indexOf(tagStart) + tagStart.length();
-		System.out.println("INDEXSTART: " + indexStart);
 		String tagEnd = "</" + tag + ">";
-		System.out.println("TAGEND: " + tagEnd);
 		int indexEnd = xml.indexOf(tagEnd);
-		System.out.println("INDEXEND: " + indexEnd);
-		System.out.println(indexStart);
-		System.out.println(indexEnd);
-		System.out.println("XML" + xml);
 		String result = xml.substring(indexStart, indexEnd);
 
 		return result;
@@ -43,7 +35,7 @@ public class Grafo {
 
 		Grafo request = new Grafo();
 
-		String origins = "Rua Padre Manual da Nobrega,82 Caruaru";
+		String origins = "Rua Padre Manual da Nobrega,31 Caruaru";
 		String destinations = "Comercial Batista LTDA";
 		String idioma = "pt-BR";
 		String retorno = "xml";
@@ -68,6 +60,7 @@ public class Grafo {
 		String distanciaString = distanciaText.replaceAll("km", "").replaceAll(",", ".").trim();
 
 		System.out.println(distanciaString);
+		BigDecimal distancia = new BigDecimal(distanciaString);
 
 	}
 

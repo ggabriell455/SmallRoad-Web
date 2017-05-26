@@ -52,6 +52,13 @@ public class Nf {
 	public Nf() {
 		
 	}
+	
+	public Nf(Integer numero,String endOrigem, String endDestino) {
+		this.numero = numero;
+		this.endDestino= endDestino;
+		this.endOrigem= endOrigem;
+				
+	}
 
 	
 

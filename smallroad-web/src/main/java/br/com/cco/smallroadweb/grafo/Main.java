@@ -4,15 +4,41 @@ package br.com.cco.smallroadweb.grafo;
 
 import java.util.ArrayList;
 import java.util.List;
+import br.com.cco.smallroadweb.entity.Nf;
+
 
 public class Main {
+	
+
+	private static List<Nf> nfs;
 	private static List<Vertice> vertices = new ArrayList<Vertice>();
 	private static List<Aresta> arestas = new ArrayList<Aresta>();
 
 	public static void main(String[] args) {
-		for (int i = 0; i < 6; i++) {
-			vertices.add(new Vertice(i+1));
+		
+		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Rua Severino Jose de Paula, 44"));
+		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Ulysses Montarroyos, 2330 Piedade"));
+		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Av. Eng. Domingos Ferreira, 4140"));
+		nfs.add(new Nf(123456,"Faculdade dos Guararapes","R. Alm. Tamandaré, 170"));
+		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Rua Jose Braz Moscow, 521"));
+	
+		
+	
+		vertices.add(new Vertice(0));
+		for (int i = 0; i < nfs.size(); i++) {
+			vertices.add(new Vertice(nfs.get(0).getNumero()));
 		}
+		
+		
+		for (int i = 0; i < vertices.size(); i++) {
+			for (int j = i+1; j < vertices.size(); j++) {
+				addAresta(vertices.get(i), vertices.get(j), 1);
+				
+			}
+		}
+		
+		
+		
 		
 		addAresta(0, 1, 8);
 		addAresta(0, 2, 12);
