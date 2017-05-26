@@ -40,7 +40,7 @@ public class NfDAOImpl implements NfDAO {
 	@Override
 	public void saveNf(Nf nf) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		saveDistancia(nf);
+		//saveDistancia(nf);
 		currentSession.saveOrUpdate(nf);
 	}
 	

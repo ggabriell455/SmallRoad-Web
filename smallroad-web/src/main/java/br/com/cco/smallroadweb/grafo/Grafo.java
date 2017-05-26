@@ -22,22 +22,29 @@ public class Grafo {
 	public static String getTagValue(String tag, String xml) {
 
 		String tagStart = "<" + tag + ">";
+		System.out.println("TAGSTART: " + tagStart);
+		System.out.println("TAGSTART LENGHT: " + tagStart.length());
 		int indexStart = xml.indexOf(tagStart) + tagStart.length();
+		System.out.println("INDEXSTART: " + indexStart);
 		String tagEnd = "</" + tag + ">";
+		System.out.println("TAGEND: " + tagEnd);
 		int indexEnd = xml.indexOf(tagEnd);
+		System.out.println("INDEXEND: " + indexEnd);
+		System.out.println(indexStart);
+		System.out.println(indexEnd);
+		System.out.println("XML" + xml);
 		String result = xml.substring(indexStart, indexEnd);
 
 		return result;
 
 	}
-	
 
 	public static void main(String[] args) throws IOException {
 
 		Grafo request = new Grafo();
 
-		String origins = "Rua joaquim marques de jesus,176 - Piedade";
-		String destinations = "Faculdade dos Guararapes";
+		String origins = "Rua Padre Manual da Nobrega,82 Caruaru";
+		String destinations = "Comercial Batista LTDA";
 		String idioma = "pt-BR";
 		String retorno = "xml";
 		String mode = "driving";
@@ -60,11 +67,8 @@ public class Grafo {
 
 		String distanciaString = distanciaText.replaceAll("km", "").replaceAll(",", ".").trim();
 
-		BigDecimal distancia = new BigDecimal(distanciaString);
-
-		System.out.println(distancia);
+		System.out.println(distanciaString);
 
 	}
-
 
 }
