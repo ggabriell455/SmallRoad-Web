@@ -1,5 +1,6 @@
 package br.com.cco.smallroadweb.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -9,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import br.com.cco.smallroadweb.grafo.Rota;
 
 @Entity
 @Table(name="nf")
@@ -31,7 +34,7 @@ public class Nf {
 	private String endDestino;
 	
 	@Column(name="distancia")
-	private Double distancia;
+	public  BigDecimal distancia;
 	
 	@Column(name="dt_entrega")
 	private Date dtEntrega;
@@ -40,6 +43,11 @@ public class Nf {
 	@JoinColumn(name="roteiro_id")
 	private Roteiro roteiro;
 	
+	
+	
+
+
+
 
 	public Nf() {
 		
@@ -87,11 +95,11 @@ public class Nf {
 		this.endDestino = endDestino;
 	}
 
-	public Double getDistancia() {
+	public BigDecimal getDistancia() {
 		return distancia;
 	}
 
-	public void setDistancia(Double distancia) {
+	public void setDistancia(BigDecimal distancia) {
 		this.distancia = distancia;
 	}
 

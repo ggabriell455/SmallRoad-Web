@@ -22,5 +22,6 @@ public interface NfService {
 	public List<Nf> listaNotaSemRoteiro();
 	
 	public void addRoteiroOnNf(Roteiro roteiro);
+	
 
 }

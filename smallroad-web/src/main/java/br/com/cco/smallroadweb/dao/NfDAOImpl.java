@@ -1,5 +1,7 @@
 package br.com.cco.smallroadweb.dao;
 
+import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -10,6 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
+import br.com.cco.smallroadweb.grafo.Rota;
+import br.com.cco.smallroadweb.service.RotaService;
 
 @Repository
 public class NfDAOImpl implements NfDAO {
@@ -17,6 +21,9 @@ public class NfDAOImpl implements NfDAO {
 	// injeta a fabrica de seção
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	@Autowired
+	private RotaService rotaService;
 
 	@Override
 	public List<Nf> getNfs() {
@@ -32,9 +39,40 @@ public class NfDAOImpl implements NfDAO {
 
 	@Override
 	public void saveNf(Nf nf) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		saveDistancia(nf);
+		currentSession.saveOrUpdate(nf);
+	}
+	
+	@Override
+	public void saveDistancia(Nf nf){
 		
 		Session currentSession = sessionFactory.getCurrentSession();
-		currentSession.saveOrUpdate(nf);
+		Rota request = new Rota();
+		String origins = nf.getEndOrigem();
+		String destinations = nf.getEndDestino();
+		String retorno = "xml";
+	
+
+		String url_request = "https://maps.googleapis.com/maps/api/distancematrix/" + retorno + "?origins=" + origins
+				+ "&destinations=" + destinations + "&mode=driving" + "&language=pt-BR" + "&key=" + request.getApiKey1();
+
+		String xml;
+		try {
+			xml = rotaService.run(url_request);
+			String tagValue = rotaService.getTagValue("distance", xml);
+			String distanciaText = rotaService.getTagValue("text", tagValue);
+			String distanciaString = distanciaText.replaceAll("km", "").replaceAll(",", ".").trim();
+			BigDecimal distancia = new BigDecimal(distanciaString);
+			request.setDistancia(distancia);
+			nf.setDistancia(request.getDistancia());
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+		
+		
+		
+		
 	}
 
 	@Override

@@ -28,33 +28,8 @@ public class RotaController {
 	@RequestMapping("/list")
 	public String rotaList(@ModelAttribute("rota")Rota request) throws IOException{
 		
-		Nf nf = nfService.getNf(13243);
 		
-		String origins = nf.getEndOrigem();
-		String destinations = nf.getEndDestino();
-		String idioma = "pt-BR";
-		String retorno = "xml";
-		String mode = "driving";
-
-		String url_request = "https://maps.googleapis.com/maps/api/distancematrix/" + retorno + "?origins=" + origins
-				+ "&destinations=" + destinations + "&mode=" + mode + "&language=" + idioma + "&key=" + request.getApiKey1();
-
-		String xml = rotaService.run(url_request);
-
-		/*
-		 * String url_request =
-		 * "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Vancouver+BC%7CSeattle&destinations=San+Francisco%7CVictoria+BC&mode=bicycling&language=pt-BR&key="
-		 * + API_KEY;
-		 */
-
-		// System.out.println(response);
-
-		String tagValue = rotaService.getTagValue("distance", xml);
-		String distanciaText = rotaService.getTagValue("text", tagValue);
-
-		String distanciaString = distanciaText.replaceAll("km", "").replaceAll(",", ".").trim();
-		BigDecimal distancia = new BigDecimal(distanciaString);
-		request.setDistancia(distancia);
+		
 		
 		return "rota-list";
 	}
