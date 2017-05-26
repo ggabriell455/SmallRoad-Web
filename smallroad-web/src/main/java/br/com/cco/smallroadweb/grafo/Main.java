@@ -16,6 +16,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		nfs.add(new Nf(0,"Faculdade dos Guararapes","Faculdade dos Guararapes"));
 		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Rua Severino Jose de Paula, 44"));
 		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Ulysses Montarroyos, 2330 Piedade"));
 		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Av. Eng. Domingos Ferreira, 4140"));
@@ -24,15 +25,15 @@ public class Main {
 	
 		
 	
-		vertices.add(new Vertice(0));
+		
 		for (int i = 0; i < nfs.size(); i++) {
-			vertices.add(new Vertice(nfs.get(0).getNumero()));
+			vertices.add(new Vertice(nfs.get(i).getNumero()));
 		}
 		
 		
 		for (int i = 0; i < vertices.size(); i++) {
 			for (int j = i+1; j < vertices.size(); j++) {
-				addAresta(vertices.get(i), vertices.get(j), 1);
+				addAresta( vertices.get(i).getId(), vertices.get(j).getId(), 1);
 				
 			}
 		}
