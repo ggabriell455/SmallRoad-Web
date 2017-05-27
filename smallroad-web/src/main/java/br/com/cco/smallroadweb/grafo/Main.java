@@ -22,9 +22,9 @@ public class Main {
 
 		nfs.put(0, new Nf(0, "Faculdade dos Guararapes", "Faculdade dos Guararapes"));
 		nfs.put(1, new Nf(1, "Faculdade dos Guararapes", "Rua Severino Jose de Paula, 44"));
-		nfs.put(132, new Nf(132, "Faculdade dos Guararapes", "Ulysses Montarroyos, 2330 Piedade"));
+		nfs.put(2, new Nf(2, "Faculdade dos Guararapes", "Ulysses Montarroyos, 2330 Piedade"));
 		nfs.put(3, new Nf(3, "Faculdade dos Guararapes", "Av. Eng. Domingos Ferreira, 4140"));
-		nfs.put(345, new Nf(345, "Faculdade dos Guararapes", "R. Alm. Tamandaré, 170"));
+		nfs.put(4, new Nf(4, "Faculdade dos Guararapes", "R. Alm. Tamandaré, 170"));
 		nfs.put(5, new Nf(5, "Faculdade dos Guararapes", "Rua Jose Braz Moscow, 521"));
 
 		for (Integer key : nfs.keySet()) {
