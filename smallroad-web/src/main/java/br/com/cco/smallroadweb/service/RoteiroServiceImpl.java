@@ -11,12 +11,10 @@ import br.com.cco.smallroadweb.entity.Roteiro;
 
 @Service
 public class RoteiroServiceImpl implements RoteiroService {
-	
-	
+
 	@Autowired
 	private roteiroDAO roteiroDAO;
-	
-	
+
 	@Transactional
 	@Override
 	public void cadastrarRoteiro(Roteiro roteiro) {
@@ -24,14 +22,10 @@ public class RoteiroServiceImpl implements RoteiroService {
 
 	}
 
-
 	@Override
 	@Transactional
 	public List<Roteiro> getRoteiros() {
 		return roteiroDAO.getRoteiros();
 	}
-
-
-
 
 }

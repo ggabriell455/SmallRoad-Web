@@ -8,25 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuario")
+@Table(name = "usuario")
 public class Usuario {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer id;
-	
-	@Column(name="nome")
+
+	@Column(name = "nome")
 	private String nome;
-	
-	@Column(name="senha")
+
+	@Column(name = "senha")
 	private String senha;
-	
-	@Column(name="email")
+
+	@Column(name = "email")
 	private String email;
-	
+
 	public Usuario() {
-		
+
 	}
 
 	public Integer getId() {

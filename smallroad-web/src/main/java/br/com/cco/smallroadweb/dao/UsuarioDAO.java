@@ -15,7 +15,7 @@ public interface UsuarioDAO {
 	public void deleteUsuario(Integer id);
 
 	List<Usuario> procuraUsuariosByNome(String nomeProcurado);
-	
-	//TEste de Commit
-	
+
+	// TEste de Commit
+
 }

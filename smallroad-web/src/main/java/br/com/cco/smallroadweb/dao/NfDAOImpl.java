@@ -21,41 +21,39 @@ public class NfDAOImpl implements NfDAO {
 	// injeta a fabrica de seção
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Autowired
 	private RotaService rotaService;
 
 	@Override
 	public List<Nf> getNfs() {
-		
+
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query<Nf> consulta = 
-				currentSession.createQuery("from Nf order by numero",
-											Nf.class);
+		Query<Nf> consulta = currentSession.createQuery("from Nf order by numero", Nf.class);
 		List<Nf> nfs = consulta.getResultList();
 		return nfs;
-		
+
 	}
 
 	@Override
 	public void saveNf(Nf nf) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		//saveDistancia(nf);
+		// saveDistancia(nf);
 		currentSession.saveOrUpdate(nf);
 	}
-	
+
 	@Override
-	public void saveDistancia(Nf nf){
-		
+	public void saveDistancia(Nf nf) {
+
 		Session currentSession = sessionFactory.getCurrentSession();
 		Rota request = new Rota();
 		String origins = nf.getEndOrigem();
 		String destinations = nf.getEndDestino();
 		String retorno = "xml";
-	
 
 		String url_request = "https://maps.googleapis.com/maps/api/distancematrix/" + retorno + "?origins=" + origins
-				+ "&destinations=" + destinations + "&mode=driving" + "&language=pt-BR" + "&key=" + request.getApiKey1();
+				+ "&destinations=" + destinations + "&mode=driving" + "&language=pt-BR" + "&key="
+				+ request.getApiKey1();
 
 		String xml;
 		try {
@@ -69,10 +67,7 @@ public class NfDAOImpl implements NfDAO {
 		} catch (IOException e) {
 			System.out.println(e);
 		}
-		
-		
-		
-		
+
 	}
 
 	@Override
@@ -80,93 +75,85 @@ public class NfDAOImpl implements NfDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Nf nf = currentSession.get(Nf.class, numero);
 		return nf;
-		
-		
+
 	}
-	
-	public Nf getNfByNumero(Integer numeroProcurado){
+
+	public Nf getNfByNumero(Integer numeroProcurado) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query<Nf> consulta = currentSession.createQuery("from Nf where numero = :numero", Nf.class);
 		consulta.setParameter("numero", numeroProcurado);
-		Nf nf =  consulta.getSingleResult();
+		Nf nf = consulta.getSingleResult();
 		return nf;
-		
-		
+
 	}
 
 	@Override
 	public void deleteNf(Integer nfNumero) {
-		
-				Session currentSession = sessionFactory.getCurrentSession();
-				Query consulta = 
-						currentSession.createQuery("delete from Nf where numero=:nfNumero");
-				consulta.setParameter("nfNumero", nfNumero);
-				
-				consulta.executeUpdate();
+
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query consulta = currentSession.createQuery("delete from Nf where numero=:nfNumero");
+		consulta.setParameter("nfNumero", nfNumero);
+
+		consulta.executeUpdate();
 
 	}
 
 	@Override
 	public void deleteNfByNumero(Integer nfNumero) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query consulta = 
-				currentSession.createQuery("delete from nf where numero=:nfnumero");
+		Query consulta = currentSession.createQuery("delete from nf where numero=:nfnumero");
 		consulta.setParameter("nfnumero", nfNumero);
-		
+
 		consulta.executeUpdate();
 
 	}
 
 	@Override
 	public List<Nf> procuraNfsByNumero(Integer numeroProcurado) {
-		 // pega a seção atual do hibernate
-        Session currentSession = sessionFactory.getCurrentSession();
-        
-        Query consulta = null;
-        
-        //
-        // so procura pelo nome se nao for nullo ou vazio
-        //
-        if (numeroProcurado != null) {
+		// pega a seção atual do hibernate
+		Session currentSession = sessionFactory.getCurrentSession();
 
-            // procura pelo nome ... caso insensitive
-        	consulta =currentSession.createQuery("from Nf where numero = :numeroProcurado ", Nf.class);
-            consulta.setParameter("numeroProcurado", numeroProcurado);
-            System.out.println(numeroProcurado);
+		Query consulta = null;
 
-        }
-        else {
-            // se o nome for vazio, traga todos os usuarios
-        	consulta =currentSession.createQuery("from Nf", Nf.class);            
-        }
-        
-        // executa a consulta e guarda na lista
-        List<Nf> nfs = consulta.getResultList();
-                
-        // retorna o resultado        
-        return nfs;
+		//
+		// so procura pelo nome se nao for nullo ou vazio
+		//
+		if (numeroProcurado != null) {
+
+			// procura pelo nome ... caso insensitive
+			consulta = currentSession.createQuery("from Nf where numero = :numeroProcurado ", Nf.class);
+			consulta.setParameter("numeroProcurado", numeroProcurado);
+			System.out.println(numeroProcurado);
+
+		} else {
+			// se o nome for vazio, traga todos os usuarios
+			consulta = currentSession.createQuery("from Nf", Nf.class);
+		}
+
+		// executa a consulta e guarda na lista
+		List<Nf> nfs = consulta.getResultList();
+
+		// retorna o resultado
+		return nfs;
 	}
 
 	@Override
 	public List<Nf> listaNotaSemRoteiro() {
 		Session session = sessionFactory.getCurrentSession();
-		Query <Nf> consulta  = session.createQuery("from Nf where roteiro is null");
+		Query<Nf> consulta = session.createQuery("from Nf where roteiro is null");
 		List<Nf> nfs = consulta.getResultList();
 		return nfs;
-		
+
 	}
 
 	@Override
 	public void addRoteiroOnNf(Roteiro roteiro) {
 		Session session = sessionFactory.getCurrentSession();
-		Query consulta = 
-				session.createQuery("From Nf where Roteiro=:roteiro");
+		Query consulta = session.createQuery("From Nf where Roteiro=:roteiro");
 		consulta.setParameter("Roteiro", roteiro);
-		
+
 		consulta.executeUpdate();
-		
+
 	}
-	
-	
 
 }

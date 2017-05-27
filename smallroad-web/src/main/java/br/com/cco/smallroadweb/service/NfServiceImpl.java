@@ -15,15 +15,13 @@ public class NfServiceImpl implements NfService {
 
 	@Autowired
 	private NfDAO nfDAO;
-	
-	
+
 	@Override
 	@Transactional
 	public void saveNf(Nf nf) {
 		nfDAO.saveNf(nf);
-		
-	}
 
+	}
 
 	@Override
 	@Transactional
@@ -31,29 +29,25 @@ public class NfServiceImpl implements NfService {
 		return nfDAO.getNfs();
 	}
 
-
 	@Override
 	@Transactional
 	public Nf getNf(Integer numero) {
 		return nfDAO.getNf(numero);
 	}
 
-
 	@Override
 	@Transactional
 	public void deleteNf(Integer numero) {
 		nfDAO.deleteNf(numero);
-		
-	}
 
+	}
 
 	@Override
 	@Transactional
 	public void deleteNfByNumero(Integer numero) {
 		nfDAO.deleteNf(numero);
-		
-	}
 
+	}
 
 	@Override
 	@Transactional
@@ -61,22 +55,17 @@ public class NfServiceImpl implements NfService {
 		return nfDAO.procuraNfsByNumero(numero);
 	}
 
-
 	@Override
 	@Transactional
 	public List<Nf> listaNotaSemRoteiro() {
 		return nfDAO.listaNotaSemRoteiro();
 	}
 
-
 	@Override
 	@Transactional
 	public void addRoteiroOnNf(Roteiro roteiro) {
 		nfDAO.addRoteiroOnNf(roteiro);
-		
+
 	}
-
-
-
 
 }

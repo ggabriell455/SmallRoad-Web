@@ -1,15 +1,15 @@
 package br.com.cco.smallroadweb.grafo;
 
-
+import java.math.BigDecimal;
 
 public class Aresta {
 	private final Vertice v1;
-	
-	private final Vertice v2;
-	
-	private final int w;
 
-	public Aresta(Vertice v1, Vertice v2, int w) {
+	private final Vertice v2;
+
+	private final BigDecimal w;
+
+	public Aresta(Vertice v1, Vertice v2, BigDecimal w) {
 		this.v1 = v1;
 		this.v2 = v2;
 		this.w = w;
@@ -23,7 +23,7 @@ public class Aresta {
 		return v2;
 	}
 
-	public int getW() {
+	public BigDecimal getW() {
 		return w;
 	}
 }

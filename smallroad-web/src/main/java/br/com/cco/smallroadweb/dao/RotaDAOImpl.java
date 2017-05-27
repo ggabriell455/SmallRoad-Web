@@ -14,7 +14,7 @@ import br.com.cco.smallroadweb.grafo.Rota;
 public class RotaDAOImpl implements RotaDAO {
 
 	public String getTagValue(String tag, String xml) {
-		
+
 		String tagStart = "<" + tag + ">";
 		int indexStart = xml.indexOf(tagStart) + tagStart.length();
 		String tagEnd = "</" + tag + ">";
@@ -26,10 +26,10 @@ public class RotaDAOImpl implements RotaDAO {
 
 	@Override
 	public String run(String url) throws IOException {
-		
+
 		Rota rota = new Rota();
 		OkHttpClient client = rota.getClient();
-		
+
 		Request request = new Request.Builder().url(url).build();
 
 		Response response = client.newCall(request).execute();

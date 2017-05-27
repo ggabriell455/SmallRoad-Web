@@ -6,14 +6,13 @@ import javax.persistence.Entity;
 
 import com.squareup.okhttp.OkHttpClient;
 
-
 @Entity
 public class Rota {
-	
+
 	private static final String API_KEY1 = "AIzaSyDQXdKIfpZk8W2l4apTqD1YMb9mWPX5UsE";
-	
+
 	private BigDecimal distancia;
-	
+
 	public BigDecimal getDistancia() {
 		return distancia;
 	}
@@ -22,7 +21,7 @@ public class Rota {
 		this.distancia = distancia;
 	}
 
-	private  OkHttpClient client = new OkHttpClient();
+	private OkHttpClient client = new OkHttpClient();
 
 	public OkHttpClient getClient() {
 		return client;
@@ -35,8 +34,5 @@ public class Rota {
 	public static String getApiKey1() {
 		return API_KEY1;
 	}
-	
-	
-	
 
 }

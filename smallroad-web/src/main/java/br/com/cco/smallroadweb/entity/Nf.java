@@ -11,56 +11,46 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import br.com.cco.smallroadweb.grafo.Rota;
-
 @Entity
-@Table(name="nf")
+@Table(name = "nf")
 public class Nf {
 
 	@Id
-	@Column(name="numero", unique=true, nullable=false)
+	@Column(name = "numero", unique = true, nullable = false)
 	private Integer numero;
-	
-	@Column(name="cep_origem")
+
+	@Column(name = "cep_origem")
 	private Integer cepOrigem;
-	
-	@Column(name="end_origem")
+
+	@Column(name = "end_origem")
 	private String endOrigem;
-	
-	@Column(name="cep_destino")
+
+	@Column(name = "cep_destino")
 	private Integer cepDestino;
-	
-	@Column(name="end_destino")
+
+	@Column(name = "end_destino")
 	private String endDestino;
-	
-	@Column(name="distancia")
-	public  BigDecimal distancia;
-	
-	@Column(name="dt_entrega")
+
+	@Column(name = "distancia")
+	public BigDecimal distancia;
+
+	@Column(name = "dt_entrega")
 	private Date dtEntrega;
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="roteiro_id")
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "roteiro_id")
 	private Roteiro roteiro;
-	
-	
-	
-
-
-
 
 	public Nf() {
-		
-	}
-	
-	public Nf(Integer numero,String endOrigem, String endDestino) {
-		this.numero = numero;
-		this.endDestino= endDestino;
-		this.endOrigem= endOrigem;
-				
+
 	}
 
-	
+	public Nf(Integer numero, String endOrigem, String endDestino) {
+		this.numero = numero;
+		this.endDestino = endDestino;
+		this.endOrigem = endOrigem;
+
+	}
 
 	public Integer getNumero() {
 		return numero;
@@ -117,28 +107,20 @@ public class Nf {
 	public void setDtEntrega(Date dtEntrega) {
 		this.dtEntrega = dtEntrega;
 	}
-	
-	
+
 	public Roteiro getRoteiro() {
 		return roteiro;
 	}
-
-
 
 	public void setRoteiro(Roteiro roteiro) {
 		this.roteiro = roteiro;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "Nf [numero=" + numero + ", cepOrigem=" + cepOrigem + ", endOrigem=" + endOrigem
-				+ ", cepDestino=" + cepDestino + ", endDestino=" + endDestino + ", distancia=" + distancia
-				+ ", dtEntrega=" + dtEntrega + "]";
+		return "Nf [numero=" + numero + ", cepOrigem=" + cepOrigem + ", endOrigem=" + endOrigem + ", cepDestino="
+				+ cepDestino + ", endDestino=" + endDestino + ", distancia=" + distancia + ", dtEntrega=" + dtEntrega
+				+ "]";
 	}
-	
-	
-	
 
 }

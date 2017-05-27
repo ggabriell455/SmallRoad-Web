@@ -16,22 +16,20 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	// injeta a fabrica de seção
 	@Autowired
 	private SessionFactory sessionFactory;
-			
+
 	@Override
 	public List<Usuario> getUsuarios() {
-		
+
 		// pega a seção atual do hibernate
 		Session currentSession = sessionFactory.getCurrentSession();
-				
+
 		// cria uma consulta e ordena por nome
-		Query<Usuario> consulta = 
-				currentSession.createQuery("from Usuario order by nome",
-											Usuario.class);
-		
+		Query<Usuario> consulta = currentSession.createQuery("from Usuario order by nome", Usuario.class);
+
 		// executa a consulta e atribue a uma lista de usuarios
 		List<Usuario> usuarios = consulta.getResultList();
-				
-		// retorna a lista		
+
+		// retorna a lista
 		return usuarios;
 	}
 
@@ -40,10 +38,10 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 		// pega a seção atual do hibernate
 		Session currentSession = sessionFactory.getCurrentSession();
-		
+
 		// atualiza(caso exista) ou insere o usuario(caso não exista)
 		currentSession.saveOrUpdate(usuario);
-		
+
 	}
 
 	@Override
@@ -51,10 +49,10 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 		// pega a seção atual do hibernate
 		Session currentSession = sessionFactory.getCurrentSession();
-		
+
 		// retorna usuario do banco passando a chave primaria
 		Usuario usuario = currentSession.get(Usuario.class, id);
-		
+
 		return usuario;
 	}
 
@@ -63,43 +61,41 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 		// pega a seção atual do hibernate
 		Session currentSession = sessionFactory.getCurrentSession();
-		
+
 		// deleta o usuario com a chave primaria passada
-		Query consulta = 
-				currentSession.createQuery("delete from Usuario where id=:usuarioId");
+		Query consulta = currentSession.createQuery("delete from Usuario where id=:usuarioId");
 		consulta.setParameter("usuarioId", id);
-		
-		consulta.executeUpdate();		
+
+		consulta.executeUpdate();
 	}
 
-	 @Override
-	 public List<Usuario> procuraUsuariosByNome(String nomeProcurado) {
+	@Override
+	public List<Usuario> procuraUsuariosByNome(String nomeProcurado) {
 
-	        // pega a seção atual do hibernate
-	        Session currentSession = sessionFactory.getCurrentSession();
-	        
-	        Query consulta = null;
-	        
-	        //
-	        // so procura pelo nome se nao for nullo ou vazio
-	        //
-	        if (nomeProcurado != null && nomeProcurado.trim().length() > 0) {
+		// pega a seção atual do hibernate
+		Session currentSession = sessionFactory.getCurrentSession();
 
-	            // procura pelo nome ... caso insensitive
-	        	consulta =currentSession.createQuery("from Usuario where lower(nome) like :nome ", Usuario.class);
-	            consulta.setParameter("nome", "%" + nomeProcurado.toLowerCase() + "%");
+		Query consulta = null;
 
-	        }
-	        else {
-	            // se o nome for vazio, traga todos os usuarios
-	        	consulta =currentSession.createQuery("from Usuario", Usuario.class);            
-	        }
-	        
-	        // executa a consulta e guarda na lista
-	        List<Usuario> usuarios = consulta.getResultList();
-	                
-	        // retorna o resultado        
-	        return usuarios;
-	        
-	    } //Vê ai gil
+		//
+		// so procura pelo nome se nao for nullo ou vazio
+		//
+		if (nomeProcurado != null && nomeProcurado.trim().length() > 0) {
+
+			// procura pelo nome ... caso insensitive
+			consulta = currentSession.createQuery("from Usuario where lower(nome) like :nome ", Usuario.class);
+			consulta.setParameter("nome", "%" + nomeProcurado.toLowerCase() + "%");
+
+		} else {
+			// se o nome for vazio, traga todos os usuarios
+			consulta = currentSession.createQuery("from Usuario", Usuario.class);
+		}
+
+		// executa a consulta e guarda na lista
+		List<Usuario> usuarios = consulta.getResultList();
+
+		// retorna o resultado
+		return usuarios;
+
+	} // Vê ai gil
 }

@@ -10,7 +10,7 @@ import br.com.cco.smallroadweb.dao.RotaDAO;
 
 @Service
 public class RotaServiceImpl implements RotaService {
-	
+
 	@Autowired
 	private RotaDAO rotaDAO;
 
@@ -24,7 +24,7 @@ public class RotaServiceImpl implements RotaService {
 	@Transactional
 	public String run(String url) throws IOException {
 		return rotaDAO.run(url);
-		
+
 	}
 
 }

@@ -1,7 +1,5 @@
 package br.com.cco.smallroadweb.grafo;
 
-
-
 public class Vertice {
 	private final int id;
 

@@ -1,71 +1,59 @@
 package br.com.cco.smallroadweb.grafo;
 
-
-
+import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import br.com.cco.smallroadweb.entity.Nf;
 
-
 public class Main {
-	
 
-	private static List<Nf> nfs;
+	private static Map<Integer, Nf> nfs;
 	private static List<Vertice> vertices = new ArrayList<Vertice>();
 	private static List<Aresta> arestas = new ArrayList<Aresta>();
 
-	public static void main(String[] args) {
-		
-		nfs.add(new Nf(0,"Faculdade dos Guararapes","Faculdade dos Guararapes"));
-		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Rua Severino Jose de Paula, 44"));
-		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Ulysses Montarroyos, 2330 Piedade"));
-		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Av. Eng. Domingos Ferreira, 4140"));
-		nfs.add(new Nf(123456,"Faculdade dos Guararapes","R. Alm. Tamandaré, 170"));
-		nfs.add(new Nf(123456,"Faculdade dos Guararapes","Rua Jose Braz Moscow, 521"));
-	
-		
-	
-		
-		for (int i = 0; i < nfs.size(); i++) {
-			vertices.add(new Vertice(nfs.get(i).getNumero()));
+	public static void main(String[] args) throws IOException {
+
+		Distancia distancia = new Distancia();
+		nfs = new HashMap<Integer, Nf>();
+
+		nfs.put(0, new Nf(0, "Faculdade dos Guararapes", "Faculdade dos Guararapes"));
+		nfs.put(1, new Nf(1, "Faculdade dos Guararapes", "Rua Severino Jose de Paula, 44"));
+		nfs.put(2, new Nf(2, "Faculdade dos Guararapes", "Ulysses Montarroyos, 2330 Piedade"));
+		nfs.put(3, new Nf(3, "Faculdade dos Guararapes", "Av. Eng. Domingos Ferreira, 4140"));
+		nfs.put(4, new Nf(4, "Faculdade dos Guararapes", "R. Alm. Tamandaré, 170"));
+		nfs.put(5, new Nf(5, "Faculdade dos Guararapes", "Rua Jose Braz Moscow, 521"));
+
+		for (Integer key : nfs.keySet()) {
+			vertices.add(new Vertice(key));
 		}
-		
-		
+
 		for (int i = 0; i < vertices.size(); i++) {
-			for (int j = i+1; j < vertices.size(); j++) {
-				addAresta( vertices.get(i).getId(), vertices.get(j).getId(), 1);
-				
+			for (int j = i + 1; j < vertices.size(); j++) {
+				BigDecimal distancia2 = distancia.getDistancia(nfs.get(vertices.get(i).getId()).getEndDestino(),
+						nfs.get(vertices.get(j).getId()).getEndDestino());
+				addAresta(i, j, distancia2);
 			}
 		}
-		
-		
-		
-		
-		addAresta(0, 1, 8);
-		addAresta(0, 2, 12);
-		addAresta(1, 2, 1);
-		addAresta(1, 3, 3);
-		addAresta(2, 4, 7);
-		addAresta(2, 4, 4);
-		addAresta(3, 4, 5);
-		addAresta(3, 5, 21);
-		addAresta(4, 5, 15);
-		
+
 		Dijkstra dijkstra = new Dijkstra(arestas, vertices);
 		dijkstra.executar(vertices.get(0));
-		
-		for(int i = 0; i < 6; i++) {
-			List<Vertice> caminho = dijkstra.getCaminho(vertices.get(i));
-			if(!caminho.isEmpty()) {
-				for(Vertice v : caminho) {
-					System.out.print(v.getId() + "->");
-				}
-				System.out.println();
+
+		List<Vertice> caminho = dijkstra.getCaminho(vertices.get(2));
+		if (!caminho.isEmpty()) {
+			for (Vertice v : caminho) {
+				System.out.print(v.getId() + "->");
 			}
+			System.out.println();
 		}
 	}
-	
-	private static void addAresta(int v1Id, int v2Id, int w) {
+
+	private static void addAresta(int v1Id, int v2Id, BigDecimal w) {
+		System.out.println("Vertice" + vertices.get(v1Id).getId() + "> " + vertices.get(v1Id) + " vertice2> "
+				+ vertices.get(v2Id) + " distancia> " + w);
 		arestas.add(new Aresta(vertices.get(v1Id), vertices.get(v2Id), w));
 	}
 }

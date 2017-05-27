@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.cco.smallroadweb.dao.NfDAO;
 import br.com.cco.smallroadweb.dao.UsuarioDAO;
-import br.com.cco.smallroadweb.dao.roteiroDAO;
-import br.com.cco.smallroadweb.entity.Roteiro;
 import br.com.cco.smallroadweb.entity.Usuario;
 
 @Service
@@ -18,7 +15,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	// Injeção de depencias UsuarioDAO
 	@Autowired
 	private UsuarioDAO usuarioDAO;
-	
+
 	@Override
 	@Transactional
 	public List<Usuario> getUsuarios() {
@@ -35,24 +32,22 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	@Transactional
 	public Usuario getUsuario(Integer id) {
-		
+
 		return usuarioDAO.getUsuario(id);
 	}
 
 	@Override
 	@Transactional
 	public void deleteUsuario(Integer id) {
-		
+
 		usuarioDAO.deleteUsuario(id);
 	}
 
 	@Override
 	@Transactional
 	public List<Usuario> procuraUsuariosPorNome(String nome) {
-		
+
 		return usuarioDAO.procuraUsuariosByNome(nome);
 	}
-
-
 
 }
