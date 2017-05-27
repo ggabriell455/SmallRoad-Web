@@ -8,29 +8,31 @@
 	<title>ROTA</title>
 </head>
 <body>
-		
 
 			
-			
-		<form:form modelAttribute="rota">
+		
+			<c:forEach var="nf" items="${nfs}">
 			<table>
-				<tr>
-					<th></th>
-		
-				</tr>
-				
-				<tr>
-				
-					<td>${rota.distancia}</td>
-							
-				
-				</tr>
-				
-			
-
-						
+				<tbody>
+					<tr>
+						<td><label>Numero:</label></td>
+						<td>${nf.numero}</td>
+					</tr>
+					<tr>
+						<td><label>CEP DESTINO:</label></td>
+						<td>${nf.cepDestino}</td>
+					</tr>
+					<tr>
+						<td><label>END DESTINO:</label></td>
+						<td>${nf.endDestino}</td>
+					</tr>
+					<tr>
+						<td><label>ROTEIRO:</label></td>
+						<td></td>
+					</tr>
+				</tbody>
 			</table>
-		</form:form>
+			</c:forEach>
 
 	
 

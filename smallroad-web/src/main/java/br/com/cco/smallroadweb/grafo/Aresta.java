@@ -2,6 +2,9 @@ package br.com.cco.smallroadweb.grafo;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Aresta {
 	private final Vertice v1;
 

@@ -23,6 +23,5 @@ public interface NfDAO {
 
 	public void addRoteiroOnNf(Roteiro roteiro);
 
-	void saveDistancia(Nf nf);
 
 }

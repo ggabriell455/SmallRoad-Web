@@ -1,5 +1,8 @@
 package br.com.cco.smallroadweb.grafo;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Vertice {
 	private final int id;
 
