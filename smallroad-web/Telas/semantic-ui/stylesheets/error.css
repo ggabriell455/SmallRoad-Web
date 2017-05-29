@@ -1,0 +1,22 @@
+body{
+	font-family: 'Lato', sans-serif;
+	background: radial-gradient(#72c2ff, #379fef, #0175c1);
+	height: 0px;
+}
+
+.erro{
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 10%;
+}
+
+.content h1{
+	color: #FFF;
+	font-size: 50px;
+	font-weight: lighter;
+}
+
+.content h3{
+	color: #FFF;
+}
