@@ -45,7 +45,7 @@
 		<div class="col-sm-6">
 			
 			<div class="input-group h2">
-				<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+				<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Usuarios">
 				<span class="input-group-btn">
 					<button class="btn btn-primary" type="submit">
 						<span class="glyphicon glyphicon-search"></span>
@@ -55,7 +55,7 @@
 			
 		</div>
 		<div class="col-sm-3">
-			<a href="add.html" class="btn btn-primary pull-right h2">Novo Item</a>
+			<a href="add.html" class="btn btn-primary pull-right h2">Novo Usuário</a>
 		</div>
 	</div> <!-- /#top -->
  
@@ -118,7 +118,7 @@
         <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
       </div>
       <div class="modal-body">
-        Deseja realmente excluir este item?
+        Deseja realmente excluir este usuario?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Sim</button>
@@ -128,7 +128,7 @@
   </div>
 </div>
 
- <script src="js/jquery.min.js"></script>
- <script src="js/bootstrap.min.js"></script>
+ <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+ <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
