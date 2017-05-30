@@ -26,7 +26,7 @@
    </div>
    <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Home</a></li>
+      <li><a href="../home.jsp">Home</a></li>
      <li><a href="${pageContext.request.contextPath}/usuario/list">Usuários</a></li>
      <li><a href="${pageContext.request.contextPath}/nf/list">Notas Fiscais</a></li>
      <li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
@@ -43,19 +43,21 @@
 			<h2>Usuários</h2>
 		</div>
 		<div class="col-sm-6">
-			
-			<div class="input-group h2">
-				<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Usuarios">
-				<span class="input-group-btn">
-					<button class="btn btn-primary" type="submit">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
+			<form:form action="search" method="POST">
+				<div class="input-group h2">
+						<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Usuarios">
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="submit">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+				</div>
+			</form:form>
 			</div>
 			
-		</div>
+		
 		<div class="col-sm-3">
-			<a href="add.html" class="btn btn-primary pull-right h2">Novo Usuário</a>
+			<a href="showFormForAdd" class="btn btn-primary pull-right h2">Novo Usuário</a>
 		</div>
 	</div> <!-- /#top -->
  
@@ -77,6 +79,9 @@
 			</thead>
 			<tbody>
 				<c:forEach var="tempUsuario" items="${usuarios}">
+					<c:url var="deleteLink" value="/usuario/delete">
+						<c:param name="usuarioId" value="${tempUsuario.id}" />
+					</c:url>
 					<tr>
 						<td>${tempUsuario.id}</td>
 						<td>${tempUsuario.nome}</td>
@@ -86,7 +91,7 @@
 						<td class="actions">
 							<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
 							<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-							<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+							<a class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#delete-modal">Excluir</a>
 						</td>
 					</tr>
 				</c:forEach>
@@ -115,14 +120,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
+        <h4 class="modal-title" id="modalLabel">Excluir Usuário</h4>
       </div>
       <div class="modal-body">
         Deseja realmente excluir este usuario?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Sim</button>
-	<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+        <a href="${deleteLink}"><button type="button" class="btn btn-primary" onclick="">Sim</button></a>
+		<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
       </div>
     </div>
   </div>

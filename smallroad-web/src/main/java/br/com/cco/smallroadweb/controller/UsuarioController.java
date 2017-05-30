@@ -77,7 +77,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/search")
-	public String searchUsuarios(@RequestParam("procuraNome") String nome, Model modelo) {
+	public String searchUsuarios(@RequestParam("data[search]") String nome, Model modelo) {
 
 		// procura usuarios no serviço
 		List<Usuario> usuarios = usuarioService.procuraUsuariosPorNome(nome);
