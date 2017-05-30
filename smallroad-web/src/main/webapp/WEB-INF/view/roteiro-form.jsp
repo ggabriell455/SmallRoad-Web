@@ -23,24 +23,22 @@
 			<table>
 				<tbody>
 					<tr>
-						<td><label>Numero:</label></td>
-						<td>${nf.numero}</td>
+						<td>Numero:</td>
+						<td>CEP DESTINO</td>
+						<td>END ORIGEM</td>
+						<td></td>
 					</tr>
 					<tr>
-						<td><label>CEP ORIGEM:</label></td>
-						<td>${nf.cepOrigem}</td>
+						<td>${ nf.numero}</td>
+						<td>${ nf.cepDestino}</td>
+						<td>${ nf.endDestino}</td>
+						<td> <input type="checkbox"/></td>
 					</tr>
-					<tr>
-						<td><label>END ORIGEM:</label></td>
-						<td>${nf.endOrigem}</td>
-					</tr>
-					<tr>
-						<td><label>ROTEIRO:</label></td>
-						<td><form:checkbox path="nfs" value="nf"/></td>
-					</tr>
+			
 				</tbody>
 			</table>
 			</c:forEach>
+				<input type="submit" />
 			</form:form>
 		
 		</form:form>
