@@ -19,7 +19,7 @@
 				</tbody>
 			</table>
 			<form:form modelAttribute="nfs" >
-			<c:forEach var="nf" items="${nfs}">
+			
 			<table>
 				<tbody>
 					<tr>
@@ -28,17 +28,18 @@
 						<td>END ORIGEM</td>
 						<td></td>
 					</tr>
+					<c:forEach var="nf" items="${nfs}">
 					<tr>
 						<td>${ nf.numero}</td>
 						<td>${ nf.cepDestino}</td>
 						<td>${ nf.endDestino}</td>
 						<td> <input type="checkbox"/></td>
 					</tr>
-			
+					</c:forEach>
 				</tbody>
 			</table>
-			</c:forEach>
-				<input type="submit" />
+			
+				<input type="submit" value="criar" />
 			</form:form>
 		
 		</form:form>
