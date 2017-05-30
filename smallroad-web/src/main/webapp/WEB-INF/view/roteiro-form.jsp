@@ -25,7 +25,7 @@
 					<tr>
 						<td>Numero:</td>
 						<td>CEP DESTINO</td>
-						<td>END ORIGEM</td>
+						<td>END DESTINO</td>
 						<td></td>
 					</tr>
 					<c:forEach var="nf" items="${nfs}">
