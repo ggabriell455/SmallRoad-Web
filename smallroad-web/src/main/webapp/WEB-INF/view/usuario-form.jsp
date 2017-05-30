@@ -1,73 +1,129 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-	<title>Save Customer</title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>SmallROAD - Adicionar Usuário</title>
 
-	<link type="text/css"
-		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/style.css">
-
-	<link type="text/css"
-		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
+ <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+ <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 </head>
-
 <body>
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+   <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">SmallROAD</a>
+   </div>
+   <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+     <li><a href="../home.jsp">Home</a></li>
+     <li><a href="${pageContext.request.contextPath}/usuario/list">Usuários</a></li>
+     <li><a href="${pageContext.request.contextPath}/nf/list">Notas Fiscais</a></li>
+     <li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
+     <li><a href="#">Perfil</a></li>
+     <li><a href="#">Ajuda</a></li>
+    </ul>
+   </div>
+  </div>
+ </nav>
+ 
+ <div id="main" class="container-fluid">
+  
+  <h3 class="page-header">Adicionar Usuário</h3>
+  
+  <form:form action="saveUsuario" modelAttribute="usuario" method="POST">
+  <form:hidden path="id" />
+  	<div class="row">
+  	  <div class="form-group col-md-4">
+  	  	<label for="exampleInputEmail1">Nome</label>
+  	  	<form:input path="nome" type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o nome do usuario"/>
+  	  </div>
+	  <div class="form-group col-md-4">
+  	  	<label for="exampleInputEmail1">Username/NickName</label>
+  	  	<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite um usuario">
+  	  </div>
+	  <div class="form-group col-md-4">
+  	  	<label for="exampleInputEmail1">E-mail</label>
+  	  	<form:input path="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite um e-mail"/>
+  	  </div>
+	</div>
+	<div class="row">
+  	  <div class="form-group col-md-3">
+  	  	<label for="exampleInputEmail1">Senha</label>
+  	  	<form:input path="senha" type="password" class="form-control" id="exampleInputEmail1" placeholder="Digite uma senha"/>
+  	  </div>
+	  <div class="form-group col-md-3">
+	  	<label for="exampleInputEmail1">Perfil</label>
+  	  	<select class="form-control">
+			  <option>ADMIN</option>
+			  <option>SUPERVISOR</option>
+			  <option>MOTORISTA</option>
+		</select>
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	
+  	  </div>
+	</div>
 	
-	<div id="wrapper">
-		<div id="header">
-			<h2>Lista de Usuarios Cadstrados</h2>
-		</div>
+	<div class="row">
+  	  <div class="form-group col-md-6">
+  	
+  	  </div>
+	  <div class="form-group col-md-6">
+  	  	
+  	  </div>
+	</div>
+	
+	<div class="row">
+  	  <div class="form-group col-md-3">
+  	  	
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	
+  	  </div>
+	  <div class="form-group col-md-3">
+  	  	
+  	  </div>
+	</div>
+	
+	<div class="row">
+  	  <div class="form-group col-md-6">
+  	  
+  	  </div>
+	  <div class="form-group col-md-6">
+  	  
+  	  </div>
+	</div>
+	
+	<hr />
+	
+	<div class="row">
+	  <div class="col-md-12">
+	  	<button type="submit" class="btn btn-primary">Salvar</button>
+		<a href="${pageContext.request.contextPath}/usuario/list" class="btn btn-default">Cancelar</a>
+	  </div>
 	</div>
 
-	<div id="container">
-		<h3>Salvar Usuario</h3>
-	
-		<form:form action="saveUsuario" modelAttribute="usuario" method="POST">
+  </form:form>
+ </div>
+ 
 
-			<!-- precisa dessa informacao pra associar com a id do usuario -->
-			<form:hidden path="id" />
-					
-			<table>
-				<tbody>
-					<tr>
-						<td><label>Nome:</label></td>
-						<td><form:input path="nome" /></td>
-					</tr>
-				
-					<tr>
-						<td><label>Senha:</label></td>
-						<td><form:input type="password" path="senha" /></td>
-					</tr>
-
-					<tr>
-						<td><label>Email:</label></td>
-						<td><form:input path="email" /></td>
-					</tr>
-
-					<tr>
-						<td><label></label></td>
-						<td><input type="submit" value="Salvar" class="save" /></td>
-					</tr>
-
-				
-				</tbody>
-			</table>
-		
-		
-		</form:form>
-	
-		<div style="clear; both;"></div>
-		
-		<p>
-			<a href="${pageContext.request.contextPath}/usuario/list">Voltar</a>
-		</p>
-	
-	</div>
-
+ <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+ <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
-
 </html>

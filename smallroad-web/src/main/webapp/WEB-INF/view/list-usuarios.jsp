@@ -80,9 +80,14 @@
 			</thead>
 			<tbody>
 				<c:forEach var="tempUsuario" items="${usuarios}">
-					<c:url var="deleteLink" value="/usuario/delete">
+					<c:url var="deleteLink" value="/usuario/modal">
 						<c:param name="usuarioId" value="${tempUsuario.id}" />
 					</c:url>
+					
+					<c:url var="updateLink" value="/usuario/showFormForUpdate">
+						<c:param name="usuarioId" value="${tempUsuario.id}" />
+					</c:url>
+					
 					<tr>
 						<td>${tempUsuario.id}</td>
 						<td>${tempUsuario.nome}</td>
@@ -91,15 +96,36 @@
 						<td>29/05/2017</td>
 						<td class="actions">
 							<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-							<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-							<a class="btn btn-danger btn-xs"  data-toggle="modal" data-target="#delete-modal">Excluir</a>
+							<a class="btn btn-warning btn-xs" href="${updateLink}">Editar</a>
+							<a class="btn btn-danger btn-xs"  data-toggle="modal" data-target="window.location.href='modal">Excluir</a>
 						</td>
 					</tr>
+			
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
 	
+		<!-- Modal -->
+		
+			<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="modalLabel">Excluir Usuário</h4>
+			      </div>
+			      <div class="modal-body">
+			        Deseja realmente excluir este usuario?
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-primary" onclick="">Sim</button></a>
+					<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		
 	</div> <!-- /#list -->
 	
 	<div id="bottom" class="row">
@@ -115,24 +141,7 @@
 	</div> <!-- /#bottom -->
  </div> <!-- /#main -->
 
-<!-- Modal -->
-<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalLabel">Excluir Usuário</h4>
-      </div>
-      <div class="modal-body">
-        Deseja realmente excluir este usuario?
-      </div>
-      <div class="modal-footer">
-        <a href="${deleteLink}"><button type="button" class="btn btn-primary" onclick="">Sim</button></a>
-		<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
  <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
  <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>

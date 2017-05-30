@@ -33,11 +33,12 @@ public class RoteiroController {
 	}
 
 	@PostMapping("/showFormforAdd")
-	public String showFormForAdd(Model modelo, Model modelo2) {
+	public String showFormForAdd(Model modelo, Model modelo2, Model modelo3) {
 		Roteiro roteiro = new Roteiro();
 		List<Nf> nfs = nfService.listaNotaSemRoteiro();
 		modelo.addAttribute("roteiro", roteiro);
 		modelo2.addAttribute("nfs", nfs);
+		
 
 		return "roteiro-form";
 	}

@@ -75,6 +75,13 @@ public class UsuarioController {
 
 		return "redirect:/usuario/list";
 	}
+	
+	
+	@GetMapping("/modal")
+	public String modalUsuario(@RequestParam("usuarioId") Integer id) {
+
+		return "redirect:/usuario/delete";
+	}
 
 	@PostMapping("/search")
 	public String searchUsuarios(@RequestParam("data[search]") String nome, Model modelo) {
