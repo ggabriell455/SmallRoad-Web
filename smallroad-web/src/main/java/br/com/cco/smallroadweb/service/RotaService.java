@@ -16,14 +16,13 @@ import br.com.cco.smallroadweb.grafo.Dijkstra;
 import br.com.cco.smallroadweb.grafo.Distancia;
 import br.com.cco.smallroadweb.grafo.Vertice;
 
-
 @Service
 public class RotaService {
 
 	private static Map<Integer, Nf> nfs;
 	private static List<Vertice> vertices = new ArrayList<Vertice>();
 	private static List<Aresta> arestas = new ArrayList<Aresta>();
-	
+
 	@Autowired
 	NfService nfService;
 
@@ -31,14 +30,13 @@ public class RotaService {
 
 		Distancia distancia = new Distancia();
 		nfs = new HashMap<Integer, Nf>();
-		
+
 		nfs.put(0, new Nf(0, "Faculdade dos Guararapes", "Faculdade dos Guararapes"));
-		for(Nf nf : notasFicais){
-			
+		for (Nf nf : notasFicais) {
+
 			nfs.put(nf.getNumero(), nf);
-			
+
 		}
-		
 
 		for (Integer key : nfs.keySet()) {
 			vertices.add(new Vertice(key));
@@ -54,16 +52,16 @@ public class RotaService {
 
 		Dijkstra dijkstra = new Dijkstra(arestas, vertices);
 		dijkstra.executar();
-		List<Nf> nfs  = new ArrayList<>();
+		List<Nf> nfs = new ArrayList<>();
 		List<Vertice> caminho = dijkstra.getCaminho(vertices.get(0));
 		String caminhoString = "";
 		if (!caminho.isEmpty()) {
 			for (Vertice v : caminho) {
 				nfs.add(nfService.getNf(v.getId()));
-				caminhoString= caminhoString+v.getId() + "-> ";
+				caminhoString = caminhoString + v.getId() + "-> ";
 			}
 		}
-		System.out.println("NFS ORDENADAS "+caminhoString);
+		System.out.println("NFS ORDENADAS " + caminhoString);
 		return nfs;
 	}
 

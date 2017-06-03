@@ -23,5 +23,4 @@ public interface NfDAO {
 
 	public void addRoteiroOnNf(Roteiro roteiro);
 
-
 }

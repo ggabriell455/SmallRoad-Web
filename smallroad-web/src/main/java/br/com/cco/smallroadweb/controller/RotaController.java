@@ -15,21 +15,20 @@ import br.com.cco.smallroadweb.service.RotaService;
 @Controller
 @RequestMapping("/rota")
 public class RotaController {
-	
+
 	@Autowired
 	RotaService rotaService;
 
 	@Autowired
 	NfService nfService;
-	
-	@RequestMapping("/list")
-	public String list(Model modelo) throws IOException{
-		
-		List <Nf> nfs = rotaService.criarRota(nfService.listaNotaSemRoteiro());
-		modelo.addAttribute("nfs",nfs);
-		return "rota-list";
-		
-	}
 
+	@RequestMapping("/list")
+	public String list(Model modelo) throws IOException {
+
+		List<Nf> nfs = rotaService.criarRota(nfService.listaNotaSemRoteiro());
+		modelo.addAttribute("nfs", nfs);
+		return "rota-list";
+
+	}
 
 }

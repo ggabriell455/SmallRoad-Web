@@ -75,8 +75,7 @@ public class UsuarioController {
 
 		return "redirect:/usuario/list";
 	}
-	
-	
+
 	@GetMapping("/modal")
 	public String modalUsuario(@RequestParam("usuarioId") Integer id) {
 

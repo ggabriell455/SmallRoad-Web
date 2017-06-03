@@ -1,7 +1,5 @@
 package br.com.cco.smallroadweb.dao;
 
-import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -20,7 +18,6 @@ public class NfDAOImpl implements NfDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-
 	@Override
 	public List<Nf> getNfs() {
 
@@ -37,9 +34,6 @@ public class NfDAOImpl implements NfDAO {
 		// saveDistancia(nf);
 		currentSession.saveOrUpdate(nf);
 	}
-
-
-
 
 	@Override
 	public Nf getNf(Integer numero) {

@@ -38,7 +38,6 @@ public class RoteiroController {
 		List<Nf> nfs = nfService.listaNotaSemRoteiro();
 		modelo.addAttribute("roteiro", roteiro);
 		modelo2.addAttribute("nfs", nfs);
-		
 
 		return "roteiro-form";
 	}

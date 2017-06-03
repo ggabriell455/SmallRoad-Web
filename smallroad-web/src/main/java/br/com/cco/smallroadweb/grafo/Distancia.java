@@ -2,26 +2,24 @@ package br.com.cco.smallroadweb.grafo;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-
-
 
 public class Distancia {
 
 	private static final String API_KEY = "AIzaSyDQXdKIfpZk8W2l4apTqD1YMb9mWPX5UsE";
 
 	OkHttpClient client = new OkHttpClient();
-	
-	
+
 	private String run(String url) throws IOException {
 		Request request = new Request.Builder().url(url).build();
 
 		Response response = client.newCall(request).execute();
 		return response.body().string();
 	}
-	
+
 	public BigDecimal getDistancia(String origem, String destino) throws IOException {
 
 		String origins = origem;
@@ -43,7 +41,7 @@ public class Distancia {
 		BigDecimal distancia = new BigDecimal(distanciaString);
 		return distancia;
 	}
-	
+
 	private String getTagValue(String tag, String xml) {
 
 		String tagStart = "<" + tag + ">";
