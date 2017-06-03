@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <title>Dashboard</title>
 
-<!-- SEMANTIC-UI SCRIPT MIN -->
-<script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
-
-<!-- SEMANTIC-UI CSS MIN -->
-<link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/semantic.min.js"></script>
 
 <!-- APART CSS STYLESHEETS -->
 <link rel="stylesheet" type="text/css" href="stylesheets/dashboard.css">
@@ -26,10 +27,9 @@
             <div class="ui inverted secondary menu">
 
                 <label class="item"><h3>SmallRoad</h3></label>
-
-                <a href="#" class="item">Home</a>
-                <a href="#" class="item">Item 01</a>
-                <a href="#" class="item">Item 02</a>
+                <a href="#" class="item">Manutenção de Usuários</a>
+                <a href="#" class="item">Manutenção de NF</a>
+                <a href="#" class="item">Manutenção de Roteiro</a>
 
                 <div class="right menu">
 
@@ -50,15 +50,7 @@
     </br>
 
     <center>
-        <div class="ui icon input">
-          <input placeholder="Buscar..." type="text" class="input-search-size">
-          <i class="search icon"></i>
-        </div>
-
-        <button class="ui primary button">
-            <i class="plus circle icon"></i>
-             Novo Item
-        </button>
+        
     </center>
 
     </br>
@@ -69,7 +61,7 @@
         <th width="50">ID</th>
         <th width="500">Header</th>
         <th width="550">Header</th>
-        <th>Ações</th>
+        <th width="307">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -120,6 +112,7 @@
         <a class="item">2</a>
         <a class="item">3</a>
         <a class="item">4</a>
+        <a class="item">5</a>
         <a class="icon item">
           <i class="right chevron icon"></i>
         </a>
@@ -127,7 +120,7 @@
     </th>
   </tr></tfoot>
 </table>
-        
+
 </body>
 
 </html>
