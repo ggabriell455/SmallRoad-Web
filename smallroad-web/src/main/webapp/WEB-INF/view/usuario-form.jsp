@@ -50,7 +50,7 @@
   	  </div>
 	  <div class="form-group col-md-4">
   	  	<label for="exampleInputEmail1">Username/NickName</label>
-  	  	<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite um usuario">
+  	  	<form:input path="nickname" type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite um usuario"/>
   	  </div>
 	  <div class="form-group col-md-4">
   	  	<label for="exampleInputEmail1">E-mail</label>
@@ -64,11 +64,11 @@
   	  </div>
 	  <div class="form-group col-md-3">
 	  	<label for="exampleInputEmail1">Perfil</label>
-  	  	<select class="form-control">
-			  <option>ADMIN</option>
-			  <option>SUPERVISOR</option>
-			  <option>MOTORISTA</option>
-		</select>
+  	  	<form:select class="form-control" path="perfil">
+			  <form:option value = "Admin" label="Admin"/>
+			  <form:option value = "Supervisor" label="Supervisor"/>
+			  <form:option value = "Motorista" label="Motorista"/>
+		</form:select>
   	  </div>
 	  <div class="form-group col-md-3">
   	  </div>

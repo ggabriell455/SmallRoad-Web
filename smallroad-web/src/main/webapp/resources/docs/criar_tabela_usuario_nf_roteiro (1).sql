@@ -24,6 +24,8 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) DEFAULT NULL,
+  `nickname` varchar(45) NOT NULL,
+  `perfil` varchar(45) NOT NULL,
   `senha` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -63,11 +65,9 @@ LOCK TABLES `usuario` WRITE;
 -----
 
 INSERT INTO `usuario` VALUES 
-	(1,'Rodrigo Carvalho','rodrigo123','rodrigo@alunofg.com.br'),
-	(2,'Gil Rodrigues','john123','gil@alunofg.com.br'),
-	(3,'Gabriel Alves','ajay123','gabriel@alunofg.com.br'),
-	(4,'Gatolindo','mary123','gatolindo@alunofg.com.br'),
-	(5,'Fabio Oliveira','maxwell123','fabio@alunofg.com.br');
+	(1,'Rodrigo Carvalho','rodrigodoe','ADMIN','rodrigo123','rodrigo@alunofg.com.br'),
+	(2,'Gil Rodrigues','gil','ADMIN','gil123','gil@alunofg.com.br'),
+    (3,'Gabriel Alves','gabriel','ADMIN','gabriel123','gabriel@alunofg.com.br');
 
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 

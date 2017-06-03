@@ -80,7 +80,7 @@
 			</thead>
 			<tbody>
 				<c:forEach var="tempUsuario" items="${usuarios}">
-					<c:url var="deleteLink" value="/usuario/modal">
+					<c:url var="deleteLink" value="/usuario/delete">
 						<c:param name="usuarioId" value="${tempUsuario.id}" />
 					</c:url>
 					
@@ -88,16 +88,21 @@
 						<c:param name="usuarioId" value="${tempUsuario.id}" />
 					</c:url>
 					
+					<c:url var="viewLink" value="/usuario/showFormForView">
+						<c:param name="usuarioId" value="${tempUsuario.id}" />
+					</c:url>
+					
+					
 					<tr>
 						<td>${tempUsuario.id}</td>
 						<td>${tempUsuario.nome}</td>
-						<td>ADMIN</td>
+						<td>${tempUsuario.perfil}</td>
 						<td>${tempUsuario.email}</td>
 						<td>29/05/2017</td>
 						<td class="actions">
-							<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+							<a class="btn btn-success btn-xs" href="${viewLink}">Visualizar</a>
 							<a class="btn btn-warning btn-xs" href="${updateLink}">Editar</a>
-							<a class="btn btn-danger btn-xs"  data-toggle="modal" data-target="window.location.href='modal">Excluir</a>
+							<a  href="${deleteLink}" class="btn btn-danger btn-xs"  onclick="if (!(confirm('Tem certeza que deseja Excluir o usuário?'))) return false">Excluir</a>
 						</td>
 					</tr>
 			
