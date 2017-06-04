@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -54,9 +55,11 @@ public class RoteiroController {
 		return "redirect:/roteiro/list";
 	}
 
-	@PostMapping("checarNfs")
-	public void listarNfs(Model modelo) {
-
+	@RequestMapping("/entregar")
+	public void listarNfs(@RequestParam("nfId")Integer id) {
+		Nf nf = nfService.getNf(id);
+		System.out.println("NFTESTE"+nf);
+		
 	}
 	
 	@RequestMapping("showFormForView")

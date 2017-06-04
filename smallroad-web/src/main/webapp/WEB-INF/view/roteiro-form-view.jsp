@@ -72,13 +72,17 @@
 			<tbody>		
 					
 						<c:forEach var="nf" items="${roteiro.nfs}">
+						
+						<c:url var="entregaLink" value="/roteiro/entregar">
+							<c:param name="nfId" value="${nf.numero}" />
+						</c:url>
 					<tr>
 					
 						<td>${ nf.numero}</td>
 						<td>${ nf.cepDestino}</td>
 						<td>${ nf.endDestino}</td>
-						<td><a class="btn btn-warning btn-xs">Entregar</a>
-							<a class="btn btn-success btn-xs">Entregue</a>
+						<td>
+							<a href="${entregaLink}"	class="btn btn-success btn-xs">Entregue</a>
 							<a  class="btn btn-danger btn-xs"  onclick="if (!(confirm('Tem certeza que deseja Nao entregar?'))) return false">Pular</a>
 						</td>
 					</tr>
