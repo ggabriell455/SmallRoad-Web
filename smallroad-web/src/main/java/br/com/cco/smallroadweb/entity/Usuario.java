@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario<perfilOpcoes> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +24,19 @@ public class Usuario {
 
 	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "nickname")
+	private String nickname;
+	
+	@Column(name="perfil")
+	private String perfil;
+	
+	
+	
+	
 
 	public Usuario() {
+		
 
 	}
 
@@ -60,5 +71,31 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	
+
+	public String getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
+	}
+
+	
+	
+	
+	
+	
+	
+	
 
 }

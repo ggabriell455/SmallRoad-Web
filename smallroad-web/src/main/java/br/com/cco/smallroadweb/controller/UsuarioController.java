@@ -66,6 +66,21 @@ public class UsuarioController {
 		// envia para o formulario
 		return "usuario-form";
 	}
+	
+	
+	@GetMapping("/showFormForView")
+	public String showFormForView(@RequestParam("usuarioId") Integer id, Model modelo) {
+
+		// pega o usuario do serviço
+		Usuario usuario = usuarioService.getUsuario(id);
+
+		// seta usuario como atributo do modelo e pre-popula o formulario
+		modelo.addAttribute("usuario", usuario);
+
+		// envia para o formulario
+		return "usuario-form-view";
+	}
+	
 
 	@GetMapping("/delete")
 	public String deleteUsuario(@RequestParam("usuarioId") Integer id) {
@@ -75,12 +90,9 @@ public class UsuarioController {
 
 		return "redirect:/usuario/list";
 	}
+	
+	
 
-	@GetMapping("/modal")
-	public String modalUsuario(@RequestParam("usuarioId") Integer id) {
-
-		return "redirect:/usuario/delete";
-	}
 
 	@PostMapping("/search")
 	public String searchUsuarios(@RequestParam("data[search]") String nome, Model modelo) {
