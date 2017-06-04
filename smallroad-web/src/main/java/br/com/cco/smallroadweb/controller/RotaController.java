@@ -9,23 +9,30 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.cco.smallroadweb.entity.Nf;
+import br.com.cco.smallroadweb.entity.Roteiro;
 import br.com.cco.smallroadweb.service.NfService;
 import br.com.cco.smallroadweb.service.RotaService;
+import br.com.cco.smallroadweb.service.RoteiroService;
 
 @Controller
 @RequestMapping("/rota")
 public class RotaController {
-
+	
 	@Autowired
 	RotaService rotaService;
-
+	
+	@Autowired
+	RoteiroService roteiroService;
+	
 	@Autowired
 	NfService nfService;
 
 	@RequestMapping("/list")
 	public String list(Model modelo) throws IOException {
-
-		List<Nf> nfs = rotaService.criarRota(nfService.listaNotaSemRoteiro());
+		
+		Integer id = 6;
+		Roteiro roteiro = roteiroService.getRoteiroByid(id);
+		List<Nf> nfs =  rotaService.criarRota(nfService.listaNotasFromRoteiro(roteiro));
 		modelo.addAttribute("nfs", nfs);
 		return "rota-list";
 

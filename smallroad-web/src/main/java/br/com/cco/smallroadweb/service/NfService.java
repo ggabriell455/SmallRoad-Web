@@ -20,6 +20,8 @@ public interface NfService {
 	public List<Nf> procuraNfsByNumero(Integer numero);
 
 	public List<Nf> listaNotaSemRoteiro();
+	
+	public List<Nf> listaNotasFromRoteiro(Roteiro roteiro);
 
 	public void addRoteiroOnNf(Roteiro roteiro);
 

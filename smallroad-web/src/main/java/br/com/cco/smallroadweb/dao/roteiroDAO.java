@@ -14,4 +14,6 @@ public interface roteiroDAO {
 
 	public void pesquisarRoteiroById(Integer id);
 
+	public Roteiro getRoteiroByid(Integer id);
+
 }

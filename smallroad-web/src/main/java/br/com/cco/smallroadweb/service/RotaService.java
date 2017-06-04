@@ -18,15 +18,18 @@ import br.com.cco.smallroadweb.grafo.Vertice;
 
 @Service
 public class RotaService {
-
-	private static Map<Integer, Nf> nfs;
-	private static List<Vertice> vertices = new ArrayList<Vertice>();
-	private static List<Aresta> arestas = new ArrayList<Aresta>();
+	
+	private Map<Integer, Nf> nfs;
+	private List<Vertice> vertices = new ArrayList<Vertice>();
+	private List<Aresta> arestas = new ArrayList<Aresta>();
+	
 
 	@Autowired
 	NfService nfService;
 
 	public List<Nf> criarRota(List<Nf> notasFicais) throws IOException {
+		
+		
 
 		Distancia distancia = new Distancia();
 		nfs = new HashMap<Integer, Nf>();
@@ -62,10 +65,11 @@ public class RotaService {
 			}
 		}
 		System.out.println("NFS ORDENADAS " + caminhoString);
+		nfs.remove(0);
 		return nfs;
 	}
 
-	private static void addAresta(int v1Id, int v2Id, BigDecimal w) {
+	private void addAresta(int v1Id, int v2Id, BigDecimal w) {
 		System.out.println("Vertice" + vertices.get(v1Id).getId() + "> " + vertices.get(v1Id) + " vertice2> "
 				+ vertices.get(v2Id) + " distancia> " + w);
 		arestas.add(new Aresta(vertices.get(v1Id), vertices.get(v2Id), w));

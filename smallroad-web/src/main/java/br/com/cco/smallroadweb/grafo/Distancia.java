@@ -9,7 +9,7 @@ import com.squareup.okhttp.Response;
 
 public class Distancia {
 
-	private static final String API_KEY = "AIzaSyDQXdKIfpZk8W2l4apTqD1YMb9mWPX5UsE";
+	String API_KEY = "AIzaSyDQXdKIfpZk8W2l4apTqD1YMb9mWPX5UsE";
 
 	OkHttpClient client = new OkHttpClient();
 

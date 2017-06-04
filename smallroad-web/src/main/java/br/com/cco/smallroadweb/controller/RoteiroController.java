@@ -1,5 +1,6 @@
 package br.com.cco.smallroadweb.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,10 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
 import br.com.cco.smallroadweb.service.NfService;
+import br.com.cco.smallroadweb.service.RotaService;
 import br.com.cco.smallroadweb.service.RoteiroService;
 
 @Controller
@@ -24,6 +27,9 @@ public class RoteiroController {
 
 	@Autowired
 	private NfService nfService;
+	
+	@Autowired
+	private RotaService rotaService;
 
 	@RequestMapping("/list")
 	public String listaRoteiro(Model modelo) {
@@ -52,5 +58,17 @@ public class RoteiroController {
 	public void listarNfs(Model modelo) {
 
 	}
+	
+	@RequestMapping("showFormForView")
+	public String showFormForView(@RequestParam("roteiroId")Integer id, Model modelo) throws IOException{
+		Roteiro roteiro = roteiroService.getRoteiroByid(id);
+		List<Nf> nfs = rotaService.criarRota(nfService.listaNotasFromRoteiro(roteiro));
+		roteiro.setNfs(nfs);
+		modelo.addAttribute("roteiro", roteiro);
+		return "roteiro-form-view";
+		
+		
+	}
 
+	
 }

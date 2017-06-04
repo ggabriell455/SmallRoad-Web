@@ -121,4 +121,13 @@ public class NfDAOImpl implements NfDAO {
 
 	}
 
+	@Override
+	public List<Nf> listaNotasFromRoteiro(Roteiro roteiro) {
+		Session session = sessionFactory.getCurrentSession();
+		Query<Nf> consulta = session.createQuery("from Nf where roteiro is :roteiro");
+		consulta.setParameter("roteiro", roteiro);
+		List<Nf> nfs = consulta.getResultList();
+		return nfs;
+	}
+
 }

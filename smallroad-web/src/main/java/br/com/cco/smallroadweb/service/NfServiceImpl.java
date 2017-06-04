@@ -68,4 +68,10 @@ public class NfServiceImpl implements NfService {
 
 	}
 
+	@Override
+	@Transactional
+	public List<Nf> listaNotasFromRoteiro(Roteiro roteiro) {
+		return nfDAO.listaNotasFromRoteiro(roteiro);
+	}
+
 }

@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 @Entity
 public class Vertice {
-	private final int id;
+	private  int id;
 
 	public Vertice(int id) {
 		this.id = id;

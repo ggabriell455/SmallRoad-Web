@@ -23,4 +23,6 @@ public interface NfDAO {
 
 	public void addRoteiroOnNf(Roteiro roteiro);
 
+	public List<Nf> listaNotasFromRoteiro(Roteiro roteiro);
+
 }

@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
 
 @Repository
@@ -41,6 +42,16 @@ public class roteiroDAOImpl implements roteiroDAO {
 	public void pesquisarRoteiroById(Integer id) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public Roteiro getRoteiroByid(Integer id) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Roteiro> consulta = currentSession.createQuery("from Roteiro where id = :id", Roteiro.class);
+		consulta.setParameter("id", id);
+		Roteiro roteiro = consulta.getSingleResult();
+		return roteiro;
+		
 	}
 
 }

@@ -10,4 +10,6 @@ public interface RoteiroService {
 
 	public List<Roteiro> getRoteiros();
 
+	public Roteiro getRoteiroByid(Integer id);
+
 }

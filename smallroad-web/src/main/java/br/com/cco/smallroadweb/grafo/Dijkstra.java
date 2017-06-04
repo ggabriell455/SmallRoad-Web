@@ -10,8 +10,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class Dijkstra {
-	private final List<Aresta> arestas;
-	private final List<Vertice> vertices;
+	private  List<Aresta> arestas;
+	private  List<Vertice> vertices;
 
 	private Set<Vertice> resolvidos;
 	private List<Vertice> naoResolvidos;
