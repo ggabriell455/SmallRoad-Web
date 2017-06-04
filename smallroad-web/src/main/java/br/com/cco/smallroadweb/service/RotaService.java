@@ -20,17 +20,21 @@ import br.com.cco.smallroadweb.grafo.Vertice;
 public class RotaService {
 	
 	private Map<Integer, Nf> nfs;
-	private List<Vertice> vertices = new ArrayList<Vertice>();
-	private List<Aresta> arestas = new ArrayList<Aresta>();
 	
-
+	
+	private List<Vertice> vertices;
+	
+	private List<Aresta> arestas;
+	
+	
 	@Autowired
 	NfService nfService;
 
 	public List<Nf> criarRota(List<Nf> notasFicais) throws IOException {
 		
+		vertices = new ArrayList<>();
+		arestas = new ArrayList<>();
 		
-
 		Distancia distancia = new Distancia();
 		nfs = new HashMap<Integer, Nf>();
 
