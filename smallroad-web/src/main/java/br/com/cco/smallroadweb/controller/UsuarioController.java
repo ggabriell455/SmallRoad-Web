@@ -31,7 +31,7 @@ public class UsuarioController {
 		// adiciona usuário ao modelo
 		modelo.addAttribute("usuarios", usuarios);
 		// retorna p/ view list-usuarios.jsp
-		return "list-usuarios";
+		return "usuario-list";
 	}
 
 	@GetMapping("/showFormForAdd")
@@ -103,6 +103,6 @@ public class UsuarioController {
 		// adiciona usuarios ao modelo
 		modelo.addAttribute("usuarios", usuarios);
 
-		return "list-usuarios";
+		return "usuario-list";
 	}
 }

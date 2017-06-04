@@ -36,7 +36,7 @@ public class RoteiroController {
 	public String listaRoteiro(Model modelo) {
 		List<Roteiro> roteiros = roteiroService.getRoteirosNaoFinalizados();
 		modelo.addAttribute("roteiros", roteiros);
-		return "roteiro";
+		return "roteiro-list";
 
 	}
 
