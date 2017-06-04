@@ -12,6 +12,8 @@ public interface RoteiroService {
 
 	public Roteiro getRoteiroByid(Integer id);
 
+	public List<Roteiro> getRoteirosNaoFinalizados();
+
 	
 
 }

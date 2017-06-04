@@ -17,6 +17,8 @@ public interface roteiroDAO {
 
 	public Roteiro getRoteiroByid(Integer id);
 
+	public List<Roteiro> getRoteirosNaoFinalizados();
+
 
 
 }
