@@ -4,7 +4,7 @@
   <groupId>br.com.cco</groupId>
   <artifactId>smallroad-web</artifactId>
   <version>1.0.0</version>
-  <packaging>war</packaging>
+  <packaging>war </packaging>
 
   <properties>
         <springframework.version>4.3.4.RELEASE</springframework.version>
