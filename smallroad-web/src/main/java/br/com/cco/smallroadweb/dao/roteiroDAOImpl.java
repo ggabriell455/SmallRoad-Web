@@ -49,9 +49,12 @@ public class roteiroDAOImpl implements roteiroDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Query<Roteiro> consulta = currentSession.createQuery("from Roteiro where id = :id", Roteiro.class);
 		consulta.setParameter("id", id);
+		System.out.println("CONSULTA"+consulta);
 		Roteiro roteiro = consulta.getSingleResult();
 		return roteiro;
 		
 	}
+
+	
 
 }
