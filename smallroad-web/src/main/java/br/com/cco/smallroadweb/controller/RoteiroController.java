@@ -56,9 +56,10 @@ public class RoteiroController {
 	}
 
 	@RequestMapping("/entregar")
-	public void listarNfs(@RequestParam("nfId")Integer id) {
+	public String listarNfs(@RequestParam("nfId")Integer id) {
 		Nf nf = nfService.getNf(id);
 		System.out.println("NFTESTE"+nf);
+		return "roteiro/showFormForView?roteiroId="+id;
 		
 	}
 	
