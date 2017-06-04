@@ -28,9 +28,9 @@
               <div class="ui inverted secondary menu">
 
                   <label class="item"><h3>SmallRoad</h3></label>
-                  <a href="#" id="manutencaoUsuarios" class="item">Manutenção de Usuários</a>
-                  <a href="#" id="manutencaoNotas" class="item">Manutenção de NF</a>
-                  <a href="#" class="item">Manutenção de Roteiros</a>
+                  <a href="adm.manutencaoUsuarios.html" class="item">Manutenção de Usuários</a>
+                  <a href="adm.manutencaoNotas.html" class="item">Manutenção de NF</a>
+                  <a href="adm.manutencaoRoteiros.html" class="item">Manutenção de Roteiros</a>
 
                   <div class="right menu">
 
@@ -56,11 +56,32 @@
 
       </br>
 
-      <div id="conteudo">
+      <div id="conteudo">        
+        <div class="ui modal">
+            <div class="header">
+            Bem-Vindo! @Usuário
+            </div>
+        
+            <div class="image content">   
+                <div class="image">
+                    An image can appear on left or an icon
+                </div>
+                
+                <div class="description">
+                    A description can appear on the right
+                </div>
+            </div>
 
-      </div><!--conteudo-->
+            <div class="actions">
+                <div class="ui green button ok">OK</div> 
+            </div>
+        </div>
+
+        <script>
+            $('.ui.modal').modal('show');
+        </script>
+     </div><!--conteudo-->
 
 </body>
-
 
 </html>
