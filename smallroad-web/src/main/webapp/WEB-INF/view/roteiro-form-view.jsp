@@ -83,8 +83,10 @@
 						<td>${ nf.cepDestino}</td>
 						<td>${ nf.endDestino}</td>
 						<td>
-							<a href="${entregaLink}"	class="btn btn-success btn-xs">Entregue</a>
+							<c:if test="${nf.entregue==null}">
+							<a  href="${entregaLink}"	class="btn btn-success btn-xs">Entregue</a>
 							<a  class="btn btn-danger btn-xs"  onclick="if (!(confirm('Tem certeza que deseja Nao entregar?'))) return false">Pular</a>
+							</c:if>
 						</td>
 					</tr>
 					</c:forEach>
