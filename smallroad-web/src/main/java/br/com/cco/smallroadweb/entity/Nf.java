@@ -34,8 +34,8 @@ public class Nf {
 	@Column(name = "distancia")
 	public BigDecimal distancia;
 
-	@Column(name = "dt_entrega")
-	private Date dtEntrega;
+	@Column(name = "entregue")
+	private String entregue;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "roteiro_id")
@@ -100,14 +100,7 @@ public class Nf {
 		this.distancia = distancia;
 	}
 
-	public Date getDtEntrega() {
-		return dtEntrega;
-	}
-
-	public void setDtEntrega(Date dtEntrega) {
-		this.dtEntrega = dtEntrega;
-	}
-
+	
 	public Roteiro getRoteiro() {
 		return roteiro;
 	}
@@ -116,11 +109,21 @@ public class Nf {
 		this.roteiro = roteiro;
 	}
 
+	public String getEntregue() {
+		return entregue;
+	}
+
+	public void setEntregue(String entregue) {
+		this.entregue = entregue;
+	}
+
 	@Override
 	public String toString() {
 		return "Nf [numero=" + numero + ", cepOrigem=" + cepOrigem + ", endOrigem=" + endOrigem + ", cepDestino="
-				+ cepDestino + ", endDestino=" + endDestino + ", distancia=" + distancia + ", dtEntrega=" + dtEntrega
-				+ "]";
+				+ cepDestino + ", endDestino=" + endDestino + ", distancia=" + distancia + ", entregue=" + entregue
+				+ ", roteiro=" + roteiro + "]";
 	}
+
+	
 
 }

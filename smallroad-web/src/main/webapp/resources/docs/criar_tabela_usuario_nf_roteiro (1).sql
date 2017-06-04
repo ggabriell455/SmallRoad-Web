@@ -49,7 +49,7 @@ CREATE TABLE `nf` (
   `cep_destino` int(8) NOT NULL,
   `end_destino` varchar(45) NOT NULL,
   `distancia` decimal(5,2) DEFAULT NULL,
-  `dt_entrega` date DEFAULT NULL,
+  `entregue` varchar(45) DEFAULT NULL,
   `roteiro_id` int(8) DEFAULT NULL,
   PRIMARY KEY (`numero`),
   FOREIGN KEY  (`roteiro_id`) 

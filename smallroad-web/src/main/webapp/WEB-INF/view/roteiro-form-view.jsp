@@ -75,6 +75,7 @@
 						
 						<c:url var="entregaLink" value="/roteiro/entregar">
 							<c:param name="nfId" value="${nf.numero}" />
+							<c:param name="roteiroId" value="${roteiro.id}"></c:param>
 						</c:url>
 					<tr>
 					
