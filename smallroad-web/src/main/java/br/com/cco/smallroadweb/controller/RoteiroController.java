@@ -34,7 +34,7 @@ public class RoteiroController {
 
 	@RequestMapping("/list")
 	public String listaRoteiro(Model modelo) {
-		List<Roteiro> roteiros = roteiroService.getRoteiros();
+		List<Roteiro> roteiros = roteiroService.getRoteirosNaoFinalizados();
 		modelo.addAttribute("roteiros", roteiros);
 		return "roteiro";
 
@@ -60,7 +60,7 @@ public class RoteiroController {
 		Nf nf = nfService.getNf(nfId);
 		Roteiro roteiro = roteiroService.getRoteiroByid(roteiroId);
 		System.out.println("ROTEIRO ID"+roteiro.getId());
-		nf.setEntregue("entregue");
+		nf.setEntregue("true");
 		nfService.saveNf(nf);
 		return "redirect:/roteiro/showFormForView?roteiroId="+roteiro.getId();
 		
@@ -75,6 +75,14 @@ public class RoteiroController {
 		return "roteiro-form-view";
 		
 		
+	}
+	
+	@RequestMapping("/finalizar")
+	public String FinalizarJornada(@RequestParam("roteiroId")Integer id){
+		Roteiro roteiro = roteiroService.getRoteiroByid(id);
+		roteiro.setFinalizado("true");
+		roteiroService.cadastrarRoteiro(roteiro);
+		return "redirect:/roteiro/list";
 	}
 
 	

@@ -25,7 +25,10 @@ public class Roteiro {
 
 	@OneToMany(mappedBy = "roteiro", cascade = CascadeType.ALL)
 	private List<Nf> nfs;
-
+	
+	@Column(name="finalizado")
+	private String finalizado;
+	
 	public List<Nf> getNfs() {
 		return nfs;
 	}
@@ -53,9 +56,21 @@ public class Roteiro {
 		this.nome = nome;
 	}
 
+	public String getFinalizado() {
+		return finalizado;
+	}
+
+	public void setFinalizado(String finalizado) {
+		this.finalizado = finalizado;
+	}
+
 	@Override
 	public String toString() {
-		return "Roteiro [id=" + id + ", nome=" + nome + ", nfs=" + nfs + "]";
+		return "Roteiro [id=" + id + ", nome=" + nome + ", nfs=" + nfs + ", finalizado=" + finalizado + "]";
 	}
+	
+	
+
+
 
 }

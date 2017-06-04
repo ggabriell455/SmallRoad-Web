@@ -55,6 +55,15 @@ public class roteiroDAOImpl implements roteiroDAO {
 		
 	}
 
+	@Override
+	public List<Roteiro> getRoteirosNaoFinalizados() {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Roteiro> consulta = currentSession.createQuery("from Roteiro where finalizado is null", Roteiro.class);
+		List<Roteiro> roteiros = consulta.getResultList();
+		return roteiros;
+
+	}
+
 	
 
 }

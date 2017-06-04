@@ -35,6 +35,13 @@ public class RoteiroServiceImpl implements RoteiroService {
 		return roteiroDAO.getRoteiroByid(id);
 	}
 
+	@Override
+	@Transactional
+	public List<Roteiro> getRoteirosNaoFinalizados() {
+		
+		return roteiroDAO.getRoteirosNaoFinalizados();
+	}
+
 	
 
 }

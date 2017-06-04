@@ -53,7 +53,10 @@
 				</div>
 			</div>
 		<div class="col-sm-3">
-			<input onclick="/roteiro/list" type="submit" value="Finalizar Jornada" class="btn btn-primary pull-right h2">
+			<c:url var="finalizarLink" value="/roteiro/finalizar">
+				<c:param name="roteiroId" value="${roteiro.id}"></c:param>
+			</c:url>
+			<a href="${finalizarLink}" class="btn btn-primary pull-right h2">Finalizar Jornada</a>
 		</div>
 			
 	
@@ -87,7 +90,7 @@
 						<td>${ nf.cepDestino}</td>
 						<td>${ nf.endDestino}</td>
 						<td>
-							<c:if test="${nf.entregue==null}">
+							<c:if test="${empty nf.entregue}">
 							<a  href="${entregaLink}"	class="btn btn-success btn-xs">Entregue</a>
 							<a  class="btn btn-danger btn-xs"  onclick="if (!(confirm('Tem certeza que deseja Nao entregar?'))) return false">Pular</a>
 							</c:if>
