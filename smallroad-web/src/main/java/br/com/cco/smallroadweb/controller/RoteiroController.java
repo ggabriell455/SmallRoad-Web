@@ -1,5 +1,6 @@
 package br.com.cco.smallroadweb.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,20 +33,18 @@ public class RoteiroController {
 
 	}
 
-	@PostMapping("/showFormforAdd")
-	public String showFormForAdd(Model modelo, Model modelo2, Model modelo3) {
+	@RequestMapping("/showFormForAdd")
+	public String showFormForAdd(Model modelo, Model modelo2) {
 		Roteiro roteiro = new Roteiro();
-		List<Nf> nfs = nfService.listaNotaSemRoteiro();
+		roteiro.setNfs(nfService.listaNotaSemRoteiro());
 		modelo.addAttribute("roteiro", roteiro);
-		modelo2.addAttribute("nfs", nfs);
-
 		return "roteiro-form";
 	}
 
-	@PostMapping("/cadastrar")
-	public String showFormForAdd(@ModelAttribute("roteiro") Roteiro roteiro) {
+	@RequestMapping("/cadastrar")
+	public String cadastrar(@ModelAttribute("roteiro") Roteiro roteiro) {
 		roteiroService.cadastrarRoteiro(roteiro);
-
+		nfService.addRoteiroOnNf(roteiro);
 		return "redirect:/roteiro/list";
 	}
 

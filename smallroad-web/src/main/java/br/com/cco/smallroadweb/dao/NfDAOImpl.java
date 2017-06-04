@@ -114,8 +114,8 @@ public class NfDAOImpl implements NfDAO {
 	@Override
 	public void addRoteiroOnNf(Roteiro roteiro) {
 		Session session = sessionFactory.getCurrentSession();
-		Query consulta = session.createQuery("From Nf where Roteiro=:roteiro");
-		consulta.setParameter("Roteiro", roteiro);
+		Query consulta = session.createQuery("update Nf set roteiro =:roteiro where roteiro is null");
+		consulta.setParameter("roteiro", roteiro);
 
 		consulta.executeUpdate();
 
