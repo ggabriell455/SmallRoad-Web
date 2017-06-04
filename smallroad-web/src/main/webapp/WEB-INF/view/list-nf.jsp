@@ -43,7 +43,7 @@
 						<td> ${tempNf.numero} </td>
 						<td> ${tempNf.cepDestino} </td>
 						<td> ${tempNf.endDestino} </td>
-						<td> ${tempNf.dtEntrega} </td>
+						<td> ${tempNf.entregue} </td>
 						<td> 
 							<a href="${updateLink}">UPDATE</a>|
 							<a href="${deleteLink}">DELETE</a>
