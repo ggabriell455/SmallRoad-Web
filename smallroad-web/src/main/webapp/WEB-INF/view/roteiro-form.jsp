@@ -48,7 +48,7 @@
 			
 			<form:hidden var="roteiroId" path="id" />
 				<div class="input-group h2">
-						<form:input path="nome" name="data[search]" class="form-control" id="search" type="text" placeholder="Nome do Roteiro"/>
+						<form:input  path="nome" name="data[search]" class="form-control " id="search" type="text" placeholder="Nome do Roteiro"/>
 				</div>
 			</div>
 			

@@ -36,6 +36,7 @@ DROP TABLE IF EXISTS `roteiro`;
 CREATE TABLE `roteiro` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) DEFAULT NULL,
+  `finalizado` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -49,7 +50,7 @@ CREATE TABLE `nf` (
   `cep_destino` int(8) NOT NULL,
   `end_destino` varchar(45) NOT NULL,
   `distancia` decimal(5,2) DEFAULT NULL,
-  `entregue` varchar(45) DEFAULT NULL,
+  `entregue` varchar(45) NOT NULL,
   `roteiro_id` int(8) DEFAULT NULL,
   PRIMARY KEY (`numero`),
   FOREIGN KEY  (`roteiro_id`) 
@@ -85,7 +86,7 @@ INSERT INTO `nf` (numero,cep_origem,end_origem,cep_destino,end_destino) VALUES
 
 LOCK TABLES `roteiro` WRITE;
 /*!40000 ALTER TABLE `roteiro` DISABLE KEYS */;
-INSERT INTO `roteiro` VALUES 
+INSERT INTO `roteiro`(id,nome) VALUES 
 	(1,'Roteiro_JBO'),
 	(2,'Roteiro_REC'),
 	(3,'Roteiro_Areias'),

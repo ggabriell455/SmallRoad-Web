@@ -42,15 +42,19 @@
  
  	<div id="top" class="row">
 		<div class="col-sm-3">
-			<h2>Roteiro</h2>
+			<h2>${roteiro.nome}</h2>
 		</div>
 		<div class="col-sm-6">
 			
 			<form:hidden var="roteiroId" path="id" />
+			<form:hidden path="nome"/>
 				<div class="input-group h2">
-						<form:input path="nome" name="data[search]" class="form-control" id="search" type="text" placeholder="Nome do Roteiro"/>
+						
 				</div>
 			</div>
+		<div class="col-sm-3">
+			<input onclick="/roteiro/list" type="submit" value="Finalizar Jornada" class="btn btn-primary pull-right h2">
+		</div>
 			
 	
 	</div> <!-- /#top -->
