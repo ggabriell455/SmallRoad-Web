@@ -68,7 +68,7 @@ LOCK TABLES `usuario` WRITE;
 INSERT INTO `usuario` VALUES 
 	(1,'Rodrigo Carvalho','rodrigodoe','ADMIN','rodrigo123','rodrigo@alunofg.com.br'),
 	(2,'Gil Rodrigues','gil','ADMIN','gil123','gil@alunofg.com.br'),
-    (3,'Gabriel Alves','gabriel','ADMIN','gabriel123','gabriel@alunofg.com.br');
+    (3,'Gabriel Alves','gabriel','ADMIN','gabriel123','gabriel@alunofg.com.br'),
     (4,'Fabio Oliveira','fabinho','ADMIN','fabio123','fabio@alunofg.com.br');
 
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
