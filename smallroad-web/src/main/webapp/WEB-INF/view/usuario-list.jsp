@@ -35,9 +35,10 @@
    <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
      <li><a href="../home.jsp" class="item">Início</a></li>
-     <li><a href="${pageContext.request.contextPath}/usuario/list" class="item active">Manutenção de Usuários</a></li>
-     <li><a href="${pageContext.request.contextPath}/nf/list" class="item">Manutenção de NF</a></li>
-     <li><a href="${pageContext.request.contextPath}/roteiro/list" class="item">Manutenção de Roteiros</a></li>
+     <li><a href="${pageContext.request.contextPath}/usuario/list" class="item active">Usuários</a></li>
+     <li><a href="${pageContext.request.contextPath}/nf/list" class="item">Notas Fiscais</a></li>
+     <li><a href="${pageContext.request.contextPath}/roteiro/list" class="item">Roteiros</a></li>
+     <li><a href="#" class="item">Perfil</a></li>
      <li><a href="#" class="item">Ajuda</a></li>
     </ul>
    </div>
