@@ -7,11 +7,15 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>SmallROAD - Usuario</title>
+<<<<<<< HEAD
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
 <script src="semantic/semantic.min.js"></script>
+=======
+
+>>>>>>> 0f5005fb6e8c8d259f1b2aee7fa876b40c2cc809
  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
  <link href="${pageContext.request.contextPath}/resources/semantic/semantic.css" rel="stylesheet">
  <script src="${pageContext.request.contextPath}/resources/semantic/semantic.js"></script>
@@ -19,6 +23,7 @@
 <body>
  
  <div class="menu">
+<<<<<<< HEAD
 
           <div class="ui inverted segment">
               <div class="ui inverted secondary menu">
@@ -42,6 +47,31 @@
 
           </div>
 
+=======
+
+          <div class="ui inverted segment">
+              <div class="ui inverted secondary menu">
+
+                  <label class="item"><h3>SmallRoad</h3></label>
+                  <a href="../home.jsp" class="item">Início</a>
+                  <a href="${pageContext.request.contextPath}/usuario/list" class="item active">Manutenção de Usuários</a>
+                  <a href="${pageContext.request.contextPath}/nf/list" class="item">Manutenção de NF</a>
+                  <a href="${pageContext.request.contextPath}/roteiro/list" class="item">Manutenção de Roteiros</a>
+				  <a href="#" class="item">Ajuda</a>				  
+                  <div class="right menu">
+
+                      <a class="ui item">
+                           <i class="sign out icon"></i>
+                           Logout
+                      </a>
+                  
+                  </div>
+
+               </div>
+
+          </div>
+
+>>>>>>> 0f5005fb6e8c8d259f1b2aee7fa876b40c2cc809
 </div><!-- menu -->
 
 <br/>
@@ -63,6 +93,10 @@
 <br/>
 <br/>
 <br/>
+<<<<<<< HEAD
+=======
+<br/>
+>>>>>>> 0f5005fb6e8c8d259f1b2aee7fa876b40c2cc809
 
  	<div id="list">
  	
@@ -102,16 +136,40 @@
 						<div class="ui buttons">
 							<a class="ui green basic button" href="${viewLink}">Visualizar</a>
 							<a class="ui blue basic button" href="${updateLink}">Editar</a>
+<<<<<<< HEAD
 							<a class="ui red basic button"  id="deleteModal">Excluir</a>
+=======
+							<a class="ui red basic button" href="${deleteLink}" class="btn btn-danger btn-xs"  onclick="if (!(confirm('Tem certeza que deseja Excluir o usuário?'))) return false">Excluir</a>
+>>>>>>> 0f5005fb6e8c8d259f1b2aee7fa876b40c2cc809
 						</div>
 						</td>
 					</tr>
 			
 				</c:forEach>
 			</tbody>
+			
+			<tfoot>
+    <tr><th colspan="6">
+      <div class="ui left floated pagination menu">
+        <a class="icon item">
+          <i class="left chevron icon"></i>
+        </a>
+        <a class="item">1</a>
+        <a class="item">2</a>
+        <a class="item">3</a>
+        <a class="item">4</a>
+        <a class="icon item">
+          <i class="right chevron icon"></i>
+        </a>
+      </div>
+    </th>
+  </tr>
+  </tfoot>
+			
 		</table>
 	</div>
 	
+<<<<<<< HEAD
 			
 <div class="ui modal" width="400">
   <i class="close icon"></i>
@@ -129,6 +187,31 @@
     <a class="ui negative button" href="${deleteLink}">Deletar</a>
   </div>
 </div>
+=======
+		<!-- Modal -->
+		
+			<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="modalLabel">Excluir Usuário</h4>
+			      </div>
+			      <div class="modal-body">
+			        Deseja realmente excluir este usuario?
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-primary" onclick="">Sim</button></a>
+					<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		
+	</div> <!-- /#list -->
+	
+
+>>>>>>> 0f5005fb6e8c8d259f1b2aee7fa876b40c2cc809
 
 <script>
 $('#deleteModal').click(function(){
