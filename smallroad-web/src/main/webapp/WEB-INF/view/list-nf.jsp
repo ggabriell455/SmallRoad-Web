@@ -4,9 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 	 <link href="${pageContext.request.contextPath}/resources/semantic/semantic.css" rel="stylesheet">
- 	 <script href="${pageContext.request.contextPath}/resources/semantic/semantic.js"></script>
+ 	 <script src="${pageContext.request.contextPath}/resources/semantic/semantic.js"></script>
 	<title>Smallroad Home</title>
 </head>
 <body>
@@ -85,7 +89,7 @@
 						<center>
 							<div class="ui buttons">
 							<a href="${updateLink}"  class="ui blue basic button">Alterar</a>
-							<a href="${deleteLink}"  class="ui red basic button">Deletar</a>
+							<a class="ui red basic button deleteModal">Excluir</a>
 							</div>
 						</center>
 						</td>
@@ -93,9 +97,29 @@
 				</c:forEach>
 			</table>
 
+<div class="ui modal">
 
+  	<div class="header">
+   		Deletar Nota Fiscal
+  	</div>
+  
+  	<div class="image content">
+        <div class="description">
+      		<h3>Tem certeza que deseja Excluir a Nota Fiscal?</h3>
+    	</div>
+  	</div>
+  	
+  	<div class="actions">
+    	<a class="ui cancel button">Cancelar</a>
+    	<a class="ui negative button" href="${deleteLink}">Deletar</a>
+  	</div>
+</div>
 	
-
+<script>
+$('.deleteModal').click(function(){
+	$('.ui.modal').modal('show');
+});
+</script>
 
 </body>
 </html>
