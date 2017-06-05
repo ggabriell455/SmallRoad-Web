@@ -12,7 +12,6 @@
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
 <script src="semantic/semantic.min.js"></script>
-
  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
  <link href="${pageContext.request.contextPath}/resources/semantic/semantic.css" rel="stylesheet">
  <script src="${pageContext.request.contextPath}/resources/semantic/semantic.js"></script>
@@ -103,7 +102,7 @@
 						<div class="ui buttons">
 							<a class="ui green basic button" href="${viewLink}">Visualizar</a>
 							<a class="ui blue basic button" href="${updateLink}">Editar</a>
-							<a class="ui red basic button" id="deleteModal">Excluir</a>
+							<a class="ui red basic button deleteModal">Excluir</a>
 						</div>
 						</td>
 					</tr>
@@ -152,7 +151,7 @@
 </div>
 	
 <script>
-$('#deleteModal').click(function(){
+$('.deleteModal').click(function(){
 	$('.ui.modal').modal('show');
 });
 </script>
