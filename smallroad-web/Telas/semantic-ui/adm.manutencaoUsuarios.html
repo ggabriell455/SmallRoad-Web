@@ -85,7 +85,7 @@
           <div class="ui buttons">
              <button class="ui green basic button" id="btAbrirModal">Visualizar</button>
              <button class="ui blue basic button">Editar</button>
-             <button class="ui red basic button">Excluir</button>
+             <button class="ui red basic button" id="deleteModal">Excluir</button>
           </div>  
           </center>
       </td>
@@ -99,7 +99,7 @@
           <div class="ui buttons">
              <button class="ui green basic button">Visualizar</button>
              <button class="ui blue basic button">Editar</button>
-             <button class="ui red basic button">Excluir</button>
+             <button class="ui red basic button" id="deleteModal">Excluir</button>
           </div> 
           </center>
       </td>
@@ -113,7 +113,7 @@
           <div class="ui buttons">
              <button class="ui green basic button">Visualizar</button>
              <button class="ui blue basic button">Editar</button>
-             <button class="ui red basic button">Excluir</button>
+             <button class="ui red basic button" id="deleteModal">Excluir</button>
           </div> 
           <center>
       </td>
@@ -137,6 +137,31 @@
     </th>
   </tr></tfoot>
 </table>
+
+<div class="ui modal">
+  	<i class="close icon"></i>
+  
+  	<div class="header">
+   		Deletar Usuário
+  	</div>
+  
+  	<div class="image content">
+        <div class="description">
+      		<center><h3>Tem certeza que deseja Excluir o Usuário?</h3></center>
+    	</div>
+  	</div>
+  	
+  	<div class="actions">
+    	<a class="ui cancel button">Cancelar</a>
+    	<a class="ui negative button">Deletar</a>
+  	</div>
+</div>
+	
+<script>
+$('#deleteModal').click(function(){
+	$('.ui.modal').modal('show');
+});
+</script>
 
 </body>
 
