@@ -41,7 +41,7 @@
   <h3 class="page-header">Bem vindo, Usuario</h3>
  </div>
 
- <script src="js/jquery.min.js"></script>
- <script src="js/bootstrap.min.js"></script>
+ <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+ <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
