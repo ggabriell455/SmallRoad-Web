@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.cco.smallroadweb.dao.roteiroDAO;
-import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
 
 @Service
@@ -38,10 +37,8 @@ public class RoteiroServiceImpl implements RoteiroService {
 	@Override
 	@Transactional
 	public List<Roteiro> getRoteirosNaoFinalizados() {
-		
+
 		return roteiroDAO.getRoteirosNaoFinalizados();
 	}
-
-	
 
 }
