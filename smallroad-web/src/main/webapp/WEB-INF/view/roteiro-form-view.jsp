@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SmallROAD - Usuario</title>
+<title>SmallROAD - Roteiro</title>
 
 <link
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
@@ -110,7 +110,7 @@
 			<!-- /#list -->
 
 			<div id="bottom" class="row">
-				<div class="col-md-12">
+				<div class="col-md-12" style="margin-bottom: 50px">
 					<ul class="pagination">
 						<li class="disabled"><a>&lt; Anterior</a></li>
 						<li class="disabled"><a>1</a></li>

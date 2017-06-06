@@ -147,7 +147,7 @@
 		<!-- /#list -->
 
 		<div id="bottom" class="row">
-			<div class="col-md-12">
+			<div class="col-md-12" style="margin-bottom: 60px">
 				<ul class="pagination">
 					<li class="disabled"><a>&lt; Anterior</a></li>
 					<li class="disabled"><a>1</a></li>

@@ -94,7 +94,7 @@
 			<hr />
 
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12" style="margin-bottom: 60px">
 					<button type="submit" class="btn btn-primary">Salvar</button>
 					<a href="${pageContext.request.contextPath}/usuario/list"
 						class="btn btn-default">Cancelar</a>

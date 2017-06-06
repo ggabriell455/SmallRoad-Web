@@ -1,8 +1,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <title>SmallRoad - ADD NF</title>
 
@@ -48,9 +50,6 @@
 		<h3 class="page-header">Adicionar Nota Fiscal</h3>
 
 		<br/>
-		<br/>
-		<br/>
-
 
 	<form:form action="saveNf" modelAttribute="tempNf" method="POST">
 
@@ -116,7 +115,7 @@
 			<hr />
 
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12" style="margin-bottom: 60px">
 					<input type="submit" value="Salvar" class="btn btn-primary">
 
 					<a href="${pageContext.request.contextPath}/nf/list" class="btn btn-default">Cancelar</a>

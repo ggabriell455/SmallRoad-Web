@@ -147,7 +147,7 @@
 
 		</div><!-- /#list -->
 
-		<div id="bottom" class="row">
+		<div id="bottom" class="row" style="margin-bottom: 60px">
 			<div class="col-md-12">
 				<ul class="pagination">
 					<li class="disabled"><a>&lt; Anterior</a></li>
@@ -163,7 +163,7 @@
 	</div>
 	<!-- /#main -->
 
-	<nav class="navbar navbar-inverse navbar-fixed-bottom">
+	<nav class="navbar navbar-inverse navbar-fixed-bottom footer">
 		<center><p style="color: #a8a8a8; margin-top: 15px;">SmallRoad - Todos Os Direitos Reservados - 2017</p></center>
 	</nav><!-- footer -->
 
