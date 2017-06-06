@@ -80,7 +80,7 @@
 						id="exampleInputEmail1" placeholder="Digite uma senha" required="Campo Obrigatório"/>
 				</div>
 
-				<div class="form-group col-md-3 divSelect">
+				<div class="form-group col-md-3 ">
 					<label for="exampleInputEmail1">Perfil</label>
 					<form:select class="form-control sizeAddUsuario" path="perfil">
 						<form:option value="Admin" label="Admin" />
@@ -89,25 +89,6 @@
 					</form:select>
 				</div>
 				
-				<div class="form-group col-md-3"></div>
-				<div class="form-group col-md-3"></div>
-			</div>
-
-			<div class="row">
-				<div class="form-group col-md-6"></div>
-				<div class="form-group col-md-6"></div>
-			</div>
-
-			<div class="row">
-				<div class="form-group col-md-3"></div>
-				<div class="form-group col-md-3"></div>
-				<div class="form-group col-md-3"></div>
-				<div class="form-group col-md-3"></div>
-			</div>
-
-			<div class="row">
-				<div class="form-group col-md-6"></div>
-				<div class="form-group col-md-6"></div>
 			</div>
 
 			<hr />
