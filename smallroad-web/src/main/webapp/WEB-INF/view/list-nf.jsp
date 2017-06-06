@@ -1,9 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -28,7 +30,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="../home.jsp">Home</a></li>
-					<li><a href="${pageContext.request.contextPath}/usuario/list">Usu·rios</a></li>
+					<li><a href="${pageContext.request.contextPath}/usuario/list">Usu√°rios</a></li>
 					<li><a href="${pageContext.request.contextPath}/nf/list">Notas
 							Fiscais</a></li>
 					<li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
@@ -80,12 +82,12 @@
 				<tr>
 					<th>Numero</th>
 					<th>Cep</th>
-					<th>EndereÁo</th>
+					<th>Endere√ßo</th>
 					<th>Data Entrega</th>
-					<th>AÁ„o</th>
+					<th>A√ß√£o</th>
 				</tr>
 
-				<!-- cria um laÁo para printar os usuarios -->
+				<!-- cria um laÔøΩo para printar os usuarios -->
 				<c:forEach var="tempNf" items="${nfs}">
 					<c:url var="updateLink" value="/nf/ShowFormForUpdate">
 						<c:param name="nfNumero" value="${tempNf.numero}" />
@@ -119,17 +121,17 @@
 	<div id="bottom" class="row">
 			<div class="col-md-12">
 				<ul class="pagination">
-					<li class="disabled"><a>&lt; Anterior</a></li>
+					<li class="disabled"><a>Anterior</a></li>
 					<li class="disabled"><a>1</a></li>
 					<li><a href="#">2</a></li>
 					<li><a href="#">3</a></li>
-					<li class="next"><a href="#" rel="next">PrÛximo &gt;</a></li>
+					<li class="next"><a href="#" rel="next">Pr√≥ximo</a></li>
 				</ul>
 				<!-- /.pagination -->
 			</div>
 		</div><!-- /#bottom -->
 
-</div><!-- /#main -->
+</div>
 
 </body>
 </html>
