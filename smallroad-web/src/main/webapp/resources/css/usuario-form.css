@@ -1,5 +1,6 @@
 #main {
   margin-top: 50px;
+  margin-left: 10px;
 }
 
 .menu{
@@ -22,4 +23,8 @@
 
 #main{
 	width: 100%;
+}
+
+#formulario{
+	margin-bottom:20px;
 }

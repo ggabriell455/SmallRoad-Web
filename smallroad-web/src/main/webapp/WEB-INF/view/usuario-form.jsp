@@ -49,7 +49,7 @@
 		<br/>
 		<br/>
 
-		<form:form action="saveUsuario" modelAttribute="usuario" method="POST">
+		<form:form id="formulario" action="saveUsuario" modelAttribute="usuario" method="POST">
 			<form:hidden path="id" />
 			<div class="row">
 
@@ -103,6 +103,7 @@
 
 		</form:form>
 	</div>
+	
 
 
 	<script
