@@ -36,7 +36,14 @@
 	</c:forEach>
 
 
-
+	<nav class="navbar navbar-inverse navbar-fixed-bottom">
+		<center><p style="color: #a8a8a8; margin-top: 15px;">SmallRoad - Todos Os Direitos Reservados - 2017</p></center>
+	</nav><!-- footer -->
+	
+	<script
+		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
 </body>
 </html>

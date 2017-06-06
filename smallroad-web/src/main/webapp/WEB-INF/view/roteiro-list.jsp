@@ -26,6 +26,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
+				<a class="navbar-brand"><span class="glyphicon glyphicon-road" aria-hidden="true" style="color:#FFF;"></span></a>
 				<a class="navbar-brand" href="#">SmallROAD</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
@@ -161,7 +162,9 @@
 	</div>
 	<!-- /#main -->
 
-
+	<nav class="navbar navbar-inverse navbar-fixed-bottom">
+		<center><p style="color: #a8a8a8; margin-top: 15px;">SmallRoad - Todos Os Direitos Reservados - 2017</p></center>
+	</nav><!-- footer -->
 
 	<script
 		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
