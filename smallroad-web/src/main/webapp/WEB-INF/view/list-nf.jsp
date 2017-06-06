@@ -4,60 +4,132 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/home.css">
+<link
+	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/style.css"
+	rel="stylesheet">
 <title>Smallroad Home</title>
 </head>
 <body>
-	<input type="button" value="Add Nf"
-		onclick="window.location.href='showFormForAdd'; return false;"
-		class="add-button" />
 
-	<form:form action="search" method="POST">
-				Procurar Usuário: <input type="text" name="procuraNumero" />
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">SmallROAD</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="../home.jsp">Home</a></li>
+					<li><a href="${pageContext.request.contextPath}/usuario/list">Usuários</a></li>
+					<li><a href="${pageContext.request.contextPath}/nf/list">Notas
+							Fiscais</a></li>
+					<li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
+					<li><a href="#">Perfil</a></li>
+					<li><a href="#">Ajuda</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-		<input type="submit" value="Procurar" class="add-button" />
-	</form:form>
+	<div id="main" class="container-fluid" style="margin-top: 50px">
 
-	<table>
-		<tr>
-			<th>Numero</th>
-			<th>Cep</th>
-			<th>Endereço</th>
-			<th>Data Entrega</th>
-			<th>Ação</th>
-		</tr>
+		<div id="top" class="row">
 
-		<!-- cria um laço para printar os usuarios -->
-		<c:forEach var="tempNf" items="${nfs}">
-			<c:url var="updateLink" value="/nf/ShowFormForUpdate">
-				<c:param name="nfNumero" value="${tempNf.numero}" />
-			</c:url>
+			<div class="col-sm-3">
+				<h2>Notas Fiscais</h2>
+			</div>
 
-			<!-- constroi um link de delete com a id do usuario -->
-			<c:url var="deleteLink" value="/nf/delete">
-				<c:param name="nfNumero" value="${tempNf.numero}" />
-			</c:url>
+			<div class="col-sm-6">
 
-			<tr>
-				<td>${tempNf.numero}</td>
-				<td>${tempNf.cepDestino}</td>
-				<td>${tempNf.endDestino}</td>
-				<td>${tempNf.entregue}</td>
-				<td><a href="${updateLink}">UPDATE</a>| <a href="${deleteLink}">DELETE</a>
+				<form:form action="search" method="POST">
+					<div class="input-group h2">
+						<input name="procuraNumero" class="form-control" id="search"
+							type="text" placeholder="Pesquisar Notas Fiscais"> <span
+							class="input-group-btn">
+							<button class="btn btn-primary" type="submit">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div>
+				</form:form>
+
+			</div>
 
 
-				</td>
+			<div class="col-sm-3">
+					<input type="button" value="Nova Nota Fiscal"
+						onclick="window.location.href='showFormForAdd'; return false;"
+					class="add-button btn btn-primary pull-right h2" />
+			</div>
+		</div><!-- /#top -->
 
-			</tr>
+		<hr/>
+		<div id="list" class="row">
 
-		</c:forEach>
+		<div class="table-responsive col-md-12">
 
-	</table>
+			<table class="table table-striped" cellspacing="0" cellpadding="0">
+				<tr>
+					<th>Numero</th>
+					<th>Cep</th>
+					<th>Endereço</th>
+					<th>Data Entrega</th>
+					<th>Ação</th>
+				</tr>
 
+				<!-- cria um laço para printar os usuarios -->
+				<c:forEach var="tempNf" items="${nfs}">
+					<c:url var="updateLink" value="/nf/ShowFormForUpdate">
+						<c:param name="nfNumero" value="${tempNf.numero}" />
+					</c:url>
 
+					<!-- constroi um link de delete com a id do usuario -->
+					<c:url var="deleteLink" value="/nf/delete">
+						<c:param name="nfNumero" value="${tempNf.numero}" />
+					</c:url>
 
+					<tr>
+						<td>${tempNf.numero}</td>
+						<td>${tempNf.cepDestino}</td>
+						<td>${tempNf.endDestino}</td>
+						<td>${tempNf.entregue}</td>
+						<td>
+						<a class="btn btn-warning btn-xs" href="${updateLink}">UPDATE</a> 
+						<a class="btn btn-danger btn-xs" href="${deleteLink}">DELETE</a>
+						</td>
 
+					</tr>
+
+				</c:forEach>
+
+			</table>
+
+		</div>
+
+	</div><!-- /#list -->
+
+	<div id="bottom" class="row">
+			<div class="col-md-12">
+				<ul class="pagination">
+					<li class="disabled"><a>&lt; Anterior</a></li>
+					<li class="disabled"><a>1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
+				</ul>
+				<!-- /.pagination -->
+			</div>
+		</div><!-- /#bottom -->
+
+</div><!-- /#main -->
 
 </body>
 </html>

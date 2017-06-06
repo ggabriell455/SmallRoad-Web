@@ -1,0 +1,25 @@
+#main {
+  margin-top: 50px;
+}
+
+.menu{
+	background-color: #1B1C1D;
+	-webkit-backgroud-color: #1B1C1D;
+	-moz-background-color: #1B1C1D;
+}
+
+.form-control{
+	width: 458px;
+}
+
+.sizeAddNF{
+	width: 300px;
+}
+
+.divSelect{
+	margin-left: 90px;
+}
+
+#main{
+	width: 80%;
+}

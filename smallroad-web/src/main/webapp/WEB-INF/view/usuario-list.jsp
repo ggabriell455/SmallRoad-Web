@@ -76,7 +76,6 @@
 
 			<div class="table-responsive col-md-12">
 				<table class="table table-striped" cellspacing="0" cellpadding="0">
-					<thead>
 						<tr>
 							<th>ID</th>
 							<th>Nome</th>
@@ -85,7 +84,6 @@
 							<th>Data Cadastro</th>
 							<th class="actions">Ações</th>
 						</tr>
-					</thead>
 					<tbody>
 						<c:forEach var="tempUsuario" items="${usuarios}">
 							<c:url var="deleteLink" value="/usuario/delete">
@@ -107,7 +105,8 @@
 								<td>${tempUsuario.perfil}</td>
 								<td>${tempUsuario.email}</td>
 								<td>29/05/2017</td>
-								<td class="actions"><a class="btn btn-success btn-xs"
+								<td class="actions">
+									<a class="btn btn-success btn-xs"
 									href="${viewLink}">Visualizar</a> <a
 									class="btn btn-warning btn-xs" href="${updateLink}">Editar</a>
 									<a href="${deleteLink}" class="btn btn-danger btn-xs"
@@ -145,8 +144,7 @@
 				</div>
 			</div>
 
-		</div>
-		<!-- /#list -->
+		</div><!-- /#list -->
 
 		<div id="bottom" class="row">
 			<div class="col-md-12">

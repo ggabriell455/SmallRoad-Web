@@ -11,7 +11,7 @@
 <link
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/css/style.css"
+<link href="${pageContext.request.contextPath}/resources/css/usuario-form.css"
 	rel="stylesheet">
 </head>
 <body>
@@ -46,39 +46,49 @@
 
 		<h3 class="page-header">Adicionar Usuário</h3>
 
+		<br/>
+		<br/>
+
 		<form:form action="saveUsuario" modelAttribute="usuario" method="POST">
 			<form:hidden path="id" />
 			<div class="row">
+
 				<div class="form-group col-md-4">
 					<label for="exampleInputEmail1">Nome</label>
-					<form:input path="nome" type="text" class="form-control"
-						id="exampleInputEmail1" placeholder="Digite o nome do usuario" />
+					<form:input path="nome" type="text" class="form-control sizeAddUsuario"
+						id="exampleInputEmail1" placeholder="Digite o nome do Usuário" required="Campo Obrigatório"/>
 				</div>
+
 				<div class="form-group col-md-4">
 					<label for="exampleInputEmail1">Username/NickName</label>
-					<form:input path="nickname" type="text" class="form-control"
-						id="exampleInputEmail1" placeholder="Digite um usuario" />
+					<form:input path="nickname" type="text" class="form-control sizeAddUsuario"
+						id="exampleInputEmail1" placeholder="Digite um Usuário" required="Campo Obrigatório"/>
 				</div>
+				
 				<div class="form-group col-md-4">
 					<label for="exampleInputEmail1">E-mail</label>
-					<form:input path="email" type="email" class="form-control"
-						id="exampleInputEmail1" placeholder="Digite um e-mail" />
+					<form:input path="email" type="email" class="form-control sizeAddUsuario"
+						id="exampleInputEmail1" placeholder="Digite um e-mail" required="Campo Obrigatório"/>
 				</div>
+				
 			</div>
+
 			<div class="row">
 				<div class="form-group col-md-3">
 					<label for="exampleInputEmail1">Senha</label>
-					<form:input path="senha" type="password" class="form-control"
-						id="exampleInputEmail1" placeholder="Digite uma senha" />
+					<form:input path="senha" type="password" class="form-control sizeAddUsuario"
+						id="exampleInputEmail1" placeholder="Digite uma senha" required="Campo Obrigatório"/>
 				</div>
-				<div class="form-group col-md-3">
+
+				<div class="form-group col-md-3 divSelect">
 					<label for="exampleInputEmail1">Perfil</label>
-					<form:select class="form-control" path="perfil">
+					<form:select class="form-control sizeAddUsuario" path="perfil">
 						<form:option value="Admin" label="Admin" />
 						<form:option value="Supervisor" label="Supervisor" />
 						<form:option value="Motorista" label="Motorista" />
 					</form:select>
 				</div>
+				
 				<div class="form-group col-md-3"></div>
 				<div class="form-group col-md-3"></div>
 			</div>

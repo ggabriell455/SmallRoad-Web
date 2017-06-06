@@ -55,6 +55,12 @@
 					<div class="input-group h2">
 						<form:input path="nome" name="data[search]" class="form-control "
 							id="search" type="text" placeholder="Nome do Roteiro" />
+							<span
+							class="input-group-btn">
+							<button class="btn btn-primary" type="submit">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
 					</div>
 				</div>
 
