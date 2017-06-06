@@ -76,12 +76,20 @@ INSERT INTO `usuario` VALUES
 LOCK TABLES `nf` WRITE;
 /*!40000 ALTER TABLE `nf` DISABLE KEYS */;
 
-INSERT INTO `nf` (numero,cep_origem,end_origem,cep_destino,end_destino) VALUES 
-	(32404,54315010,'Estrada da batalha, 461',54400620,'Ulysses Montarroyos, 2330'),
-	(13243,54315010,'Estrada da batalha, 461',54400450,'Rua Severino Jose de Paula, 44'),
-	(42352,54315010,'Estrada da batalha, 461',51020030,'Av. Eng. Domingos Ferreira, 4140'),
-	(97542,54315010,'Estrada da batalha, 461',54410390,'Rua Jose Braz Moscow, 521'),
-	(78912,54315010,'Estrada da batalha, 461',51030090,'R. Alm. Tamandaré, 170');
+INSERT INTO `nf` (numero,cep_origem,end_origem,cep_destino,end_destino,roteiro_id) VALUES 
+	(1,54315010,'Faculdade dos Guararapes',54400620,'Ulysses Montarroyos, 2330',1),
+	(2,54315010,'Faculdade dos Guararapes',54400450,'Rua Severino Jose de Paula, 44',1),
+	(3,54315010,'Faculdade dos Guararapes',51020030,'Av. Eng. Domingos Ferreira, 4140',1),
+	(4,54315010,'Faculdade dos Guararapes',54410390,'Rua Jose Braz Moscow, 521',1),
+	(5,54315010,'Faculdade dos Guararapes',51030090,'R. Alm. Tamandaré, 170',2),
+    (6,54315010,'Faculdade dos Guararapes',54400620,'Rua Professor Mario Ramos, 136 Candeias',2),
+	(7,54315010,'Faculdade dos Guararapes',54400450,'Ferreira Costa - Imbiribeira, Recife',2),
+	(8,54315010,'Faculdade dos Guararapes',51020030,'Rua Ot�vio Cruz,88 Prazeres',2),
+	(9,54315010,'Faculdade dos Guararapes',54410390,'Rua Antonio Alves de Araujo, 320 Prazeres',2),
+	(10,54315010,'Faculdade dos Guararapes',51030090,'Rua General Goes Monteiro, 912, Imbiribeira',3),
+    (11,54315010,'Faculdade dos Guararapes',51030090,'Rua das papoulas , 11  Rio Doce ',3),
+    (12,54315010,'Faculdade dos Guararapes',51030090,'R. Alm. Tamandaré, 170',3);
+
 
 /*!40000 ALTER TABLE `nf` ENABLE KEYS */;
 
@@ -90,9 +98,8 @@ LOCK TABLES `roteiro` WRITE;
 INSERT INTO `roteiro`(id,nome) VALUES 
 	(1,'Roteiro_JBO'),
 	(2,'Roteiro_REC'),
-	(3,'Roteiro_Areias'),
-	(4,'Roteiro_Paulista'),
-	(5,'Roteiro_Caruaru');  
+	(3,'Roteiro_Areias');
+
     
 /*!40000 ALTER TABLE `roteiro` ENABLE KEYS */;
 
