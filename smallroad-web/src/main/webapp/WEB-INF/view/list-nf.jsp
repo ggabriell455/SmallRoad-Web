@@ -30,7 +30,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="../home.jsp">Home</a></li>
-					<li><a href="${pageContext.request.contextPath}/usuario/list">Usu√°rios</a></li>
+					<li><a href="${pageContext.request.contextPath}/usuario/list">Usu·rios</a></li>
 					<li><a href="${pageContext.request.contextPath}/nf/list">Notas
 							Fiscais</a></li>
 					<li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
@@ -82,9 +82,9 @@
 				<tr>
 					<th>Numero</th>
 					<th>Cep</th>
-					<th>Endere√ßo</th>
+					<th>EndereÁo</th>
 					<th>Data Entrega</th>
-					<th>A√ß√£o</th>
+					<th>AÁ„o</th>
 				</tr>
 
 				<!-- cria um laÔøΩo para printar os usuarios -->
@@ -125,7 +125,7 @@
 					<li class="disabled"><a>1</a></li>
 					<li><a href="#">2</a></li>
 					<li><a href="#">3</a></li>
-					<li class="next"><a href="#" rel="next">Pr√≥ximo</a></li>
+					<li class="next"><a href="#" rel="next">PrÛximo</a></li>
 				</ul>
 				<!-- /.pagination -->
 			</div>
