@@ -26,6 +26,11 @@
 		<property name="prefix" value="/WEB-INF/view/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+    		<property name="defaultErrorView" value="error/unknown"/>
+	</bean>
 
     <!-- Step 1: Define Database DataSource / connection pool -->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
