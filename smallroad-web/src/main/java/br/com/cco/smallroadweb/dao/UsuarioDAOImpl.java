@@ -2,6 +2,8 @@ package br.com.cco.smallroadweb.dao;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -98,4 +100,23 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		return usuarios;
 
 	} // Vê ai gil
+
+	@Override
+	public Usuario usuarioExiste(Usuario usuario)  throws NoResultException {
+		
+		
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Query <Usuario >consulta = currentSession.createQuery("from Usuario where nickName like :usuarioNickname and senha like :usuarioSenha  ", Usuario.class);
+		consulta.setParameter("usuarioNickname", usuario.getNickname());
+		consulta.setParameter("usuarioSenha", usuario.getSenha());
+		
+		Usuario usuarioListado = consulta.getSingleResult();
+		System.out.println("CONSULTA"+consulta);
+		
+		return usuarioListado;
+		
+		
+	}
 }

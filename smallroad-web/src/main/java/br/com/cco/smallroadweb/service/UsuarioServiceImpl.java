@@ -2,6 +2,8 @@ package br.com.cco.smallroadweb.service;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,6 +50,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public List<Usuario> procuraUsuariosPorNome(String nome) {
 
 		return usuarioDAO.procuraUsuariosByNome(nome);
+	}
+
+	@Override
+	@Transactional
+	public Usuario usuarioExiste(Usuario usuario)throws NoResultException {
+		return usuarioDAO.usuarioExiste(usuario);
 	}
 
 }

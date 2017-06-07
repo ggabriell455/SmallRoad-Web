@@ -2,6 +2,8 @@ package br.com.cco.smallroadweb.service;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import br.com.cco.smallroadweb.entity.Usuario;
 
 public interface UsuarioService {
@@ -15,5 +17,7 @@ public interface UsuarioService {
 	public void deleteUsuario(Integer id);
 
 	public List<Usuario> procuraUsuariosPorNome(String nome);
+
+	public Usuario usuarioExiste(Usuario usuario) throws NoResultException;
 
 }

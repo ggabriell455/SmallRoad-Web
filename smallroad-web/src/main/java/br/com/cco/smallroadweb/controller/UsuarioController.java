@@ -22,7 +22,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 
-	@GetMapping("/list")
+	@RequestMapping("/list")
 	public String listUsuarios(Model modelo) {
 
 		// pega usuarios do serviço
@@ -91,6 +91,39 @@ public class UsuarioController {
 		return "redirect:/usuario/list";
 	}
 	
+	
+	@RequestMapping("/login")
+	public String deleteUsuario(){
+		
+		
+		return "login";
+	}
+	
+	@PostMapping("/checkLogin")
+	public String searchUsuarios(@RequestParam("username") String nickname, @RequestParam("password")String senha,  Model modelo) {
+		
+		Usuario usuario = new Usuario();
+		usuario.setNickname(nickname);
+		usuario.setSenha(senha);
+		try{
+			
+			usuario = usuarioService.usuarioExiste(usuario);
+			modelo.addAttribute("usuario", usuario);
+			System.out.println("USUARIO STRING"+usuario.toString());
+			return "redirect:/usuario/list";
+			
+			
+		}catch (Exception e) {
+
+			return "redirect:/usuario/login";
+		}
+			
+			
+	}
+		
+		
+
+
 	
 
 
