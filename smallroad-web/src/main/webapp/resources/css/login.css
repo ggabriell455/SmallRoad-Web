@@ -2,8 +2,12 @@ body {
   background: #eee !important;
 }
 
+.top{
+	margin-top: 8%;
+}
+
 .wrapper {
-  margin-top: 12%;
+  margin-top: 80px;
   margin-bottom: 80px;
 }
 
