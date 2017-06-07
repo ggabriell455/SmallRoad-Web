@@ -163,7 +163,7 @@
 	<!-- /#main -->
 
 	<nav class="navbar navbar-inverse navbar-fixed-bottom">
-		<center><p style="color: #a8a8a8; margin-top: 15px;">SmallRoad - Todos Os Direitos Reservados - 2017</p></center>
+		<center><p style="color: #a8a8a8; margin-top: 15px;">&#169; SmallRoad - Todos Os Direitos Reservados - 2017</p></center>
 	</nav><!-- footer -->
 
 	<script
