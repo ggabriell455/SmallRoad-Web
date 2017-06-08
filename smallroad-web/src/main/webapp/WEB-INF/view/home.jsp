@@ -28,7 +28,7 @@
    <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
      <li><a href="#">Home</a></li>
-     <li><a href="${pageContext.request.contextPath}/usuario/list">Usuï¿½rios</a></li>
+     <li><a href="${pageContext.request.contextPath}/usuario/list">Usuários</a></li>
      <li><a href="${pageContext.request.contextPath}/nf/list">Notas Fiscais</a></li>
      <li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
      <li><a href="#">Ajuda</a></li>
