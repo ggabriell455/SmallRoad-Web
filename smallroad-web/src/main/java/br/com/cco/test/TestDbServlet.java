@@ -1,4 +1,4 @@
-package br.com.cco.testdb;
+package br.com.cco.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
