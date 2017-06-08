@@ -2,8 +2,11 @@ package br.com.cco.smallroadweb.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
+
 
 public interface NfService {
 

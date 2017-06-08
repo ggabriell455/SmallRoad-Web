@@ -13,6 +13,7 @@
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
+		
 
 	<!-- Add support for component scanning -->
 	<context:component-scan base-package="br.com.cco.smallroadweb" />
@@ -27,7 +28,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-
+	
 	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
     		<property name="defaultErrorView" value="error/unknown"/>
 	</bean>
