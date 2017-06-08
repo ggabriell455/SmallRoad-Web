@@ -39,7 +39,7 @@
  </nav>
 
  <div id="main" class="container-fluid">
-  <h3 class="page-header">Bem vindo, Usuario</h3>
+  <h3 class="page-header">Bem vindo</h3>
  </div>
  
  	<nav class="navbar navbar-inverse navbar-fixed-bottom">

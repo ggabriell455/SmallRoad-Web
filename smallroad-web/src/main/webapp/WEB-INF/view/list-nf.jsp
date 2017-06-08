@@ -36,7 +36,7 @@
 							Fiscais</a></li>
 					<li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
 					<li><a href="#">Ajuda</a></li>
-					<li><a href="../home.jsp">Logout</a></li>
+					<li><a href="${pageContext.request.contextPath}/usuario/login">Logout</a></li>
 				</ul>
 			</div>
 		</div>

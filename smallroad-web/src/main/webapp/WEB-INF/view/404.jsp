@@ -19,8 +19,6 @@
 
 <body>
 
- 
-
     <!-- Error Page -->
             <div class="error" style="margin-top:2%;">
                 <div class="container-floud">
