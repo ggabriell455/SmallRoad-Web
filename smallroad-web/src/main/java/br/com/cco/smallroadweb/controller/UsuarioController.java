@@ -93,10 +93,17 @@ public class UsuarioController {
 	
 	
 	@RequestMapping("/login")
-	public String deleteUsuario(){
+	public String usuarioLogin(){
 		
 		
 		return "login";
+	}
+	
+	@RequestMapping("/home")
+	public String usuarioHome(){
+		
+		
+		return "home";
 	}
 	
 	@PostMapping("/checkLogin")
