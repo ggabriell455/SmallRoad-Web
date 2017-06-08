@@ -9,9 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+
 import br.com.cco.smallroadweb.entity.Nf;
+import br.com.cco.smallroadweb.entity.Roteiro;
 import br.com.cco.smallroadweb.service.NfService;
 import br.com.cco.smallroadweb.service.RotaService;
+import br.com.cco.smallroadweb.service.RoteiroService;
 
 
 
@@ -25,6 +28,9 @@ public class JUnitClass {
 	
 	@Autowired
 	RotaService rotaService;
+	
+	@Autowired
+	RoteiroService roteiroService;
 	
 	@Test
 	public void testGetNfByNumero(){
@@ -57,13 +63,12 @@ public class JUnitClass {
 	}
 	
 	@Test
-	public void testCriaRota(){
-		List<Nf> nfs = nfService.getNfs();
-		try {
-			rotaService.criarRota(nfs);
-		} catch (IOException e) {
-			System.out.println("SEM CONEXAO");
-		}
+	public void testCriaRota() throws IOException{
 		
+		Roteiro roteiro  = roteiroService.getRoteiroByid(1);
+		List<Nf> nfs = nfService.listaNotasFromRoteiro(roteiro);
+		rotaService.criarRota(nfs);
 	}
+		
+	
 }
