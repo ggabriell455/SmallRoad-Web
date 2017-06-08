@@ -35,8 +35,8 @@
 					<li><a href="${pageContext.request.contextPath}/nf/list">Notas
 							Fiscais</a></li>
 					<li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
-					<li><a href="#">Perfil</a></li>
 					<li><a href="#">Ajuda</a></li>
+					<li><a href="../home.jsp">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -52,10 +52,10 @@
 				<form:form action="search" method="POST">
 					<div class="input-group h2">
 						<input name="procuraNumero" class="form-control" id="search"
-							type="text" placeholder="Adicionar Notas Fiscais"> <span
+							type="text" placeholder="Pesquisar Notas Fiscais"> <span
 							class="input-group-btn">
 							<button class="btn btn-primary" type="submit">
-								<span class="glyphicon glyphicon-plus"></span>
+								<span class="glyphicon glyphicon-search"></span>
 							</button>
 						</span>
 					</div>

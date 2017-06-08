@@ -36,8 +36,8 @@
 					<li><a href="${pageContext.request.contextPath}/nf/list">Notas
 							Fiscais</a></li>
 					<li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
-					<li><a href="#">Perfil</a></li>
 					<li><a href="#">Ajuda</a></li>
+					<li><a href="../home.jsp">Logout</a></li>
 				</ul>
 			</div>
 		</div>

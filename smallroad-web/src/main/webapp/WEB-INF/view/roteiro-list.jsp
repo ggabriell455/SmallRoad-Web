@@ -36,8 +36,8 @@
 					<li><a href="${pageContext.request.contextPath}/nf/list">Notas
 							Fiscais</a></li>
 					<li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
-					<li><a href="#">Perfil</a></li>
 					<li><a href="#">Ajuda</a></li>
+					<li><a href="../home.jsp">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -53,10 +53,10 @@
 				<form:form action="search" method="POST">
 					<div class="input-group h2">
 						<input name="data[search]" class="form-control" id="search"
-							type="text" placeholder="Pesquisar Roteiros"> <span
+							type="text" placeholder="Adicionar Roteiro"> <span
 							class="input-group-btn">
 							<button class="btn btn-primary" type="submit">
-								<span class="glyphicon glyphicon-search"></span>
+								<span class="glyphicon glyphicon-plus"></span>
 							</button>
 						</span>
 					</div>

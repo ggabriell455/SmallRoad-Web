@@ -1,5 +1,4 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -14,6 +13,7 @@
 
 <link href="${pageContext.request.contextPath}/resources/css/nf-form.css"
 	rel="stylesheet">
+
 </head>
 
 <body>
@@ -38,13 +38,13 @@
 					<li><a href="${pageContext.request.contextPath}/nf/list">Notas
 							Fiscais</a></li>
 					<li><a href="${pageContext.request.contextPath}/roteiro/list">Roteiros</a></li>
-					<li><a href="#">Perfil</a></li>
 					<li><a href="#">Ajuda</a></li>
+					<li><a href="../home.jsp">Logout</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-
+	
 	<div id="main" class="container-fluid">
 
 		<h3 class="page-header">Adicionar Nota Fiscal</h3>
@@ -58,19 +58,19 @@
 			<div class="form-group col-md-4">
 				<label for="exampleInputEmail1">Número NF</label>
 					<form:input path="numero" type="text" class="form-control sizeAddNF"
-					id="exampleInputEmail1" placeholder="Digite o Número da NF" required="Campo Obrigatório"/>
+					id="numeroNF" name="numeroNF" placeholder="Digite o Número da NF" required="Campo Obrigatório"/>
 			</div>
 
 			<div class="form-group col-md-4">
 				<label for="exampleInputEmail1">Endereço de Origem</label>
 					<form:input path="EndOrigem" type="text" class="form-control sizeAddNF"
-					id="exampleInputEmail1" placeholder="Digite o Endereço de Origem" required="Campo Obrigatório"/>
+					id="enderecoOrigem" name="enderecoOrigem" placeholder="Digite o Endereço de Origem" readonly="true"/>
 			</div>
 
 			<div class="form-group col-md-4">
 				<label for="exampleInputEmail1">CEP de Origem</label>
 					<form:input path="cepOrigem" type="text" class="form-control sizeAddNF"
-					id="exampleInputEmail1" placeholder="Digite o CEP de Origem" required="Campo Obrigatório"/>
+					id="cepOrigem" name="cepOrigem" placeholder="Digite o CEP de Origem" readonly="true"/>
 			</div>
 
 		</div>
@@ -80,13 +80,13 @@
 			<div class="form-group col-md-4">
 				<label for="exampleInputEmail1">Endereço de Destino</label>
 					<form:input path="endDestino" type="text" class="form-control sizeAddNF"
-					id="exampleInputEmail1" placeholder="Digite o Endereço de Destino" required="Campo Obrigatório"/>
+					id="enderecoDestino" placeholder="Digite o Endereço de Destino" required="Campo Obrigatório"/>
 			</div>
 
 			<div class="form-group col-md-4">
-				<label for="exampleInputEmail1">Endereço de Origem</label>
+				<label for="exampleInputEmail1">CEP de Destino</label>
 					<form:input path="cepDestino" type="text" class="form-control sizeAddNF"
-					id="exampleInputEmail1" placeholder="Digite o CEP de Destino" required="Campo Obrigatório"/>
+					id="cepDestino" name="cepDestino" placeholder="Digite o CEP de Destino" required="Campo Obrigatório"/>
 			
 
 				<div class="form-group col-md-3"></div>
@@ -134,6 +134,12 @@
 		src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	<script 
+		src="${pageContext.request.contextPath}/resources/js/jquery.maskedinput.min.js"></script>
+    <script
+    	 src="${pageContext.request.contextPath}/resources/js/jquery.validate.min.js"></script>
+    <script 
+    	src="${pageContext.request.contextPath}/resources/js/jquery.zebra-datepicker.js"></script>
 
 </body>
 
