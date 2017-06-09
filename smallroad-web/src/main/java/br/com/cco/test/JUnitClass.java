@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
@@ -17,6 +18,7 @@ import br.com.cco.smallroadweb.service.NfService;
 import br.com.cco.smallroadweb.service.RotaService;
 import br.com.cco.smallroadweb.service.RoteiroService;
 import br.com.cco.smallroadweb.service.UsuarioService;
+import junit.framework.Assert;
 
 
 
@@ -115,7 +117,7 @@ public class JUnitClass {
 	}
 	
 	//roteiro
-	
+		@Test
 		public void testCriaRoteiro(){
 		
 		List <Nf> nfs = nfService.listaNotaSemRoteiro();
@@ -126,12 +128,14 @@ public class JUnitClass {
 		
 		
 	}
-		
+		@Test
 		public void testCriarNf(){
 			Nf nf = new Nf(1,"Rua Antonio Alves de Araujo");
 			nf.setCepOrigem("5400000");
 			
 		}
+		
+		
 		
 	
 }

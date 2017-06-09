@@ -28,7 +28,7 @@ public class NfDAOImpl implements NfDAO {
 	public List<Nf> getNfs() {
 
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query<Nf> consulta = currentSession.createQuery("from Nf order by numero", Nf.class);
+		Query<Nf> consulta = currentSession.createQuery("from Nf order by entregue,numero", Nf.class);
 		List<Nf> nfs = consulta.getResultList();
 		return nfs;
 
@@ -144,9 +144,10 @@ public class NfDAOImpl implements NfDAO {
 		
 		for(Nf nf : nfs){
 			
-			Query<Nf> consulta = session.createQuery("update Nf set roteiro = null where roteiro =:roteiro");
+			Query<Nf> consulta = session.createQuery("update Nf set roteiro = null where roteiro =:roteiro and numero = :nfNumero");
 			
 			consulta.setParameter("roteiro", roteiro);
+			consulta.setParameter("nfNumero", nf.getNumero());
 			
 			consulta.executeUpdate();
 			
@@ -155,6 +156,15 @@ public class NfDAOImpl implements NfDAO {
 			
 		
 		
+		
+	}
+
+	@Override
+	public void setRoteiroToNull(Nf nf) {
+		Session session = sessionFactory.getCurrentSession();
+		Query<Nf> consulta = session.createQuery("update Nf set roteiro = null where numero = :nfNumero");
+		consulta.setParameter("nfNumero", nf.getNumero());
+		consulta.executeUpdate();
 		
 	}
 

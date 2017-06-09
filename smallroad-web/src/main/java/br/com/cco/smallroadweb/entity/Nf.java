@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "nf")
 public class Nf {
@@ -36,7 +35,7 @@ public class Nf {
 	@Column(name = "entregue")
 	private String entregue;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "roteiro_id")
 	private Roteiro roteiro;
 
@@ -59,8 +58,6 @@ public class Nf {
 		this.numero = numero;
 	}
 
-	
-
 	public String getCepOrigem() {
 		return cepOrigem;
 	}
@@ -80,8 +77,6 @@ public class Nf {
 	public void setEndOrigem(String endOrigem) {
 		this.endOrigem = endOrigem;
 	}
-
-	
 
 	public String getCepDestino() {
 		return cepDestino;
@@ -103,7 +98,6 @@ public class Nf {
 		this.distancia = distancia;
 	}
 
-	
 	public Roteiro getRoteiro() {
 		return roteiro;
 	}
@@ -126,7 +120,5 @@ public class Nf {
 				+ cepDestino + ", endDestino=" + endDestino + ", distancia=" + distancia + ", entregue=" + entregue
 				+ ", roteiro=" + roteiro + "]";
 	}
-
-	
 
 }

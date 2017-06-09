@@ -81,4 +81,11 @@ public class NfServiceImpl implements NfService {
 		
 	}
 
+	@Override
+	@Transactional
+	public void setRoteiroToNull(Nf nf) {
+		nfDAO.setRoteiroToNull(nf);
+		
+	}
+
 }

@@ -25,10 +25,8 @@ public interface NfDAO {
 
 	public List<Nf> listaNotasFromRoteiro(Roteiro roteiro);
 
-	
-
 	void setNfsToNull(List<Nf> nfs, Roteiro roteiro);
 
-	
+	void setRoteiroToNull(Nf nf);
 
 }

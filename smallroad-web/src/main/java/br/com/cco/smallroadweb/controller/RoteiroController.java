@@ -89,8 +89,23 @@ public class RoteiroController {
 	@RequestMapping("/finalizar")
 	public String FinalizarJornada(@RequestParam("roteiroId")Integer id){
 		Roteiro roteiro = roteiroService.getRoteiroByid(id);
+		List<Nf> nfs = nfService.listaNotasFromRoteiro(roteiro);
+		
+		
+		for(Nf nf : nfs){
+			
+			if(nf.getEntregue() == null){
+				nfService.setRoteiroToNull(nf);
+				System.out.println("NF NUMERO"+nf.getNumero()+"NF ENTREGUE: "+nf.getEntregue());
+			}
+		}
+		
+		
 		roteiro.setFinalizado("true");
 		roteiroService.cadastrarRoteiro(roteiro);
+		
+		
+		
 		return "redirect:/roteiro/list";
 	}
 
