@@ -74,4 +74,11 @@ public class NfServiceImpl implements NfService {
 		return nfDAO.listaNotasFromRoteiro(roteiro);
 	}
 
+	@Override
+	@Transactional
+	public void setNfsToNull(List<Nf> nfs, Roteiro roteiro) {
+		nfDAO.setNfsToNull(nfs, roteiro);
+		
+	}
+
 }

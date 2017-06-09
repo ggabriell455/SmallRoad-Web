@@ -1,5 +1,6 @@
 package br.com.cco.smallroadweb.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -10,6 +11,9 @@ import org.springframework.stereotype.Repository;
 
 import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
+import br.com.cco.smallroadweb.service.NfService;
+import br.com.cco.smallroadweb.service.RoteiroService;
+import javassist.expr.NewArray;
 
 @Repository
 public class NfDAOImpl implements NfDAO {
@@ -17,6 +21,8 @@ public class NfDAOImpl implements NfDAO {
 	// injeta a fabrica de seção
 	@Autowired
 	private SessionFactory sessionFactory;
+	@Autowired
+	private RoteiroService roteiroService;
 
 	@Override
 	public List<Nf> getNfs() {
@@ -62,6 +68,8 @@ public class NfDAOImpl implements NfDAO {
 		consulta.executeUpdate();
 
 	}
+	
+	
 
 	@Override
 	public void deleteNfByNumero(Integer nfNumero) {
@@ -128,6 +136,26 @@ public class NfDAOImpl implements NfDAO {
 		consulta.setParameter("roteiro", roteiro);
 		List<Nf> nfs = consulta.getResultList();
 		return nfs;
+	}
+
+	@Override
+	public void setNfsToNull(List<Nf> nfs, Roteiro roteiro) {
+		Session session = sessionFactory.getCurrentSession();
+		
+		for(Nf nf : nfs){
+			
+			Query<Nf> consulta = session.createQuery("update Nf set roteiro = null where roteiro =:roteiro");
+			
+			consulta.setParameter("roteiro", roteiro);
+			
+			consulta.executeUpdate();
+			
+		}
+		
+			
+		
+		
+		
 	}
 
 }

@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "roteiro")
 public class Roteiro {
@@ -23,7 +24,7 @@ public class Roteiro {
 	@Column(name = "nome")
 	private String nome;
 
-	@OneToMany(mappedBy = "roteiro", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "roteiro", cascade = CascadeType.REMOVE)
 	private List<Nf> nfs;
 	
 	@Column(name="finalizado")

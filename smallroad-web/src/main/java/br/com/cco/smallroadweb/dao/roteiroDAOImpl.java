@@ -10,12 +10,16 @@ import org.springframework.stereotype.Repository;
 
 import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
+import br.com.cco.smallroadweb.service.NfService;
 
 @Repository
 public class roteiroDAOImpl implements roteiroDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	@Autowired
+	private NfService nfService;
 
 	@Override
 	public void cadastrarRoteiro(Roteiro roteiro) {
@@ -25,8 +29,14 @@ public class roteiroDAOImpl implements roteiroDAO {
 	}
 
 	@Override
-	public void deletarRoteiro(Integer ids) {
-		// TODO Auto-generated method stub
+	public void deletarRoteiro(Integer id) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Roteiro roteiro = getRoteiroByid(id);
+		List<Nf> nfs = nfService.listaNotasFromRoteiro(roteiro);
+		nfService.setNfsToNull(nfs, roteiro);
+		
+		currentSession.delete("Roteiro", roteiro);
+
 
 	}
 
@@ -36,12 +46,6 @@ public class roteiroDAOImpl implements roteiroDAO {
 		Query<Roteiro> consulta = session.createQuery("From Roteiro", Roteiro.class);
 		List<Roteiro> roteiros = consulta.getResultList();
 		return roteiros;
-	}
-
-	@Override
-	public void pesquisarRoteiroById(Integer id) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
