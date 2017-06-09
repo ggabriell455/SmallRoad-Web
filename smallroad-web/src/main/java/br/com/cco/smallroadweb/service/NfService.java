@@ -28,4 +28,6 @@ public interface NfService {
 
 	public void addRoteiroOnNf(Roteiro roteiro);
 
+	void setNfsToNull(List<Nf> nfs, Roteiro roteiro);
+
 }

@@ -1,13 +1,14 @@
 package br.com.cco.smallroadweb.entity;
 
 import java.math.BigDecimal;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "nf")
@@ -35,7 +36,7 @@ public class Nf {
 	@Column(name = "entregue")
 	private String entregue;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "roteiro_id")
 	private Roteiro roteiro;
 

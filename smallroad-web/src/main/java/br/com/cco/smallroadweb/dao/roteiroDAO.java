@@ -13,8 +13,6 @@ public interface roteiroDAO {
 
 	public List<Roteiro> getRoteiros();
 
-	public void pesquisarRoteiroById(Integer id);
-
 	public Roteiro getRoteiroByid(Integer id);
 
 	public List<Roteiro> getRoteirosNaoFinalizados();

@@ -66,13 +66,22 @@ public class RoteiroController {
 		
 	}
 	
-	@RequestMapping("showFormForView")
+	@RequestMapping("/showFormForView")
 	public String showFormForView(@RequestParam("roteiroId")Integer id, Model modelo) throws IOException{
 		Roteiro roteiro = roteiroService.getRoteiroByid(id);
 		List<Nf> nfs = rotaService.criarRota(nfService.listaNotasFromRoteiro(roteiro));
 		roteiro.setNfs(nfs);
 		modelo.addAttribute("roteiro", roteiro);
 		return "roteiro-form-view";
+		
+		
+	}
+	
+	@RequestMapping("/delete")
+	public String delete(@RequestParam("roteiroId")Integer id) {
+		roteiroService.deletarRoteiro(id);
+
+		return "redirect:/roteiro/list";
 		
 		
 	}

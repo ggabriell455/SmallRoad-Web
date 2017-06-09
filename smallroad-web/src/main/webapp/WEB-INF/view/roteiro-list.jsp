@@ -106,7 +106,7 @@
 								<td>04/06/2017</td>
 								<td class="actions"><a class="btn btn-success btn-xs"
 									href="${viewLink}">Iniciar Jornada</a> <a
-									class="btn btn-warning btn-xs" href="${updateLink}">Editar</a>
+									class="btn btn-warning btn-xs disabled" href="${updateLink}">Editar</a>
 									<a href="${deleteLink}" class="btn btn-danger btn-xs"
 									onclick="if (!(confirm('Tem certeza que deseja Excluir o roteiro?'))) return false">Excluir</a>
 								</td>

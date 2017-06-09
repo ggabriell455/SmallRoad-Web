@@ -41,4 +41,11 @@ public class RoteiroServiceImpl implements RoteiroService {
 		return roteiroDAO.getRoteirosNaoFinalizados();
 	}
 
+	@Override
+	@Transactional
+	public void deletarRoteiro(Integer id) {
+		roteiroDAO.deletarRoteiro(id);
+		
+	}
+
 }
