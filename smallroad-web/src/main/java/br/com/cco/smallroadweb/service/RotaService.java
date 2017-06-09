@@ -38,7 +38,7 @@ public class RotaService {
 		Distancia distancia = new Distancia();
 		nfs = new HashMap<Integer, Nf>();
 
-		nfs.put(0, new Nf(0, "Faculdade dos Guararapes", "Faculdade dos Guararapes"));
+		nfs.put(0, new Nf(0,"Faculdade dos Guararapes"));
 		for (Nf nf : notasFicais) {
 
 			nfs.put(nf.getNumero(), nf);

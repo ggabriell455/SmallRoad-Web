@@ -45,8 +45,8 @@ CREATE TABLE `roteiro` (
 DROP TABLE IF EXISTS `nf`;
 CREATE TABLE `nf` (
   `numero` int(11) NOT NULL ,
-  `cep_origem` int(8) NOT NULL,
-  `end_origem` varchar(45) NOT NULL,
+  `cep_origem` int(8) DEFAULT NULL,
+  `end_origem` varchar(45) DEFAULT NULL,
   `cep_destino` int(8) NOT NULL,
   `end_destino` varchar(45) NOT NULL,
   `distancia` decimal(5,2) DEFAULT NULL,

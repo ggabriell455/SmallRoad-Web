@@ -43,11 +43,11 @@ public class Nf {
 
 	}
 
-	public Nf(Integer numero, String endOrigem, String endDestino) {
+	public Nf(Integer numero, String endDestino) {
 		this.numero = numero;
 		this.endDestino = endDestino;
-		this.endOrigem = endOrigem;
-
+		this.cepOrigem = 5400000;
+		this.endOrigem = "Faculdade dos Guararapes";
 	}
 
 	public Integer getNumero() {

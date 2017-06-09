@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import br.com.cco.smallroadweb.entity.Nf;
-import br.com.cco.smallroadweb.service.NfService;
+import br.com.cco.smallroadweb.entity.Nf;import br.com.cco.smallroadweb.service.NfService;
 
 @Controller
 @RequestMapping("/nf")
@@ -41,7 +40,7 @@ public class NfController {
 		return "redirect:/nf/list";
 	}
 
-	@GetMapping("/ShowFormForUpdate")
+	@GetMapping("/showFormForUpdate")
 	public String ShowFormForUpdate(@RequestParam("nfNumero") Integer numero, Model model) {
 
 		Nf nf = nfService.getNf(numero);
@@ -50,8 +49,9 @@ public class NfController {
 		return "nf-form";
 	}
 
-	@PostMapping("/saveNf")
+	@RequestMapping("/saveNf")
 	public String saveNf(@ModelAttribute("tempNf") Nf nf) {
+		System.out.println("TESTE"+nf.toString());
 		nfService.saveNf(nf);
 		return "redirect:/nf/list";
 
@@ -78,5 +78,19 @@ public class NfController {
 
 		return "list-nf";
 	}
+	
+	@GetMapping("/showFormForView")
+	public String showFormForView(@RequestParam("nfNumero") Integer numero, Model modelo) {
+
+		// pega o usuario do serviço
+		Nf nf = nfService.getNf(numero);
+
+		// seta usuario como atributo do modelo e pre-popula o formulario
+		modelo.addAttribute("nf", nf);
+
+		// envia para o formulario
+		return "nf-form-view";
+	}
+	
 
 }

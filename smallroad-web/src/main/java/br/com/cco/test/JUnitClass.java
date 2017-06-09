@@ -39,9 +39,9 @@ public class JUnitClass {
 	
 	//nf
 	@Test
-	public void testGetNfByNumero(Integer numero){
-		numero = 1;
-	Nf nf = nfService.getNf(1);
+	public void testGetNfByNumero(){
+	Integer numero = 1;
+	Nf nf = nfService.getNf(numero);
 	
 
 	}
@@ -93,8 +93,8 @@ public class JUnitClass {
 	}
 	
 	@Test
-	public void getUsuarioById(Integer numero){
-		numero = 4;
+	public void getUsuarioById(){
+		Integer numero = 4;
 		usuarioService.getUsuario(numero);
 	}
 	@Test
@@ -109,7 +109,7 @@ public class JUnitClass {
 	@Test
 	public void testCriaRota() throws IOException{
 		
-		Roteiro roteiro  = roteiroService.getRoteiroByid(1);
+		Roteiro roteiro  = roteiroService.getRoteiroByid(2);
 		List<Nf> nfs = nfService.listaNotasFromRoteiro(roteiro);
 		rotaService.criarRota(nfs);
 	}
@@ -126,6 +126,12 @@ public class JUnitClass {
 		
 		
 	}
+		
+		public void testCriarNf(){
+			Nf nf = new Nf(1,"Rua Antonio Alves de Araujo");
+			nf.setCepOrigem(540000);
+			
+		}
 		
 	
 }

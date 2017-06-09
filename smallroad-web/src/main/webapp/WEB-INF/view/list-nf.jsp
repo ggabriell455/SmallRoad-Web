@@ -88,7 +88,7 @@
 					
 					<!-- cria um laco para printar os usuarios -->
 					<c:forEach var="tempNf" items="${nfs}">
-					<c:url var="updateLink" value="/nf/ShowFormForUpdate">
+					<c:url var="updateLink" value="/nf/showFormForUpdate">
 						<c:param name="nfNumero" value="${tempNf.numero}" />
 					</c:url>
 
@@ -96,6 +96,11 @@
 					<c:url var="deleteLink" value="/nf/delete">
 						<c:param name="nfNumero" value="${tempNf.numero}" />
 					</c:url>
+					
+					<c:url var="viewLink" value="/nf/showFormForView">
+						<c:param name="nfNumero" value="${tempNf.numero}" />
+					</c:url>
+					
 
 					<tr>
 						<td>${tempNf.numero}</td>
@@ -103,8 +108,11 @@
 						<td>${tempNf.endDestino}</td>
 						<td>${tempNf.entregue}</td>
 						<td>
-						<a class="btn btn-warning btn-xs" href="${updateLink}">UPDATE</a> 
-						<a class="btn btn-danger btn-xs" href="${deleteLink}">DELETE</a>
+						<a class="btn btn-success btn-xs"
+									href="${viewLink}">Visualizar</a> <a
+									class="btn btn-warning btn-xs" href="${updateLink}">Editar</a>
+									<a href="${deleteLink}" class="btn btn-danger btn-xs"
+									onclick="if (!(confirm('Tem certeza que deseja excluir a nf?'))) return false">Excluir</a>
 						</td>
 
 					</tr>

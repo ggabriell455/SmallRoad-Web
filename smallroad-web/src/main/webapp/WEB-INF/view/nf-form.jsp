@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -46,31 +47,29 @@
 	</nav>
 	
 	<div id="main" class="container-fluid">
-
-		<h3 class="page-header">Adicionar Nota Fiscal</h3>
-
-		<br/>
+		
+		
 
 	<form:form action="saveNf" modelAttribute="tempNf" method="POST">
-
+		<c:choose>
+			<c:when test="${not empty tempNf.numero }">
+				<h3 class="page-header"> Atualizar Nota Fiscal</h3>
+			</c:when>
+			<c:otherwise>
+				<h3 class="page-header"> Cadastrar Nota Fiscal</h3>
+			</c:otherwise>
+		</c:choose>
+		<br/>
+		
 		<div class="row">
 
 			<div class="form-group col-md-4">
-				<label for="exampleInputEmail1">Número NF</label>
+			
+			<c:if test="${empty tempNf.numero }">
+				<label for="numeroNF">Número NF</label>
 					<form:input path="numero" type="text" class="form-control sizeAddNF"
 					id="numeroNF" name="numeroNF" placeholder="Digite o Número da NF" required="Campo Obrigatório"/>
-			</div>
-
-			<div class="form-group col-md-4">
-				<label for="exampleInputEmail1">Endereço de Origem</label>
-					<form:input path="EndOrigem" type="text" class="form-control sizeAddNF"
-					id="enderecoOrigem" name="enderecoOrigem" placeholder="Digite o Endereço de Origem" readonly="true"/>
-			</div>
-
-			<div class="form-group col-md-4">
-				<label for="exampleInputEmail1">CEP de Origem</label>
-					<form:input path="cepOrigem" type="text" class="form-control sizeAddNF"
-					id="cepOrigem" name="cepOrigem" placeholder="Digite o CEP de Origem" readonly="true"/>
+			</c:if>
 			</div>
 
 		</div>

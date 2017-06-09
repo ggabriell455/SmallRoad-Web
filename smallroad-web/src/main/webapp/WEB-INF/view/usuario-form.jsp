@@ -44,13 +44,20 @@
 
 	<div id="main" class="container-fluid">
 
-		<h3 class="page-header">Adicionar Usuário</h3>
-
-		<br/>
-		<br/>
-
+		
 		<form:form id="formulario" action="saveUsuario" modelAttribute="usuario" method="POST">
 			<form:hidden path="id" />
+			
+			<c:choose>
+			<c:when test="${not empty usuario.id }">
+				<h3 class="page-header"> Atualizar Usuário</h3>
+			</c:when>
+			<c:otherwise>
+				<h3 class="page-header"> Cadastrar Usuário</h3>
+			</c:otherwise>
+			</c:choose>
+		<br/>
+		<br/>
 			<div class="row">
 
 				<div class="form-group col-md-3">
