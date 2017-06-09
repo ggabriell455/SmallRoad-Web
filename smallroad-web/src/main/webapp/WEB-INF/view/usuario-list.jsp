@@ -83,7 +83,7 @@
 							<th>Perfil</th>
 							<th>E-mail</th>
 							<th>Data Cadastro</th>
-							<th class="actions">Ações</th>
+							<th class="actions" width="200px;">Ações</th>
 						</tr>
 					<tbody>
 						<c:forEach var="tempUsuario" items="${usuarios}">

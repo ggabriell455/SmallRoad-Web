@@ -1,16 +1,11 @@
 #main {
   margin-top: 50px;
-  margin-left: 10px;
 }
 
 .menu{
 	background-color: #1B1C1D;
 	-webkit-backgroud-color: #1B1C1D;
 	-moz-background-color: #1B1C1D;
-}
-
-.form-control{
-	width: 458px;
 }
 
 .sizeAddUsuario{

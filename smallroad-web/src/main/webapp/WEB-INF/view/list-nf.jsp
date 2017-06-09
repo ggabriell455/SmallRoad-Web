@@ -82,7 +82,7 @@
 							<th>Cep</th>
 							<th>Endereço</th>
 							<th>Data Entrega</th>
-							<th>Ação</th>
+							<th width="200px;">Ação</th>
 						</tr>
 					<tbody>
 					

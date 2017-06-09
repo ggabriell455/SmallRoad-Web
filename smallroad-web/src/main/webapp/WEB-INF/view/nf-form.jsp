@@ -48,8 +48,6 @@
 	
 	<div id="main" class="container-fluid">
 		
-		
-
 	<form:form action="saveNf" modelAttribute="tempNf" method="POST">
 		<c:choose>
 			<c:when test="${not empty tempNf.numero }">
@@ -93,24 +91,7 @@
 			</div>
 
 		</div>
-
-			<div class="row">
-				<div class="form-group col-md-6"></div>
-				<div class="form-group col-md-6"></div>
-			</div>
-
-			<div class="row">
-				<div class="form-group col-md-3"></div>
-				<div class="form-group col-md-3"></div>
-				<div class="form-group col-md-3"></div>
-				<div class="form-group col-md-3"></div>
-			</div>
-
-			<div class="row">
-				<div class="form-group col-md-6"></div>
-				<div class="form-group col-md-6"></div>
-			</div>
-
+		
 			<hr />
 
 			<div class="row">

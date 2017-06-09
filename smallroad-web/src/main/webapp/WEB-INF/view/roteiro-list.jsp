@@ -82,7 +82,7 @@
 							<th>ID</th>
 							<th>Nome</th>
 							<th>Data do Fechamento</th>
-							<th class="actions">Ações</th>
+							<th class="actions" width="230px;">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
