@@ -18,13 +18,13 @@ public class Nf {
 	private Integer numero;
 
 	@Column(name = "cep_origem")
-	private Integer cepOrigem;
+	private String cepOrigem;
 
 	@Column(name = "end_origem")
 	private String endOrigem;
 
 	@Column(name = "cep_destino")
-	private Integer cepDestino;
+	private String cepDestino;
 
 	@Column(name = "end_destino")
 	private String endDestino;
@@ -46,7 +46,7 @@ public class Nf {
 	public Nf(Integer numero, String endDestino) {
 		this.numero = numero;
 		this.endDestino = endDestino;
-		this.cepOrigem = 5400000;
+		this.cepOrigem = "54000-000";
 		this.endOrigem = "Faculdade dos Guararapes";
 	}
 
@@ -58,12 +58,18 @@ public class Nf {
 		this.numero = numero;
 	}
 
-	public Integer getCepOrigem() {
+	
+
+	public String getCepOrigem() {
 		return cepOrigem;
 	}
 
-	public void setCepOrigem(Integer cepOrigem) {
+	public void setCepOrigem(String cepOrigem) {
 		this.cepOrigem = cepOrigem;
+	}
+
+	public void setCepDestino(String cepDestino) {
+		this.cepDestino = cepDestino;
 	}
 
 	public String getEndOrigem() {
@@ -74,12 +80,10 @@ public class Nf {
 		this.endOrigem = endOrigem;
 	}
 
-	public Integer getCepDestino() {
-		return cepDestino;
-	}
+	
 
-	public void setCepDestino(Integer cepDestino) {
-		this.cepDestino = cepDestino;
+	public String getCepDestino() {
+		return cepDestino;
 	}
 
 	public String getEndDestino() {

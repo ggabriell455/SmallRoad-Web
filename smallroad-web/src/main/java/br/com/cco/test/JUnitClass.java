@@ -62,9 +62,9 @@ public class JUnitClass {
 	public void testSaveNf(){
 		Nf nf = new Nf();
 		nf.setNumero(1);
-		nf.setCepDestino(54000000);
+		nf.setCepDestino("50000000");
 		nf.setEndDestino("Shopping Guararapes");
-		nf.setCepOrigem(400000);
+		nf.setCepOrigem("50000000");
 		nf.setEndOrigem("Faculdade dos Gurarapes");
 		nfService.saveNf(nf);
 	}
@@ -129,7 +129,7 @@ public class JUnitClass {
 		
 		public void testCriarNf(){
 			Nf nf = new Nf(1,"Rua Antonio Alves de Araujo");
-			nf.setCepOrigem(540000);
+			nf.setCepOrigem("5400000");
 			
 		}
 		

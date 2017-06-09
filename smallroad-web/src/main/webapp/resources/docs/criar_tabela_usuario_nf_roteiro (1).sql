@@ -45,9 +45,9 @@ CREATE TABLE `roteiro` (
 DROP TABLE IF EXISTS `nf`;
 CREATE TABLE `nf` (
   `numero` int(11) NOT NULL ,
-  `cep_origem` int(8) DEFAULT NULL,
+  `cep_origem` varchar(10) DEFAULT NULL,
   `end_origem` varchar(45) DEFAULT NULL,
-  `cep_destino` int(8) NOT NULL,
+  `cep_destino` varchar(10) NOT NULL,
   `end_destino` varchar(45) NOT NULL,
   `distancia` decimal(5,2) DEFAULT NULL,
   `entregue` varchar(45) DEFAULT NULL,
@@ -77,18 +77,18 @@ LOCK TABLES `nf` WRITE;
 /*!40000 ALTER TABLE `nf` DISABLE KEYS */;
 
 INSERT INTO `nf` (numero,cep_origem,end_origem,cep_destino,end_destino,roteiro_id) VALUES 
-	(1,54315010,'Faculdade dos Guararapes',54400620,'Ulysses Montarroyos, 2330',1),
-	(2,54315010,'Faculdade dos Guararapes',54400450,'Rua Severino Jose de Paula, 44',1),
-	(3,54315010,'Faculdade dos Guararapes',51020030,'Av. Eng. Domingos Ferreira, 4140',1),
-	(4,54315010,'Faculdade dos Guararapes',54410390,'Rua Jose Braz Moscow, 521',1),
-	(5,54315010,'Faculdade dos Guararapes',51030090,'R. Alm. Tamandaré, 170',2),
-    (6,54315010,'Faculdade dos Guararapes',54400620,'Rua Professor Mario Ramos, 136 Candeias',2),
-	(7,54315010,'Faculdade dos Guararapes',54400450,'Ferreira Costa - Imbiribeira, Recife',2),
-	(8,54315010,'Faculdade dos Guararapes',51020030,'Rua Ot�vio Cruz,88 Prazeres',2),
-	(9,54315010,'Faculdade dos Guararapes',54410390,'Rua Antonio Alves de Araujo, 320 Prazeres',2),
-	(10,54315010,'Faculdade dos Guararapes',51030090,'Rua General Goes Monteiro, 912, Imbiribeira',3),
-    (11,54315010,'Faculdade dos Guararapes',51030090,'Rua das papoulas , 11  Rio Doce ',3),
-    (12,54315010,'Faculdade dos Guararapes',51030090,'R. Alm. Tamandaré, 170',3);
+	(1,'54315-010','Faculdade dos Guararapes','51030-090','Ulysses Montarroyos, 2330',1),
+	(2,'54315-010','Faculdade dos Guararapes','51030-090','Rua Severino Jose de Paula, 44',1),
+	(3,'54315-010','Faculdade dos Guararapes','51030-090','Av. Eng. Domingos Ferreira, 4140',1),
+	(4,'54315-010','Faculdade dos Guararapes','51030-090','Rua Jose Braz Moscow, 521',1),
+	(5,'54315-010','Faculdade dos Guararapes','51030-090','R. Alm. Tamandaré, 170',2),
+    (6,'54315-010','Faculdade dos Guararapes','51030-090','Rua Professor Mario Ramos, 136 Candeias',2),
+	(7,'54315-010','Faculdade dos Guararapes','51030-090','Ferreira Costa - Imbiribeira, Recife',2),
+	(8,'54315-010','Faculdade dos Guararapes','51030-090','Rua Ot�vio Cruz,88 Prazeres',2),
+	(9,'54315-010','Faculdade dos Guararapes','51030-090','Rua Antonio Alves de Araujo, 320 Prazeres',2),
+	(10,'54315-010','Faculdade dos Guararapes','51030-090','Rua General Goes Monteiro, 912, Imbiribeira',3),
+    (11,'54315-010','Faculdade dos Guararapes','51030-090','Rua das papoulas , 11  Rio Doce ',3),
+    (12,'54315-010','Faculdade dos Guararapes','51030-090','R. Alm. Tamandaré, 170',3);
 
 
 /*!40000 ALTER TABLE `nf` ENABLE KEYS */;
