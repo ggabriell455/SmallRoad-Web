@@ -117,7 +117,7 @@ public class UsuarioController {
 			usuario = usuarioService.usuarioExiste(usuario);
 			modelo.addAttribute("usuario", usuario);
 			System.out.println("USUARIO STRING"+usuario.toString());
-			return "redirect:/usuario/list";
+			return "redirect:/usuario/home";
 			
 			
 		}catch (Exception e) {
