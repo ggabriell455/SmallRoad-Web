@@ -50,18 +50,13 @@
 				<div class="col-sm-3">
 					<h2>Roteiro</h2>
 				</div>
+				
 				<div class="col-sm-6">
 
 					<form:hidden var="roteiroId" path="id" />
 					<div class="input-group h2">
-						<form:input path="nome" name="data[search]" class="form-control "
-							id="search" type="text" placeholder="Nome do Roteiro" />
-							<span
-							class="input-group-btn">
-							<button class="btn btn-primary" type="submit">
-								<span class="glyphicon glyphicon-search"></span>
-							</button>
-						</span>
+						<form:input path="nome" name="data[search]" class="form-control"
+							id="search" type="text" placeholder="Nome do Roteiro" style="width: 630px; border-radius: 4px;"/>
 					</div>
 				</div>
 

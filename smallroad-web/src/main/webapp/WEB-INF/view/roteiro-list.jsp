@@ -53,10 +53,10 @@
 				<form:form action="search" method="POST">
 					<div class="input-group h2">
 						<input name="data[search]" class="form-control" id="search"
-							type="text" placeholder="Adicionar Roteiro"> <span
+							type="text" placeholder="Pesquisar Roteiro"> <span
 							class="input-group-btn">
 							<button class="btn btn-primary" type="submit">
-								<span class="glyphicon glyphicon-plus"></span>
+								<span class="glyphicon glyphicon-search"></span>
 							</button>
 						</span>
 					</div>
