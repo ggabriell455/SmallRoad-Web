@@ -33,9 +33,6 @@ public class roteiroDAOImpl implements roteiroDAO {
 	public void deletarRoteiro(Integer id) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		Roteiro roteiro = getRoteiroByid(id);
-		List<Nf> nfs = nfService.listaNotasFromRoteiro(roteiro);
-		nfService.setNfsToNull(nfs, roteiro);
-		
 		currentSession.delete("Roteiro", roteiro);
 
 

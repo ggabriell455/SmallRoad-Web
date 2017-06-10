@@ -25,7 +25,7 @@ public class Roteiro {
 	@Column(name = "nome")
 	private String nome;
 
-	@OneToMany(mappedBy = "roteiro", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "roteiro", cascade = CascadeType.ALL, fetch= FetchType.EAGER)
 	private List<Nf> nfs;
 	
 	@Column(name="finalizado")

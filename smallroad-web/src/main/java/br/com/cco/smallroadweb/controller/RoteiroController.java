@@ -80,8 +80,13 @@ public class RoteiroController {
 	
 	@RequestMapping("/delete")
 	public String delete(@RequestParam("roteiroId")Integer id) {
+		
+		Roteiro roteiro = roteiroService.getRoteiroByid(id);
+		List<Nf> nfs = roteiro.getNfs();
+		nfService.setNfsToNull(nfs, roteiro);
 		roteiroService.deletarRoteiro(id);
-
+		
+		
 		return "redirect:/roteiro/list";
 		
 		
@@ -91,19 +96,19 @@ public class RoteiroController {
 	public String FinalizarJornada(@RequestParam("roteiroId")Integer id){
 		Roteiro roteiro = roteiroService.getRoteiroByid(id);
 		List<Nf> nfs = nfService.listaNotasFromRoteiro(roteiro);
-		
+		roteiro.setFinalizado("true");
+		roteiroService.cadastrarRoteiro(roteiro);
 		
 		for(Nf nf : nfs){
 			
 			if(nf.getEntregue() == null){
 				nfService.setRoteiroToNull(nf);
-				System.out.println("NF NUMERO"+nf.getNumero()+"NF ENTREGUE: "+nf.getEntregue());
+				
 			}
 		}
 		
 		
-		roteiro.setFinalizado("true");
-		roteiroService.cadastrarRoteiro(roteiro);
+		
 		
 		
 		

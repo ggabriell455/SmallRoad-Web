@@ -81,7 +81,7 @@
 							<th>Numero</th>
 							<th>Cep</th>
 							<th>Endereço</th>
-							<th>Data Entrega</th>
+							<th>Entregue</th>
 							<th width="200px;">Ação</th>
 						</tr>
 					<tbody>

@@ -42,11 +42,16 @@ public class JUnitClass {
 	RoteiroService roteiroService;
 	
 	//nf
+	
 	@Test
 	public void testGetNfByNumero(){
-	Integer numero = 1;
-	Nf nf = nfService.getNf(numero);
+	boolean condicao=true;
 	
+	if(nfService.getNf(1) == null){
+		condicao = false;
+	}
+	
+	assertEquals(true, condicao);
 
 	}
 	
@@ -73,9 +78,15 @@ public class JUnitClass {
 
 	
 	@Test
-	public void testUsuario(){
+	public void testDeleteUsuario(){
+		boolean condicao =true;
 		
-		
+		try {
+			usuarioService.deleteUsuario(9999);
+		} catch (Exception e) {
+			condicao = false;
+		}
+		assertEquals(true, condicao);
 
 	}
 
@@ -83,11 +94,17 @@ public class JUnitClass {
 	public void testSaveNf(){
 		Nf nf = new Nf();
 		nf.setNumero(1);
-		nf.setCepDestino("50000000");
-		nf.setEndDestino("Shopping Guararapes");
-		nf.setCepOrigem("50000000");
-		nf.setEndOrigem("Faculdade dos Gurarapes");
-		nfService.saveNf(nf);
+		boolean condicao = true;
+		try {
+			nfService.saveNf(nf);
+		} catch (Exception e) {
+			condicao = false;
+		}
+		
+		
+		assertEquals(true, condicao);
+	
+		
 	}
 	
 	//usuario
@@ -98,64 +115,45 @@ public class JUnitClass {
 	usuario.setNickname("usuario");
 	usuario.setSenha("senhateste");
 	usuario.setEmail("usuario@teste.com.br");
-	usuario.setPerfil("ADMIN");
+
+	boolean condicao = true;
 	
-	usuarioService.saveUsuario(usuario);
+	try {
+		usuarioService.saveUsuario(usuario);
+	} catch (Exception e) {
+		condicao = false;
+	}
+	
+	
+	
+	assertTrue(condicao);
 	
 
 	}
 	
-	@Test
-	public void testLoginUsuario(){
-		
-		
-	}
-	
-	@Test
-	public void testGetUsuario(){
-		
-		List<Usuario> usuario = usuarioService.getUsuarios();
-		
-		
-	}
-	
-	@Test
-	public void getUsuarioById(){
-		Integer numero = 4;
-		usuarioService.getUsuario(numero);
-	}
-	@Test
-	public void testDeleteUsuario(){
-		
-		usuarioService.deleteUsuario(4);
-	}
 	
 	
 	
 	//rota
 	@Test
-	public void testCriaRota() throws IOException{
+	public void testCriaRota(){
+		boolean condicao=true;
 		
-		Roteiro roteiro  = roteiroService.getRoteiroByid(999);
-		List<Nf> nfs = nfService.listaNotasFromRoteiro(roteiro);
-		rotaService.criarRota(nfs);
+		try {
+			
+			Roteiro roteiro  = roteiroService.getRoteiroByid(9999);
+			rotaService.criarRota(roteiro.getNfs());
+		} catch (Exception e) {
+			 condicao = false;
+		}
+		
+		
+	
+		
+		assertEquals(true, condicao);
 	}
 	
-	//roteiro
-		@Test
-		public void testCriaRoteiro(){
-		
-		Roteiro roteiro = new Roteiro();
-		roteiroService.cadastrarRoteiro(roteiro);
-		
-		
-	}
-		@Test
-		public void testCriarNf(){
-			Nf nf = new Nf(1,"Rua Antonio Alves de Araujo");
-			nf.setCepOrigem("5400000");
-			
-		}
+	
 		
 		
 		
