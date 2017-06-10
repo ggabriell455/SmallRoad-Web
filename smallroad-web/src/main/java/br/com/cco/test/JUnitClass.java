@@ -55,7 +55,7 @@ public class JUnitClass {
 		
 	
 		
-		assertNotNull( nfService.getNf(1));
+		assertNotNull( nfService.getNf(2));
 	}
 	
 	@Test
@@ -68,24 +68,17 @@ public class JUnitClass {
 		usuario.setNickname("gil");
 		
 		
-		usuarioService.usuarioExiste(usuario);
+		assertNotNull(usuarioService.usuarioExiste(usuario));
 	}
 
 	
 	@Test
 	public void testUsuario(){
 		
-		Usuario usuario = usuarioService.getUsuario(2);
-		Usuario usuario2 = new Usuario();
-		usuario2.setNome("gil");
-		usuario2.setSenha("gil123");
-		usuario2.setEmail("gil@gil.com");
-		usuario2.setPerfil("ADMIN");
-		usuario2.setNickname("gil");
 		
-		assertSame( usuario, usuario2);
+
 	}
-/*
+
 	@Test
 	public void testSaveNf(){
 		Nf nf = new Nf();
@@ -143,7 +136,7 @@ public class JUnitClass {
 	@Test
 	public void testCriaRota() throws IOException{
 		
-		Roteiro roteiro  = roteiroService.getRoteiroByid(2);
+		Roteiro roteiro  = roteiroService.getRoteiroByid(999);
 		List<Nf> nfs = nfService.listaNotasFromRoteiro(roteiro);
 		rotaService.criarRota(nfs);
 	}
@@ -152,7 +145,6 @@ public class JUnitClass {
 		@Test
 		public void testCriaRoteiro(){
 		
-		List <Nf> nfs = nfService.listaNotaSemRoteiro();
 		Roteiro roteiro = new Roteiro();
 		roteiroService.cadastrarRoteiro(roteiro);
 		
@@ -167,5 +159,5 @@ public class JUnitClass {
 		
 		
 		
-	*/
+	
 }
