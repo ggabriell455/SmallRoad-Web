@@ -48,4 +48,10 @@ public class RoteiroServiceImpl implements RoteiroService {
 		
 	}
 
+	@Override
+	@Transactional
+	public List<Roteiro> getRoteiroByNome(String nome) {
+		return roteiroDAO.getRoteiroByNome(nome);
+	}
+
 }

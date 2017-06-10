@@ -81,14 +81,20 @@ INSERT INTO `nf` (numero,cep_origem,end_origem,cep_destino,end_destino,roteiro_i
 	(2,'54315-010','Faculdade dos Guararapes','51030-090','Rua Severino Jose de Paula, 44',1),
 	(3,'54315-010','Faculdade dos Guararapes','51030-090','Av. Eng. Domingos Ferreira, 4140',1),
 	(4,'54315-010','Faculdade dos Guararapes','51030-090','Rua Jose Braz Moscow, 521',1),
-	(5,'54315-010','Faculdade dos Guararapes','51030-090','R. Alm. Tamandar√©, 170',2),
+	(5,'54315-010','Faculdade dos Guararapes','51030-090','R. Alm. TamandarÈ, 170',2),
     (6,'54315-010','Faculdade dos Guararapes','51030-090','Rua Professor Mario Ramos, 136 Candeias',2),
 	(7,'54315-010','Faculdade dos Guararapes','51030-090','Ferreira Costa - Imbiribeira, Recife',2),
 	(8,'54315-010','Faculdade dos Guararapes','51030-090','Rua Ot·vio Cruz,88 Prazeres',2),
 	(9,'54315-010','Faculdade dos Guararapes','51030-090','Rua Antonio Alves de Araujo, 320 Prazeres',2),
 	(10,'54315-010','Faculdade dos Guararapes','51030-090','Rua General Goes Monteiro, 912, Imbiribeira',3),
     (11,'54315-010','Faculdade dos Guararapes','51030-090','Rua das papoulas , 11  Rio Doce ',3),
-    (12,'54315-010','Faculdade dos Guararapes','51030-090','R. Alm. Tamandar√©, 170',3);
+    (12,'54315-010','Faculdade dos Guararapes','50741-100','Rua Jo„o Francisco Lisboa, 120 Varzea',3);
+    
+    
+INSERT INTO `nf` (numero,cep_origem,end_origem,cep_destino,end_destino) VALUES 
+	(13,'54315-010','Faculdade dos Guararapes','51030-090','Av 20 de janeiro, 355 setubal'),
+	(14,'54315-010','Faculdade dos Guararapes','51030-090','Rua Joaquim marques de jesus, 176'),
+	(15,'54315-010','Faculdade dos Guararapes','51030-090','Ferreira Costa - Imbiribeira, Recife - PE');
 
 
 /*!40000 ALTER TABLE `nf` ENABLE KEYS */;

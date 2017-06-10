@@ -16,6 +16,8 @@ public interface RoteiroService {
 
 	public void deletarRoteiro(Integer id);
 
+	public List<Roteiro> getRoteiroByNome(String nome);
+
 	
 
 }

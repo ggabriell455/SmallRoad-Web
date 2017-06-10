@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
+import br.com.cco.smallroadweb.entity.Usuario;
 import br.com.cco.smallroadweb.service.NfService;
 import br.com.cco.smallroadweb.service.RotaService;
 import br.com.cco.smallroadweb.service.RoteiroService;
@@ -109,5 +110,15 @@ public class RoteiroController {
 		return "redirect:/roteiro/list";
 	}
 
-	
+	@PostMapping("/search")
+	public String searchRoteiros(@RequestParam("data[search]") String nome, Model modelo) {
+
+		// procura usuarios no serviço
+		List<Roteiro> roteiros = roteiroService.getRoteiroByNome(nome);
+
+		// adiciona usuarios ao modelo
+		modelo.addAttribute("roteiros", roteiros);
+
+		return "roteiro-list";
+	}
 }

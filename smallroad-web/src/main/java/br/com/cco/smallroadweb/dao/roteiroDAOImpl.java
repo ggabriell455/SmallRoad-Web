@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.cco.smallroadweb.entity.Nf;
 import br.com.cco.smallroadweb.entity.Roteiro;
+import br.com.cco.smallroadweb.entity.Usuario;
 import br.com.cco.smallroadweb.service.NfService;
 
 @Repository
@@ -66,6 +67,34 @@ public class roteiroDAOImpl implements roteiroDAO {
 		List<Roteiro> roteiros = consulta.getResultList();
 		return roteiros;
 
+	}
+
+	@Override
+	public List<Roteiro> getRoteiroByNome(String nomeProcurado) {
+		// pega a seção atual do hibernate
+				Session currentSession = sessionFactory.getCurrentSession();
+
+				Query consulta = null;
+
+				//
+				// so procura pelo nome se nao for nullo ou vazio
+				//
+				if (nomeProcurado != null && nomeProcurado.trim().length() > 0) {
+
+					// procura pelo nome ... caso insensitive
+					consulta = currentSession.createQuery("from Roteiro where lower(nome) like :nome ", Roteiro.class);
+					consulta.setParameter("nome", "%" + nomeProcurado.toLowerCase() + "%");
+
+				} else {
+					// se o nome for vazio, traga todos os roteiros
+					consulta = currentSession.createQuery("from Roteiro", Roteiro.class);
+				}
+
+				// executa a consulta e guarda na lista
+				List<Roteiro> roteiros = consulta.getResultList();
+
+				// retorna o resultado
+				return roteiros;
 	}
 
 	
