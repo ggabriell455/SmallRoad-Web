@@ -67,13 +67,19 @@ public class JUnitClass {
 	public void testUsuarioLogin(){
 		Usuario usuario  = new Usuario();
 		usuario.setNome("gil");
-		usuario.setSenha("gil123");
+		usuario.setSenha("gil1234");
 		usuario.setEmail("gil@gil.com");
 		usuario.setPerfil("ADMIN");
 		usuario.setNickname("gil");
+		boolean condicao = true;
 		
+		try {
+			usuarioService.usuarioExiste(usuario);
+		} catch (Exception e) {
+			condicao = false;
+		}
 		
-		assertNotNull(usuarioService.usuarioExiste(usuario));
+		assertEquals(true,condicao);
 	}
 
 	
