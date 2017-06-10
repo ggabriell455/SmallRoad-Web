@@ -1,5 +1,7 @@
 package br.com.cco.test;
 
+import static org.junit.Assert.*;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -51,15 +53,39 @@ public class JUnitClass {
 	@Test
 	public void testGetNfs(){
 		
-		List<Nf> nfs = nfService.getNfs();
+	
+		
+		assertNotNull( nfService.getNf(1));
 	}
 	
 	@Test
-	public void testDeleteNf(){
+	public void testUsuarioLogin(){
+		Usuario usuario  = new Usuario();
+		usuario.setNome("gil");
+		usuario.setSenha("gil123");
+		usuario.setEmail("gil@gil.com");
+		usuario.setPerfil("ADMIN");
+		usuario.setNickname("gil");
 		
-		nfService.deleteNf(1);
+		
+		usuarioService.usuarioExiste(usuario);
 	}
+
 	
+	@Test
+	public void testUsuario(){
+		
+		Usuario usuario = usuarioService.getUsuario(2);
+		Usuario usuario2 = new Usuario();
+		usuario2.setNome("gil");
+		usuario2.setSenha("gil123");
+		usuario2.setEmail("gil@gil.com");
+		usuario2.setPerfil("ADMIN");
+		usuario2.setNickname("gil");
+		
+		assertSame( usuario, usuario2);
+	}
+/*
 	@Test
 	public void testSaveNf(){
 		Nf nf = new Nf();
@@ -84,6 +110,12 @@ public class JUnitClass {
 	usuarioService.saveUsuario(usuario);
 	
 
+	}
+	
+	@Test
+	public void testLoginUsuario(){
+		
+		
 	}
 	
 	@Test
@@ -122,9 +154,7 @@ public class JUnitClass {
 		
 		List <Nf> nfs = nfService.listaNotaSemRoteiro();
 		Roteiro roteiro = new Roteiro();
-		roteiro.setId(10);
-		roteiro.setNome("ROTEIRO_TESTE");
-		roteiro.setNfs(nfs);
+		roteiroService.cadastrarRoteiro(roteiro);
 		
 		
 	}
@@ -137,5 +167,5 @@ public class JUnitClass {
 		
 		
 		
-	
+	*/
 }
