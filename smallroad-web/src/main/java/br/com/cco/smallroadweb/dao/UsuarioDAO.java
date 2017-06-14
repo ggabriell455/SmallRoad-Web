@@ -20,6 +20,5 @@ public interface UsuarioDAO {
 
 	public Usuario usuarioExiste(Usuario usuario) throws NoResultException;
 
-	// TEste de Commit
 
 }
